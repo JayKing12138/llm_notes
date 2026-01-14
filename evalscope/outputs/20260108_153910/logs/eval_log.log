@@ -1,0 +1,1108 @@
+2026-01-08 16:53:45 - evalscope - INFO: Running with native backend
+2026-01-08 16:53:45 - evalscope - INFO: Dump task config to /home/crq/llm_scripts/evalscope/outputs/20260108_153910/configs/task_config_be1d3d.yaml
+2026-01-08 16:53:45 - evalscope - INFO: {
+    "model": "Qwen3-4B-Instruct-2507-eval",
+    "model_id": "Qwen3-4B-Instruct-2507-eval",
+    "model_args": {},
+    "model_task": "text_generation",
+    "chat_template": null,
+    "datasets": [
+        "mmlu_pro",
+        "ifeval",
+        "ceval",
+        "math_500"
+    ],
+    "dataset_args": {
+        "mmlu_pro": {
+            "name": "mmlu_pro",
+            "dataset_id": "TIGER-Lab/MMLU-Pro",
+            "output_types": [
+                "generation"
+            ],
+            "subset_list": [
+                "computer science",
+                "math",
+                "chemistry",
+                "engineering",
+                "law",
+                "biology",
+                "health",
+                "physics",
+                "business",
+                "philosophy",
+                "economics",
+                "other",
+                "psychology",
+                "history"
+            ],
+            "default_subset": "default",
+            "few_shot_num": 0,
+            "few_shot_random": false,
+            "train_split": "validation",
+            "eval_split": "test",
+            "prompt_template": "Answer the following multiple choice question. The last line of your response should be of the following format: 'ANSWER: [LETTER]' (without quotes) where [LETTER] is one of {letters}. Think step by step before answering.\n\nQuestion:\n{question}\nOptions:\n{choices}\n",
+            "few_shot_prompt_template": "The following are multiple choice questions (with answers) about {subject}. Think step by step and then finish your answer with 'ANSWER: [LETTER]' (without quotes) where [LETTER] is the correct letter choice.\n\n{examples}\nAnswer the following multiple choice question. The last line of your response should be of the following format: 'ANSWER: [LETTER]' (without quotes) where [LETTER] is one of {letters}. Think step by step before answering.\n\nQuestion:\n{question}\nOptions:\n{choices}\n",
+            "system_prompt": null,
+            "query_template": null,
+            "pretty_name": "MMLU-Pro",
+            "description": "MMLU-Pro is a benchmark for evaluating language models on multiple-choice questions across various subjects. It includes questions from different domains, where the model must select the correct answer from given options.",
+            "tags": [
+                "MCQ",
+                "Knowledge"
+            ],
+            "filters": null,
+            "metric_list": [
+                "acc"
+            ],
+            "aggregation": "mean",
+            "shuffle": false,
+            "shuffle_choices": false,
+            "force_redownload": false,
+            "review_timeout": null,
+            "extra_params": {},
+            "sandbox_config": {}
+        },
+        "ifeval": {
+            "name": "ifeval",
+            "dataset_id": "opencompass/ifeval",
+            "output_types": [
+                "generation"
+            ],
+            "subset_list": [
+                "default"
+            ],
+            "default_subset": "default",
+            "few_shot_num": 0,
+            "few_shot_random": false,
+            "train_split": null,
+            "eval_split": "train",
+            "prompt_template": "",
+            "few_shot_prompt_template": null,
+            "system_prompt": null,
+            "query_template": null,
+            "pretty_name": "IFEval",
+            "description": "IFEval is a benchmark for evaluating instruction-following language models, focusing on their ability to understand and respond to various prompts. It includes a diverse set of tasks and metrics to assess model performance comprehensively.",
+            "tags": [
+                "InstructionFollowing"
+            ],
+            "filters": null,
+            "metric_list": [
+                "prompt_level_strict",
+                "inst_level_strict",
+                "prompt_level_loose",
+                "inst_level_loose"
+            ],
+            "aggregation": "mean",
+            "shuffle": false,
+            "shuffle_choices": false,
+            "force_redownload": false,
+            "review_timeout": null,
+            "extra_params": {},
+            "sandbox_config": {}
+        },
+        "ceval": {
+            "name": "ceval",
+            "dataset_id": "ceval-exam",
+            "output_types": [
+                "generation"
+            ],
+            "subset_list": [
+                "computer_network",
+                "operating_system",
+                "computer_architecture",
+                "college_programming",
+                "college_physics",
+                "college_chemistry",
+                "advanced_mathematics",
+                "probability_and_statistics",
+                "discrete_mathematics",
+                "electrical_engineer",
+                "metrology_engineer",
+                "high_school_mathematics",
+                "high_school_physics",
+                "high_school_chemistry",
+                "high_school_biology",
+                "middle_school_mathematics",
+                "middle_school_biology",
+                "middle_school_physics",
+                "middle_school_chemistry",
+                "veterinary_medicine",
+                "college_economics",
+                "business_administration",
+                "marxism",
+                "mao_zedong_thought",
+                "education_science",
+                "teacher_qualification",
+                "high_school_politics",
+                "high_school_geography",
+                "middle_school_politics",
+                "middle_school_geography",
+                "modern_chinese_history",
+                "ideological_and_moral_cultivation",
+                "logic",
+                "law",
+                "chinese_language_and_literature",
+                "art_studies",
+                "professional_tour_guide",
+                "legal_professional",
+                "high_school_chinese",
+                "high_school_history",
+                "middle_school_history",
+                "civil_servant",
+                "sports_science",
+                "plant_protection",
+                "basic_medicine",
+                "clinical_medicine",
+                "urban_and_rural_planner",
+                "accountant",
+                "fire_engineer",
+                "environmental_impact_assessment_engineer",
+                "tax_accountant",
+                "physician"
+            ],
+            "default_subset": "default",
+            "few_shot_num": 5,
+            "few_shot_random": false,
+            "train_split": "dev",
+            "eval_split": "val",
+            "prompt_template": "以下是中国关于{subject}的单项选择题，请选出其中的正确答案。你的回答的最后一行应该是这样的格式：\"答案：[LETTER]\"（不带引号），其中 [LETTER] 是 A、B、C、D 中的一个。\n\n问题：{question}\n选项：\n{choices}\n",
+            "few_shot_prompt_template": "以下是一些示例问题：\n\n{fewshot}\n\n",
+            "system_prompt": null,
+            "query_template": null,
+            "pretty_name": "C-Eval",
+            "description": "C-Eval is a benchmark designed to evaluate the performance of AI models on Chinese exams across various subjects, including STEM, social sciences, and humanities. It consists of multiple-choice questions that test knowledge and reasoning abilities in these areas.",
+            "tags": [
+                "Knowledge",
+                "MCQ",
+                "Chinese"
+            ],
+            "filters": null,
+            "metric_list": [
+                "acc"
+            ],
+            "aggregation": "mean",
+            "shuffle": false,
+            "shuffle_choices": false,
+            "force_redownload": false,
+            "review_timeout": null,
+            "extra_params": {},
+            "sandbox_config": {}
+        },
+        "math_500": {
+            "name": "math_500",
+            "dataset_id": "AI-ModelScope/MATH-500",
+            "output_types": [
+                "generation"
+            ],
+            "subset_list": [
+                "Level 1",
+                "Level 2",
+                "Level 3",
+                "Level 4",
+                "Level 5"
+            ],
+            "default_subset": "default",
+            "few_shot_num": 0,
+            "few_shot_random": false,
+            "train_split": null,
+            "eval_split": "test",
+            "prompt_template": "{question}\nPlease reason step by step, and put your final answer within \\boxed{{}}.",
+            "few_shot_prompt_template": null,
+            "system_prompt": null,
+            "query_template": null,
+            "pretty_name": "MATH-500",
+            "description": "MATH-500 is a benchmark for evaluating mathematical reasoning capabilities of AI models. It consists of 500 diverse math problems across five levels of difficulty, designed to test a model's ability to solve complex mathematical problems by generating step-by-step solutions and providing the correct final answer.",
+            "tags": [
+                "Math",
+                "Reasoning"
+            ],
+            "filters": null,
+            "metric_list": [
+                {
+                    "acc": {
+                        "numeric": true
+                    }
+                }
+            ],
+            "aggregation": "mean",
+            "shuffle": false,
+            "shuffle_choices": false,
+            "force_redownload": false,
+            "review_timeout": null,
+            "extra_params": {},
+            "sandbox_config": {}
+        }
+    },
+    "dataset_dir": "/home/crq/.cache/modelscope/hub/datasets",
+    "dataset_hub": "modelscope",
+    "repeats": 1,
+    "generation_config": {
+        "timeout": 300000,
+        "batch_size": 8,
+        "stream": true,
+        "max_tokens": 2048,
+        "top_p": 1.0,
+        "temperature": 0.0
+    },
+    "eval_type": "openai_api",
+    "eval_backend": "Native",
+    "eval_config": null,
+    "limit": 100,
+    "eval_batch_size": 8,
+    "use_cache": "/home/crq/llm_scripts/evalscope/outputs/20260108_153910",
+    "rerun_review": false,
+    "work_dir": "/home/crq/llm_scripts/evalscope/outputs/20260108_153910",
+    "no_timestamp": false,
+    "ignore_errors": false,
+    "debug": false,
+    "seed": 42,
+    "api_url": "http://127.0.0.1:8010/v1/chat/completions",
+    "timeout": null,
+    "stream": null,
+    "judge_strategy": "auto",
+    "judge_worker_num": 1,
+    "judge_model_args": {},
+    "analysis_report": false,
+    "use_sandbox": false,
+    "sandbox_type": "docker",
+    "sandbox_manager_config": {},
+    "evalscope_version": "1.4.1"
+}
+2026-01-08 16:53:45 - evalscope - INFO: Start loading benchmark dataset: mmlu_pro
+2026-01-08 16:53:46 - evalscope - INFO: Start evaluating 14 subsets of the mmlu_pro: ['computer science', 'math', 'chemistry', 'engineering', 'law', 'biology', 'health', 'physics', 'business', 'philosophy', 'economics', 'other', 'psychology', 'history']
+2026-01-08 16:53:46 - evalscope - INFO: Evaluating subset: computer science
+2026-01-08 16:53:46 - evalscope - INFO: Getting predictions for subset: computer science
+2026-01-08 16:53:46 - evalscope - INFO: Reusing predictions from /home/crq/llm_scripts/evalscope/outputs/20260108_153910/predictions/Qwen3-4B-Instruct-2507-eval/mmlu_pro_computer science.jsonl, got 100 predictions, remaining 0 samples
+2026-01-08 16:53:46 - evalscope - INFO: Getting reviews for subset: computer science
+2026-01-08 16:53:46 - evalscope - INFO: Reusing reviews from /home/crq/llm_scripts/evalscope/outputs/20260108_153910/reviews/Qwen3-4B-Instruct-2507-eval/mmlu_pro_computer science.jsonl, got 100 reviews
+2026-01-08 16:53:46 - evalscope - INFO: Aggregating scores for subset: computer science
+2026-01-08 16:53:46 - evalscope - INFO: Evaluating subset: math
+2026-01-08 16:53:46 - evalscope - INFO: Getting predictions for subset: math
+2026-01-08 16:53:46 - evalscope - INFO: Reusing predictions from /home/crq/llm_scripts/evalscope/outputs/20260108_153910/predictions/Qwen3-4B-Instruct-2507-eval/mmlu_pro_math.jsonl, got 100 predictions, remaining 0 samples
+2026-01-08 16:53:46 - evalscope - INFO: Getting reviews for subset: math
+2026-01-08 16:53:46 - evalscope - INFO: Reusing reviews from /home/crq/llm_scripts/evalscope/outputs/20260108_153910/reviews/Qwen3-4B-Instruct-2507-eval/mmlu_pro_math.jsonl, got 100 reviews
+2026-01-08 16:53:46 - evalscope - INFO: Aggregating scores for subset: math
+2026-01-08 16:53:46 - evalscope - INFO: Evaluating subset: chemistry
+2026-01-08 16:53:46 - evalscope - INFO: Getting predictions for subset: chemistry
+2026-01-08 16:53:46 - evalscope - INFO: Reusing predictions from /home/crq/llm_scripts/evalscope/outputs/20260108_153910/predictions/Qwen3-4B-Instruct-2507-eval/mmlu_pro_chemistry.jsonl, got 100 predictions, remaining 0 samples
+2026-01-08 16:53:46 - evalscope - INFO: Getting reviews for subset: chemistry
+2026-01-08 16:53:46 - evalscope - INFO: Reusing reviews from /home/crq/llm_scripts/evalscope/outputs/20260108_153910/reviews/Qwen3-4B-Instruct-2507-eval/mmlu_pro_chemistry.jsonl, got 100 reviews
+2026-01-08 16:53:46 - evalscope - INFO: Aggregating scores for subset: chemistry
+2026-01-08 16:53:46 - evalscope - INFO: Evaluating subset: engineering
+2026-01-08 16:53:46 - evalscope - INFO: Getting predictions for subset: engineering
+2026-01-08 16:53:46 - evalscope - INFO: Reusing predictions from /home/crq/llm_scripts/evalscope/outputs/20260108_153910/predictions/Qwen3-4B-Instruct-2507-eval/mmlu_pro_engineering.jsonl, got 100 predictions, remaining 0 samples
+2026-01-08 16:53:46 - evalscope - INFO: Getting reviews for subset: engineering
+2026-01-08 16:53:46 - evalscope - INFO: Reusing reviews from /home/crq/llm_scripts/evalscope/outputs/20260108_153910/reviews/Qwen3-4B-Instruct-2507-eval/mmlu_pro_engineering.jsonl, got 100 reviews
+2026-01-08 16:53:46 - evalscope - INFO: Aggregating scores for subset: engineering
+2026-01-08 16:53:46 - evalscope - INFO: Evaluating subset: law
+2026-01-08 16:53:46 - evalscope - INFO: Getting predictions for subset: law
+2026-01-08 16:53:46 - evalscope - INFO: Reusing predictions from /home/crq/llm_scripts/evalscope/outputs/20260108_153910/predictions/Qwen3-4B-Instruct-2507-eval/mmlu_pro_law.jsonl, got 100 predictions, remaining 0 samples
+2026-01-08 16:53:46 - evalscope - INFO: Getting reviews for subset: law
+2026-01-08 16:53:46 - evalscope - INFO: Reusing reviews from /home/crq/llm_scripts/evalscope/outputs/20260108_153910/reviews/Qwen3-4B-Instruct-2507-eval/mmlu_pro_law.jsonl, got 100 reviews
+2026-01-08 16:53:46 - evalscope - INFO: Aggregating scores for subset: law
+2026-01-08 16:53:46 - evalscope - INFO: Evaluating subset: biology
+2026-01-08 16:53:46 - evalscope - INFO: Getting predictions for subset: biology
+2026-01-08 16:53:46 - evalscope - INFO: Reusing predictions from /home/crq/llm_scripts/evalscope/outputs/20260108_153910/predictions/Qwen3-4B-Instruct-2507-eval/mmlu_pro_biology.jsonl, got 100 predictions, remaining 0 samples
+2026-01-08 16:53:46 - evalscope - INFO: Getting reviews for subset: biology
+2026-01-08 16:53:46 - evalscope - INFO: Reusing reviews from /home/crq/llm_scripts/evalscope/outputs/20260108_153910/reviews/Qwen3-4B-Instruct-2507-eval/mmlu_pro_biology.jsonl, got 100 reviews
+2026-01-08 16:53:46 - evalscope - INFO: Aggregating scores for subset: biology
+2026-01-08 16:53:46 - evalscope - INFO: Evaluating subset: health
+2026-01-08 16:53:46 - evalscope - INFO: Getting predictions for subset: health
+2026-01-08 16:53:46 - evalscope - INFO: Reusing predictions from /home/crq/llm_scripts/evalscope/outputs/20260108_153910/predictions/Qwen3-4B-Instruct-2507-eval/mmlu_pro_health.jsonl, got 100 predictions, remaining 0 samples
+2026-01-08 16:53:46 - evalscope - INFO: Getting reviews for subset: health
+2026-01-08 16:53:46 - evalscope - INFO: Reusing reviews from /home/crq/llm_scripts/evalscope/outputs/20260108_153910/reviews/Qwen3-4B-Instruct-2507-eval/mmlu_pro_health.jsonl, got 100 reviews
+2026-01-08 16:53:46 - evalscope - INFO: Aggregating scores for subset: health
+2026-01-08 16:53:46 - evalscope - INFO: Evaluating subset: physics
+2026-01-08 16:53:46 - evalscope - INFO: Getting predictions for subset: physics
+2026-01-08 16:53:46 - evalscope - INFO: Reusing predictions from /home/crq/llm_scripts/evalscope/outputs/20260108_153910/predictions/Qwen3-4B-Instruct-2507-eval/mmlu_pro_physics.jsonl, got 100 predictions, remaining 0 samples
+2026-01-08 16:53:46 - evalscope - INFO: Getting reviews for subset: physics
+2026-01-08 16:53:46 - evalscope - INFO: Reusing reviews from /home/crq/llm_scripts/evalscope/outputs/20260108_153910/reviews/Qwen3-4B-Instruct-2507-eval/mmlu_pro_physics.jsonl, got 100 reviews
+2026-01-08 16:53:46 - evalscope - INFO: Aggregating scores for subset: physics
+2026-01-08 16:53:46 - evalscope - INFO: Evaluating subset: business
+2026-01-08 16:53:46 - evalscope - INFO: Getting predictions for subset: business
+2026-01-08 16:53:46 - evalscope - INFO: Reusing predictions from /home/crq/llm_scripts/evalscope/outputs/20260108_153910/predictions/Qwen3-4B-Instruct-2507-eval/mmlu_pro_business.jsonl, got 100 predictions, remaining 0 samples
+2026-01-08 16:53:46 - evalscope - INFO: Getting reviews for subset: business
+2026-01-08 16:53:46 - evalscope - INFO: Reusing reviews from /home/crq/llm_scripts/evalscope/outputs/20260108_153910/reviews/Qwen3-4B-Instruct-2507-eval/mmlu_pro_business.jsonl, got 100 reviews
+2026-01-08 16:53:46 - evalscope - INFO: Aggregating scores for subset: business
+2026-01-08 16:53:46 - evalscope - INFO: Evaluating subset: philosophy
+2026-01-08 16:53:46 - evalscope - INFO: Getting predictions for subset: philosophy
+2026-01-08 16:53:46 - evalscope - INFO: Reusing predictions from /home/crq/llm_scripts/evalscope/outputs/20260108_153910/predictions/Qwen3-4B-Instruct-2507-eval/mmlu_pro_philosophy.jsonl, got 100 predictions, remaining 0 samples
+2026-01-08 16:53:46 - evalscope - INFO: Getting reviews for subset: philosophy
+2026-01-08 16:53:46 - evalscope - INFO: Reusing reviews from /home/crq/llm_scripts/evalscope/outputs/20260108_153910/reviews/Qwen3-4B-Instruct-2507-eval/mmlu_pro_philosophy.jsonl, got 100 reviews
+2026-01-08 16:53:46 - evalscope - INFO: Aggregating scores for subset: philosophy
+2026-01-08 16:53:46 - evalscope - INFO: Evaluating subset: economics
+2026-01-08 16:53:46 - evalscope - INFO: Getting predictions for subset: economics
+2026-01-08 16:53:46 - evalscope - INFO: Reusing predictions from /home/crq/llm_scripts/evalscope/outputs/20260108_153910/predictions/Qwen3-4B-Instruct-2507-eval/mmlu_pro_economics.jsonl, got 100 predictions, remaining 0 samples
+2026-01-08 16:53:46 - evalscope - INFO: Getting reviews for subset: economics
+2026-01-08 16:53:46 - evalscope - INFO: Reusing reviews from /home/crq/llm_scripts/evalscope/outputs/20260108_153910/reviews/Qwen3-4B-Instruct-2507-eval/mmlu_pro_economics.jsonl, got 100 reviews
+2026-01-08 16:53:46 - evalscope - INFO: Aggregating scores for subset: economics
+2026-01-08 16:53:46 - evalscope - INFO: Evaluating subset: other
+2026-01-08 16:53:46 - evalscope - INFO: Getting predictions for subset: other
+2026-01-08 16:53:46 - evalscope - INFO: Reusing predictions from /home/crq/llm_scripts/evalscope/outputs/20260108_153910/predictions/Qwen3-4B-Instruct-2507-eval/mmlu_pro_other.jsonl, got 100 predictions, remaining 0 samples
+2026-01-08 16:53:46 - evalscope - INFO: Getting reviews for subset: other
+2026-01-08 16:53:46 - evalscope - INFO: Reusing reviews from /home/crq/llm_scripts/evalscope/outputs/20260108_153910/reviews/Qwen3-4B-Instruct-2507-eval/mmlu_pro_other.jsonl, got 100 reviews
+2026-01-08 16:53:46 - evalscope - INFO: Aggregating scores for subset: other
+2026-01-08 16:53:46 - evalscope - INFO: Evaluating subset: psychology
+2026-01-08 16:53:46 - evalscope - INFO: Getting predictions for subset: psychology
+2026-01-08 16:53:46 - evalscope - INFO: Reusing predictions from /home/crq/llm_scripts/evalscope/outputs/20260108_153910/predictions/Qwen3-4B-Instruct-2507-eval/mmlu_pro_psychology.jsonl, got 100 predictions, remaining 0 samples
+2026-01-08 16:53:46 - evalscope - INFO: Getting reviews for subset: psychology
+2026-01-08 16:53:46 - evalscope - INFO: Reusing reviews from /home/crq/llm_scripts/evalscope/outputs/20260108_153910/reviews/Qwen3-4B-Instruct-2507-eval/mmlu_pro_psychology.jsonl, got 100 reviews
+2026-01-08 16:53:46 - evalscope - INFO: Aggregating scores for subset: psychology
+2026-01-08 16:53:46 - evalscope - INFO: Evaluating subset: history
+2026-01-08 16:53:46 - evalscope - INFO: Getting predictions for subset: history
+2026-01-08 16:53:46 - evalscope - INFO: Reusing predictions from /home/crq/llm_scripts/evalscope/outputs/20260108_153910/predictions/Qwen3-4B-Instruct-2507-eval/mmlu_pro_history.jsonl, got 100 predictions, remaining 0 samples
+2026-01-08 16:53:46 - evalscope - INFO: Getting reviews for subset: history
+2026-01-08 16:53:46 - evalscope - INFO: Reusing reviews from /home/crq/llm_scripts/evalscope/outputs/20260108_153910/reviews/Qwen3-4B-Instruct-2507-eval/mmlu_pro_history.jsonl, got 100 reviews
+2026-01-08 16:53:46 - evalscope - INFO: Aggregating scores for subset: history
+2026-01-08 16:53:46 - evalscope - INFO: Evaluating [mmlu_pro] 100%| 14/14 [Elapsed: 00:00 < Remaining: 00:00, 102.10subset/s]
+2026-01-08 16:53:46 - evalscope - INFO: Generating report...
+2026-01-08 16:53:46 - evalscope - INFO: 
+mmlu_pro report table:
++-----------------------------+-----------+----------+------------------+-------+---------+---------+
+| Model                       | Dataset   | Metric   | Subset           |   Num |   Score | Cat.0   |
++=============================+===========+==========+==================+=======+=========+=========+
+| Qwen3-4B-Instruct-2507-eval | mmlu_pro  | mean_acc | computer science |   100 |  0.67   | default |
++-----------------------------+-----------+----------+------------------+-------+---------+---------+
+| Qwen3-4B-Instruct-2507-eval | mmlu_pro  | mean_acc | math             |   100 |  0.83   | default |
++-----------------------------+-----------+----------+------------------+-------+---------+---------+
+| Qwen3-4B-Instruct-2507-eval | mmlu_pro  | mean_acc | chemistry        |   100 |  0.79   | default |
++-----------------------------+-----------+----------+------------------+-------+---------+---------+
+| Qwen3-4B-Instruct-2507-eval | mmlu_pro  | mean_acc | engineering      |   100 |  0.61   | default |
++-----------------------------+-----------+----------+------------------+-------+---------+---------+
+| Qwen3-4B-Instruct-2507-eval | mmlu_pro  | mean_acc | law              |   100 |  0.37   | default |
++-----------------------------+-----------+----------+------------------+-------+---------+---------+
+| Qwen3-4B-Instruct-2507-eval | mmlu_pro  | mean_acc | biology          |   100 |  0.77   | default |
++-----------------------------+-----------+----------+------------------+-------+---------+---------+
+| Qwen3-4B-Instruct-2507-eval | mmlu_pro  | mean_acc | health           |   100 |  0.57   | default |
++-----------------------------+-----------+----------+------------------+-------+---------+---------+
+| Qwen3-4B-Instruct-2507-eval | mmlu_pro  | mean_acc | physics          |   100 |  0.71   | default |
++-----------------------------+-----------+----------+------------------+-------+---------+---------+
+| Qwen3-4B-Instruct-2507-eval | mmlu_pro  | mean_acc | business         |   100 |  0.71   | default |
++-----------------------------+-----------+----------+------------------+-------+---------+---------+
+| Qwen3-4B-Instruct-2507-eval | mmlu_pro  | mean_acc | philosophy       |   100 |  0.51   | default |
++-----------------------------+-----------+----------+------------------+-------+---------+---------+
+| Qwen3-4B-Instruct-2507-eval | mmlu_pro  | mean_acc | economics        |   100 |  0.72   | default |
++-----------------------------+-----------+----------+------------------+-------+---------+---------+
+| Qwen3-4B-Instruct-2507-eval | mmlu_pro  | mean_acc | other            |   100 |  0.46   | default |
++-----------------------------+-----------+----------+------------------+-------+---------+---------+
+| Qwen3-4B-Instruct-2507-eval | mmlu_pro  | mean_acc | psychology       |   100 |  0.63   | default |
++-----------------------------+-----------+----------+------------------+-------+---------+---------+
+| Qwen3-4B-Instruct-2507-eval | mmlu_pro  | mean_acc | history          |   100 |  0.46   | default |
++-----------------------------+-----------+----------+------------------+-------+---------+---------+
+| Qwen3-4B-Instruct-2507-eval | mmlu_pro  | mean_acc | OVERALL          |  1400 |  0.6293 | -       |
++-----------------------------+-----------+----------+------------------+-------+---------+---------+ 
+
+2026-01-08 16:53:46 - evalscope - INFO: Skipping report analysis (`analysis_report=False`).
+2026-01-08 16:53:46 - evalscope - INFO: Dump report to: /home/crq/llm_scripts/evalscope/outputs/20260108_153910/reports/Qwen3-4B-Instruct-2507-eval/mmlu_pro.json 
+
+2026-01-08 16:53:46 - evalscope - INFO: Benchmark mmlu_pro evaluation finished.
+2026-01-08 16:53:46 - evalscope - INFO: Start loading benchmark dataset: ifeval
+2026-01-08 16:53:46 - evalscope - INFO: Start evaluating 1 subsets of the ifeval: ['default']
+2026-01-08 16:53:46 - evalscope - INFO: Evaluating subset: default
+2026-01-08 16:53:46 - evalscope - INFO: Getting predictions for subset: default
+2026-01-08 16:53:46 - evalscope - INFO: Reusing predictions from /home/crq/llm_scripts/evalscope/outputs/20260108_153910/predictions/Qwen3-4B-Instruct-2507-eval/ifeval_default.jsonl, got 100 predictions, remaining 0 samples
+2026-01-08 16:53:46 - evalscope - INFO: Getting reviews for subset: default
+2026-01-08 16:53:46 - evalscope - INFO: Reusing reviews from /home/crq/llm_scripts/evalscope/outputs/20260108_153910/reviews/Qwen3-4B-Instruct-2507-eval/ifeval_default.jsonl, got 100 reviews
+2026-01-08 16:53:46 - evalscope - INFO: Aggregating scores for subset: default
+2026-01-08 16:53:46 - evalscope - INFO: Evaluating [ifeval] 100%| 1/1 [Elapsed: 00:00 < Remaining: 00:00, 64.30subset/s]
+2026-01-08 16:53:46 - evalscope - INFO: Generating report...
+2026-01-08 16:53:46 - evalscope - INFO: 
+ifeval report table:
++-----------------------------+-----------+--------------------------+----------+-------+---------+---------+
+| Model                       | Dataset   | Metric                   | Subset   |   Num |   Score | Cat.0   |
++=============================+===========+==========================+==========+=======+=========+=========+
+| Qwen3-4B-Instruct-2507-eval | ifeval    | mean_prompt_level_strict | default  |   100 |  0.85   | default |
++-----------------------------+-----------+--------------------------+----------+-------+---------+---------+
+| Qwen3-4B-Instruct-2507-eval | ifeval    | mean_inst_level_strict   | default  |   100 |  0.9167 | default |
++-----------------------------+-----------+--------------------------+----------+-------+---------+---------+
+| Qwen3-4B-Instruct-2507-eval | ifeval    | mean_prompt_level_loose  | default  |   100 |  0.91   | default |
++-----------------------------+-----------+--------------------------+----------+-------+---------+---------+
+| Qwen3-4B-Instruct-2507-eval | ifeval    | mean_inst_level_loose    | default  |   100 |  0.9483 | default |
++-----------------------------+-----------+--------------------------+----------+-------+---------+---------+ 
+
+2026-01-08 16:53:46 - evalscope - INFO: Skipping report analysis (`analysis_report=False`).
+2026-01-08 16:53:46 - evalscope - INFO: Dump report to: /home/crq/llm_scripts/evalscope/outputs/20260108_153910/reports/Qwen3-4B-Instruct-2507-eval/ifeval.json 
+
+2026-01-08 16:53:46 - evalscope - INFO: Benchmark ifeval evaluation finished.
+2026-01-08 16:53:46 - evalscope - INFO: Start loading benchmark dataset: ceval
+2026-01-08 16:53:47 - evalscope - INFO: Start evaluating 52 subsets of the ceval: ['computer_network', 'operating_system', 'computer_architecture', 'college_programming', 'college_physics', 'college_chemistry', 'advanced_mathematics', 'probability_and_statistics', 'discrete_mathematics', 'electrical_engineer', 'metrology_engineer', 'high_school_mathematics', 'high_school_physics', 'high_school_chemistry', 'high_school_biology', 'middle_school_mathematics', 'middle_school_biology', 'middle_school_physics', 'middle_school_chemistry', 'veterinary_medicine', 'college_economics', 'business_administration', 'marxism', 'mao_zedong_thought', 'education_science', 'teacher_qualification', 'high_school_politics', 'high_school_geography', 'middle_school_politics', 'middle_school_geography', 'modern_chinese_history', 'ideological_and_moral_cultivation', 'logic', 'law', 'chinese_language_and_literature', 'art_studies', 'professional_tour_guide', 'legal_professional', 'high_school_chinese', 'high_school_history', 'middle_school_history', 'civil_servant', 'sports_science', 'plant_protection', 'basic_medicine', 'clinical_medicine', 'urban_and_rural_planner', 'accountant', 'fire_engineer', 'environmental_impact_assessment_engineer', 'tax_accountant', 'physician']
+2026-01-08 16:53:47 - evalscope - INFO: Evaluating subset: computer_network
+2026-01-08 16:53:47 - evalscope - INFO: Getting predictions for subset: computer_network
+2026-01-08 16:53:47 - evalscope - INFO: Reusing predictions from /home/crq/llm_scripts/evalscope/outputs/20260108_153910/predictions/Qwen3-4B-Instruct-2507-eval/ceval_computer_network.jsonl, got 19 predictions, remaining 0 samples
+2026-01-08 16:53:47 - evalscope - INFO: Getting reviews for subset: computer_network
+2026-01-08 16:53:47 - evalscope - INFO: Reusing reviews from /home/crq/llm_scripts/evalscope/outputs/20260108_153910/reviews/Qwen3-4B-Instruct-2507-eval/ceval_computer_network.jsonl, got 19 reviews
+2026-01-08 16:53:47 - evalscope - INFO: Aggregating scores for subset: computer_network
+2026-01-08 16:53:47 - evalscope - INFO: Evaluating subset: operating_system
+2026-01-08 16:53:47 - evalscope - INFO: Getting predictions for subset: operating_system
+2026-01-08 16:53:47 - evalscope - INFO: Reusing predictions from /home/crq/llm_scripts/evalscope/outputs/20260108_153910/predictions/Qwen3-4B-Instruct-2507-eval/ceval_operating_system.jsonl, got 19 predictions, remaining 0 samples
+2026-01-08 16:53:47 - evalscope - INFO: Getting reviews for subset: operating_system
+2026-01-08 16:53:47 - evalscope - INFO: Reusing reviews from /home/crq/llm_scripts/evalscope/outputs/20260108_153910/reviews/Qwen3-4B-Instruct-2507-eval/ceval_operating_system.jsonl, got 19 reviews
+2026-01-08 16:53:47 - evalscope - INFO: Aggregating scores for subset: operating_system
+2026-01-08 16:53:47 - evalscope - INFO: Evaluating subset: computer_architecture
+2026-01-08 16:53:47 - evalscope - INFO: Getting predictions for subset: computer_architecture
+2026-01-08 16:53:47 - evalscope - INFO: Reusing predictions from /home/crq/llm_scripts/evalscope/outputs/20260108_153910/predictions/Qwen3-4B-Instruct-2507-eval/ceval_computer_architecture.jsonl, got 21 predictions, remaining 0 samples
+2026-01-08 16:53:47 - evalscope - INFO: Getting reviews for subset: computer_architecture
+2026-01-08 16:53:47 - evalscope - INFO: Reusing reviews from /home/crq/llm_scripts/evalscope/outputs/20260108_153910/reviews/Qwen3-4B-Instruct-2507-eval/ceval_computer_architecture.jsonl, got 21 reviews
+2026-01-08 16:53:47 - evalscope - INFO: Aggregating scores for subset: computer_architecture
+2026-01-08 16:53:47 - evalscope - INFO: Evaluating subset: college_programming
+2026-01-08 16:53:47 - evalscope - INFO: Getting predictions for subset: college_programming
+2026-01-08 16:53:47 - evalscope - INFO: Reusing predictions from /home/crq/llm_scripts/evalscope/outputs/20260108_153910/predictions/Qwen3-4B-Instruct-2507-eval/ceval_college_programming.jsonl, got 37 predictions, remaining 0 samples
+2026-01-08 16:53:47 - evalscope - INFO: Getting reviews for subset: college_programming
+2026-01-08 16:53:47 - evalscope - INFO: Reusing reviews from /home/crq/llm_scripts/evalscope/outputs/20260108_153910/reviews/Qwen3-4B-Instruct-2507-eval/ceval_college_programming.jsonl, got 37 reviews
+2026-01-08 16:53:47 - evalscope - INFO: Aggregating scores for subset: college_programming
+2026-01-08 16:53:47 - evalscope - INFO: Evaluating subset: college_physics
+2026-01-08 16:53:47 - evalscope - INFO: Getting predictions for subset: college_physics
+2026-01-08 16:53:47 - evalscope - INFO: Reusing predictions from /home/crq/llm_scripts/evalscope/outputs/20260108_153910/predictions/Qwen3-4B-Instruct-2507-eval/ceval_college_physics.jsonl, got 19 predictions, remaining 0 samples
+2026-01-08 16:53:47 - evalscope - INFO: Getting reviews for subset: college_physics
+2026-01-08 16:53:47 - evalscope - INFO: Reusing reviews from /home/crq/llm_scripts/evalscope/outputs/20260108_153910/reviews/Qwen3-4B-Instruct-2507-eval/ceval_college_physics.jsonl, got 19 reviews
+2026-01-08 16:53:47 - evalscope - INFO: Aggregating scores for subset: college_physics
+2026-01-08 16:53:47 - evalscope - INFO: Evaluating subset: college_chemistry
+2026-01-08 16:53:47 - evalscope - INFO: Getting predictions for subset: college_chemistry
+2026-01-08 16:53:47 - evalscope - INFO: Reusing predictions from /home/crq/llm_scripts/evalscope/outputs/20260108_153910/predictions/Qwen3-4B-Instruct-2507-eval/ceval_college_chemistry.jsonl, got 24 predictions, remaining 0 samples
+2026-01-08 16:53:47 - evalscope - INFO: Getting reviews for subset: college_chemistry
+2026-01-08 16:53:47 - evalscope - INFO: Reusing reviews from /home/crq/llm_scripts/evalscope/outputs/20260108_153910/reviews/Qwen3-4B-Instruct-2507-eval/ceval_college_chemistry.jsonl, got 24 reviews
+2026-01-08 16:53:47 - evalscope - INFO: Aggregating scores for subset: college_chemistry
+2026-01-08 16:53:47 - evalscope - INFO: Evaluating subset: advanced_mathematics
+2026-01-08 16:53:47 - evalscope - INFO: Getting predictions for subset: advanced_mathematics
+2026-01-08 16:53:47 - evalscope - INFO: Reusing predictions from /home/crq/llm_scripts/evalscope/outputs/20260108_153910/predictions/Qwen3-4B-Instruct-2507-eval/ceval_advanced_mathematics.jsonl, got 19 predictions, remaining 0 samples
+2026-01-08 16:53:47 - evalscope - INFO: Getting reviews for subset: advanced_mathematics
+2026-01-08 16:53:47 - evalscope - INFO: Reusing reviews from /home/crq/llm_scripts/evalscope/outputs/20260108_153910/reviews/Qwen3-4B-Instruct-2507-eval/ceval_advanced_mathematics.jsonl, got 19 reviews
+2026-01-08 16:53:47 - evalscope - INFO: Aggregating scores for subset: advanced_mathematics
+2026-01-08 16:53:47 - evalscope - INFO: Evaluating subset: probability_and_statistics
+2026-01-08 16:53:47 - evalscope - INFO: Getting predictions for subset: probability_and_statistics
+2026-01-08 16:53:47 - evalscope - INFO: Reusing predictions from /home/crq/llm_scripts/evalscope/outputs/20260108_153910/predictions/Qwen3-4B-Instruct-2507-eval/ceval_probability_and_statistics.jsonl, got 18 predictions, remaining 0 samples
+2026-01-08 16:53:47 - evalscope - INFO: Getting reviews for subset: probability_and_statistics
+2026-01-08 16:53:47 - evalscope - INFO: Reusing reviews from /home/crq/llm_scripts/evalscope/outputs/20260108_153910/reviews/Qwen3-4B-Instruct-2507-eval/ceval_probability_and_statistics.jsonl, got 18 reviews
+2026-01-08 16:53:47 - evalscope - INFO: Aggregating scores for subset: probability_and_statistics
+2026-01-08 16:53:47 - evalscope - INFO: Evaluating subset: discrete_mathematics
+2026-01-08 16:53:47 - evalscope - INFO: Getting predictions for subset: discrete_mathematics
+2026-01-08 16:53:47 - evalscope - INFO: Reusing predictions from /home/crq/llm_scripts/evalscope/outputs/20260108_153910/predictions/Qwen3-4B-Instruct-2507-eval/ceval_discrete_mathematics.jsonl, got 16 predictions, remaining 0 samples
+2026-01-08 16:53:47 - evalscope - INFO: Getting reviews for subset: discrete_mathematics
+2026-01-08 16:53:47 - evalscope - INFO: Reusing reviews from /home/crq/llm_scripts/evalscope/outputs/20260108_153910/reviews/Qwen3-4B-Instruct-2507-eval/ceval_discrete_mathematics.jsonl, got 16 reviews
+2026-01-08 16:53:47 - evalscope - INFO: Aggregating scores for subset: discrete_mathematics
+2026-01-08 16:53:47 - evalscope - INFO: Evaluating subset: electrical_engineer
+2026-01-08 16:53:47 - evalscope - INFO: Getting predictions for subset: electrical_engineer
+2026-01-08 16:53:47 - evalscope - INFO: Reusing predictions from /home/crq/llm_scripts/evalscope/outputs/20260108_153910/predictions/Qwen3-4B-Instruct-2507-eval/ceval_electrical_engineer.jsonl, got 37 predictions, remaining 0 samples
+2026-01-08 16:53:47 - evalscope - INFO: Getting reviews for subset: electrical_engineer
+2026-01-08 16:53:47 - evalscope - INFO: Reusing reviews from /home/crq/llm_scripts/evalscope/outputs/20260108_153910/reviews/Qwen3-4B-Instruct-2507-eval/ceval_electrical_engineer.jsonl, got 37 reviews
+2026-01-08 16:53:47 - evalscope - INFO: Aggregating scores for subset: electrical_engineer
+2026-01-08 16:53:47 - evalscope - INFO: Evaluating subset: metrology_engineer
+2026-01-08 16:53:47 - evalscope - INFO: Getting predictions for subset: metrology_engineer
+2026-01-08 16:53:47 - evalscope - INFO: Reusing predictions from /home/crq/llm_scripts/evalscope/outputs/20260108_153910/predictions/Qwen3-4B-Instruct-2507-eval/ceval_metrology_engineer.jsonl, got 24 predictions, remaining 0 samples
+2026-01-08 16:53:47 - evalscope - INFO: Getting reviews for subset: metrology_engineer
+2026-01-08 16:53:47 - evalscope - INFO: Reusing reviews from /home/crq/llm_scripts/evalscope/outputs/20260108_153910/reviews/Qwen3-4B-Instruct-2507-eval/ceval_metrology_engineer.jsonl, got 24 reviews
+2026-01-08 16:53:47 - evalscope - INFO: Aggregating scores for subset: metrology_engineer
+2026-01-08 16:53:47 - evalscope - INFO: Evaluating subset: high_school_mathematics
+2026-01-08 16:53:47 - evalscope - INFO: Getting predictions for subset: high_school_mathematics
+2026-01-08 16:53:47 - evalscope - INFO: Reusing predictions from /home/crq/llm_scripts/evalscope/outputs/20260108_153910/predictions/Qwen3-4B-Instruct-2507-eval/ceval_high_school_mathematics.jsonl, got 18 predictions, remaining 0 samples
+2026-01-08 16:53:47 - evalscope - INFO: Getting reviews for subset: high_school_mathematics
+2026-01-08 16:53:47 - evalscope - INFO: Reusing reviews from /home/crq/llm_scripts/evalscope/outputs/20260108_153910/reviews/Qwen3-4B-Instruct-2507-eval/ceval_high_school_mathematics.jsonl, got 18 reviews
+2026-01-08 16:53:47 - evalscope - INFO: Aggregating scores for subset: high_school_mathematics
+2026-01-08 16:53:47 - evalscope - INFO: Evaluating subset: high_school_physics
+2026-01-08 16:53:47 - evalscope - INFO: Getting predictions for subset: high_school_physics
+2026-01-08 16:53:47 - evalscope - INFO: Reusing predictions from /home/crq/llm_scripts/evalscope/outputs/20260108_153910/predictions/Qwen3-4B-Instruct-2507-eval/ceval_high_school_physics.jsonl, got 19 predictions, remaining 0 samples
+2026-01-08 16:53:47 - evalscope - INFO: Getting reviews for subset: high_school_physics
+2026-01-08 16:53:47 - evalscope - INFO: Reusing reviews from /home/crq/llm_scripts/evalscope/outputs/20260108_153910/reviews/Qwen3-4B-Instruct-2507-eval/ceval_high_school_physics.jsonl, got 19 reviews
+2026-01-08 16:53:47 - evalscope - INFO: Aggregating scores for subset: high_school_physics
+2026-01-08 16:53:47 - evalscope - INFO: Evaluating subset: high_school_chemistry
+2026-01-08 16:53:47 - evalscope - INFO: Getting predictions for subset: high_school_chemistry
+2026-01-08 16:53:47 - evalscope - INFO: Reusing predictions from /home/crq/llm_scripts/evalscope/outputs/20260108_153910/predictions/Qwen3-4B-Instruct-2507-eval/ceval_high_school_chemistry.jsonl, got 19 predictions, remaining 0 samples
+2026-01-08 16:53:47 - evalscope - INFO: Getting reviews for subset: high_school_chemistry
+2026-01-08 16:53:47 - evalscope - INFO: Reusing reviews from /home/crq/llm_scripts/evalscope/outputs/20260108_153910/reviews/Qwen3-4B-Instruct-2507-eval/ceval_high_school_chemistry.jsonl, got 19 reviews
+2026-01-08 16:53:47 - evalscope - INFO: Aggregating scores for subset: high_school_chemistry
+2026-01-08 16:53:47 - evalscope - INFO: Evaluating subset: high_school_biology
+2026-01-08 16:53:47 - evalscope - INFO: Getting predictions for subset: high_school_biology
+2026-01-08 16:53:47 - evalscope - INFO: Reusing predictions from /home/crq/llm_scripts/evalscope/outputs/20260108_153910/predictions/Qwen3-4B-Instruct-2507-eval/ceval_high_school_biology.jsonl, got 19 predictions, remaining 0 samples
+2026-01-08 16:53:47 - evalscope - INFO: Getting reviews for subset: high_school_biology
+2026-01-08 16:53:47 - evalscope - INFO: Reusing reviews from /home/crq/llm_scripts/evalscope/outputs/20260108_153910/reviews/Qwen3-4B-Instruct-2507-eval/ceval_high_school_biology.jsonl, got 19 reviews
+2026-01-08 16:53:47 - evalscope - INFO: Aggregating scores for subset: high_school_biology
+2026-01-08 16:53:47 - evalscope - INFO: Evaluating subset: middle_school_mathematics
+2026-01-08 16:53:47 - evalscope - INFO: Getting predictions for subset: middle_school_mathematics
+2026-01-08 16:53:47 - evalscope - INFO: Reusing predictions from /home/crq/llm_scripts/evalscope/outputs/20260108_153910/predictions/Qwen3-4B-Instruct-2507-eval/ceval_middle_school_mathematics.jsonl, got 19 predictions, remaining 0 samples
+2026-01-08 16:53:47 - evalscope - INFO: Getting reviews for subset: middle_school_mathematics
+2026-01-08 16:53:47 - evalscope - INFO: Reusing reviews from /home/crq/llm_scripts/evalscope/outputs/20260108_153910/reviews/Qwen3-4B-Instruct-2507-eval/ceval_middle_school_mathematics.jsonl, got 19 reviews
+2026-01-08 16:53:47 - evalscope - INFO: Aggregating scores for subset: middle_school_mathematics
+2026-01-08 16:53:47 - evalscope - INFO: Evaluating subset: middle_school_biology
+2026-01-08 16:53:47 - evalscope - INFO: Getting predictions for subset: middle_school_biology
+2026-01-08 16:53:47 - evalscope - INFO: Reusing predictions from /home/crq/llm_scripts/evalscope/outputs/20260108_153910/predictions/Qwen3-4B-Instruct-2507-eval/ceval_middle_school_biology.jsonl, got 21 predictions, remaining 0 samples
+2026-01-08 16:53:47 - evalscope - INFO: Getting reviews for subset: middle_school_biology
+2026-01-08 16:53:47 - evalscope - INFO: Reusing reviews from /home/crq/llm_scripts/evalscope/outputs/20260108_153910/reviews/Qwen3-4B-Instruct-2507-eval/ceval_middle_school_biology.jsonl, got 21 reviews
+2026-01-08 16:53:47 - evalscope - INFO: Aggregating scores for subset: middle_school_biology
+2026-01-08 16:53:47 - evalscope - INFO: Evaluating subset: middle_school_physics
+2026-01-08 16:53:47 - evalscope - INFO: Getting predictions for subset: middle_school_physics
+2026-01-08 16:53:47 - evalscope - INFO: Reusing predictions from /home/crq/llm_scripts/evalscope/outputs/20260108_153910/predictions/Qwen3-4B-Instruct-2507-eval/ceval_middle_school_physics.jsonl, got 19 predictions, remaining 0 samples
+2026-01-08 16:53:47 - evalscope - INFO: Getting reviews for subset: middle_school_physics
+2026-01-08 16:53:47 - evalscope - INFO: Reusing reviews from /home/crq/llm_scripts/evalscope/outputs/20260108_153910/reviews/Qwen3-4B-Instruct-2507-eval/ceval_middle_school_physics.jsonl, got 19 reviews
+2026-01-08 16:53:47 - evalscope - INFO: Aggregating scores for subset: middle_school_physics
+2026-01-08 16:53:47 - evalscope - INFO: Evaluating subset: middle_school_chemistry
+2026-01-08 16:53:47 - evalscope - INFO: Getting predictions for subset: middle_school_chemistry
+2026-01-08 16:53:47 - evalscope - INFO: Reusing predictions from /home/crq/llm_scripts/evalscope/outputs/20260108_153910/predictions/Qwen3-4B-Instruct-2507-eval/ceval_middle_school_chemistry.jsonl, got 20 predictions, remaining 0 samples
+2026-01-08 16:53:47 - evalscope - INFO: Getting reviews for subset: middle_school_chemistry
+2026-01-08 16:53:47 - evalscope - INFO: Reusing reviews from /home/crq/llm_scripts/evalscope/outputs/20260108_153910/reviews/Qwen3-4B-Instruct-2507-eval/ceval_middle_school_chemistry.jsonl, got 20 reviews
+2026-01-08 16:53:47 - evalscope - INFO: Aggregating scores for subset: middle_school_chemistry
+2026-01-08 16:53:47 - evalscope - INFO: Evaluating subset: veterinary_medicine
+2026-01-08 16:53:47 - evalscope - INFO: Getting predictions for subset: veterinary_medicine
+2026-01-08 16:53:47 - evalscope - INFO: Reusing predictions from /home/crq/llm_scripts/evalscope/outputs/20260108_153910/predictions/Qwen3-4B-Instruct-2507-eval/ceval_veterinary_medicine.jsonl, got 23 predictions, remaining 0 samples
+2026-01-08 16:53:47 - evalscope - INFO: Getting reviews for subset: veterinary_medicine
+2026-01-08 16:53:47 - evalscope - INFO: Reusing reviews from /home/crq/llm_scripts/evalscope/outputs/20260108_153910/reviews/Qwen3-4B-Instruct-2507-eval/ceval_veterinary_medicine.jsonl, got 23 reviews
+2026-01-08 16:53:47 - evalscope - INFO: Aggregating scores for subset: veterinary_medicine
+2026-01-08 16:53:47 - evalscope - INFO: Evaluating subset: college_economics
+2026-01-08 16:53:47 - evalscope - INFO: Getting predictions for subset: college_economics
+2026-01-08 16:53:47 - evalscope - INFO: Reusing predictions from /home/crq/llm_scripts/evalscope/outputs/20260108_153910/predictions/Qwen3-4B-Instruct-2507-eval/ceval_college_economics.jsonl, got 55 predictions, remaining 0 samples
+2026-01-08 16:53:47 - evalscope - INFO: Getting reviews for subset: college_economics
+2026-01-08 16:53:47 - evalscope - INFO: Reusing reviews from /home/crq/llm_scripts/evalscope/outputs/20260108_153910/reviews/Qwen3-4B-Instruct-2507-eval/ceval_college_economics.jsonl, got 55 reviews
+2026-01-08 16:53:47 - evalscope - INFO: Aggregating scores for subset: college_economics
+2026-01-08 16:53:47 - evalscope - INFO: Evaluating subset: business_administration
+2026-01-08 16:53:47 - evalscope - INFO: Getting predictions for subset: business_administration
+2026-01-08 16:53:47 - evalscope - INFO: Reusing predictions from /home/crq/llm_scripts/evalscope/outputs/20260108_153910/predictions/Qwen3-4B-Instruct-2507-eval/ceval_business_administration.jsonl, got 33 predictions, remaining 0 samples
+2026-01-08 16:53:47 - evalscope - INFO: Getting reviews for subset: business_administration
+2026-01-08 16:53:47 - evalscope - INFO: Reusing reviews from /home/crq/llm_scripts/evalscope/outputs/20260108_153910/reviews/Qwen3-4B-Instruct-2507-eval/ceval_business_administration.jsonl, got 33 reviews
+2026-01-08 16:53:47 - evalscope - INFO: Aggregating scores for subset: business_administration
+2026-01-08 16:53:47 - evalscope - INFO: Evaluating subset: marxism
+2026-01-08 16:53:47 - evalscope - INFO: Getting predictions for subset: marxism
+2026-01-08 16:53:47 - evalscope - INFO: Reusing predictions from /home/crq/llm_scripts/evalscope/outputs/20260108_153910/predictions/Qwen3-4B-Instruct-2507-eval/ceval_marxism.jsonl, got 19 predictions, remaining 0 samples
+2026-01-08 16:53:47 - evalscope - INFO: Getting reviews for subset: marxism
+2026-01-08 16:53:47 - evalscope - INFO: Reusing reviews from /home/crq/llm_scripts/evalscope/outputs/20260108_153910/reviews/Qwen3-4B-Instruct-2507-eval/ceval_marxism.jsonl, got 19 reviews
+2026-01-08 16:53:47 - evalscope - INFO: Aggregating scores for subset: marxism
+2026-01-08 16:53:47 - evalscope - INFO: Evaluating subset: mao_zedong_thought
+2026-01-08 16:53:47 - evalscope - INFO: Getting predictions for subset: mao_zedong_thought
+2026-01-08 16:53:47 - evalscope - INFO: Reusing predictions from /home/crq/llm_scripts/evalscope/outputs/20260108_153910/predictions/Qwen3-4B-Instruct-2507-eval/ceval_mao_zedong_thought.jsonl, got 24 predictions, remaining 0 samples
+2026-01-08 16:53:47 - evalscope - INFO: Getting reviews for subset: mao_zedong_thought
+2026-01-08 16:53:47 - evalscope - INFO: Reusing reviews from /home/crq/llm_scripts/evalscope/outputs/20260108_153910/reviews/Qwen3-4B-Instruct-2507-eval/ceval_mao_zedong_thought.jsonl, got 24 reviews
+2026-01-08 16:53:47 - evalscope - INFO: Aggregating scores for subset: mao_zedong_thought
+2026-01-08 16:53:47 - evalscope - INFO: Evaluating subset: education_science
+2026-01-08 16:53:47 - evalscope - INFO: Getting predictions for subset: education_science
+2026-01-08 16:53:47 - evalscope - INFO: Reusing predictions from /home/crq/llm_scripts/evalscope/outputs/20260108_153910/predictions/Qwen3-4B-Instruct-2507-eval/ceval_education_science.jsonl, got 29 predictions, remaining 0 samples
+2026-01-08 16:53:47 - evalscope - INFO: Getting reviews for subset: education_science
+2026-01-08 16:53:47 - evalscope - INFO: Reusing reviews from /home/crq/llm_scripts/evalscope/outputs/20260108_153910/reviews/Qwen3-4B-Instruct-2507-eval/ceval_education_science.jsonl, got 29 reviews
+2026-01-08 16:53:47 - evalscope - INFO: Aggregating scores for subset: education_science
+2026-01-08 16:53:47 - evalscope - INFO: Evaluating subset: teacher_qualification
+2026-01-08 16:53:47 - evalscope - INFO: Getting predictions for subset: teacher_qualification
+2026-01-08 16:53:47 - evalscope - INFO: Reusing predictions from /home/crq/llm_scripts/evalscope/outputs/20260108_153910/predictions/Qwen3-4B-Instruct-2507-eval/ceval_teacher_qualification.jsonl, got 44 predictions, remaining 0 samples
+2026-01-08 16:53:47 - evalscope - INFO: Getting reviews for subset: teacher_qualification
+2026-01-08 16:53:47 - evalscope - INFO: Reusing reviews from /home/crq/llm_scripts/evalscope/outputs/20260108_153910/reviews/Qwen3-4B-Instruct-2507-eval/ceval_teacher_qualification.jsonl, got 44 reviews
+2026-01-08 16:53:47 - evalscope - INFO: Aggregating scores for subset: teacher_qualification
+2026-01-08 16:53:47 - evalscope - INFO: Evaluating subset: high_school_politics
+2026-01-08 16:53:47 - evalscope - INFO: Getting predictions for subset: high_school_politics
+2026-01-08 16:53:47 - evalscope - INFO: Reusing predictions from /home/crq/llm_scripts/evalscope/outputs/20260108_153910/predictions/Qwen3-4B-Instruct-2507-eval/ceval_high_school_politics.jsonl, got 19 predictions, remaining 0 samples
+2026-01-08 16:53:47 - evalscope - INFO: Getting reviews for subset: high_school_politics
+2026-01-08 16:53:47 - evalscope - INFO: Reusing reviews from /home/crq/llm_scripts/evalscope/outputs/20260108_153910/reviews/Qwen3-4B-Instruct-2507-eval/ceval_high_school_politics.jsonl, got 19 reviews
+2026-01-08 16:53:47 - evalscope - INFO: Aggregating scores for subset: high_school_politics
+2026-01-08 16:53:47 - evalscope - INFO: Evaluating subset: high_school_geography
+2026-01-08 16:53:47 - evalscope - INFO: Getting predictions for subset: high_school_geography
+2026-01-08 16:53:47 - evalscope - INFO: Reusing predictions from /home/crq/llm_scripts/evalscope/outputs/20260108_153910/predictions/Qwen3-4B-Instruct-2507-eval/ceval_high_school_geography.jsonl, got 19 predictions, remaining 0 samples
+2026-01-08 16:53:47 - evalscope - INFO: Getting reviews for subset: high_school_geography
+2026-01-08 16:53:47 - evalscope - INFO: Reusing reviews from /home/crq/llm_scripts/evalscope/outputs/20260108_153910/reviews/Qwen3-4B-Instruct-2507-eval/ceval_high_school_geography.jsonl, got 19 reviews
+2026-01-08 16:53:47 - evalscope - INFO: Aggregating scores for subset: high_school_geography
+2026-01-08 16:53:47 - evalscope - INFO: Evaluating subset: middle_school_politics
+2026-01-08 16:53:47 - evalscope - INFO: Getting predictions for subset: middle_school_politics
+2026-01-08 16:53:47 - evalscope - INFO: Reusing predictions from /home/crq/llm_scripts/evalscope/outputs/20260108_153910/predictions/Qwen3-4B-Instruct-2507-eval/ceval_middle_school_politics.jsonl, got 21 predictions, remaining 0 samples
+2026-01-08 16:53:47 - evalscope - INFO: Getting reviews for subset: middle_school_politics
+2026-01-08 16:53:47 - evalscope - INFO: Reusing reviews from /home/crq/llm_scripts/evalscope/outputs/20260108_153910/reviews/Qwen3-4B-Instruct-2507-eval/ceval_middle_school_politics.jsonl, got 21 reviews
+2026-01-08 16:53:47 - evalscope - INFO: Aggregating scores for subset: middle_school_politics
+2026-01-08 16:53:47 - evalscope - INFO: Evaluating subset: middle_school_geography
+2026-01-08 16:53:47 - evalscope - INFO: Getting predictions for subset: middle_school_geography
+2026-01-08 16:53:47 - evalscope - INFO: Reusing predictions from /home/crq/llm_scripts/evalscope/outputs/20260108_153910/predictions/Qwen3-4B-Instruct-2507-eval/ceval_middle_school_geography.jsonl, got 12 predictions, remaining 0 samples
+2026-01-08 16:53:47 - evalscope - INFO: Getting reviews for subset: middle_school_geography
+2026-01-08 16:53:47 - evalscope - INFO: Reusing reviews from /home/crq/llm_scripts/evalscope/outputs/20260108_153910/reviews/Qwen3-4B-Instruct-2507-eval/ceval_middle_school_geography.jsonl, got 12 reviews
+2026-01-08 16:53:47 - evalscope - INFO: Aggregating scores for subset: middle_school_geography
+2026-01-08 16:53:47 - evalscope - INFO: Evaluating subset: modern_chinese_history
+2026-01-08 16:53:47 - evalscope - INFO: Getting predictions for subset: modern_chinese_history
+2026-01-08 16:53:47 - evalscope - INFO: Reusing predictions from /home/crq/llm_scripts/evalscope/outputs/20260108_153910/predictions/Qwen3-4B-Instruct-2507-eval/ceval_modern_chinese_history.jsonl, got 23 predictions, remaining 0 samples
+2026-01-08 16:53:47 - evalscope - INFO: Getting reviews for subset: modern_chinese_history
+2026-01-08 16:53:47 - evalscope - INFO: Reusing reviews from /home/crq/llm_scripts/evalscope/outputs/20260108_153910/reviews/Qwen3-4B-Instruct-2507-eval/ceval_modern_chinese_history.jsonl, got 23 reviews
+2026-01-08 16:53:47 - evalscope - INFO: Aggregating scores for subset: modern_chinese_history
+2026-01-08 16:53:47 - evalscope - INFO: Evaluating subset: ideological_and_moral_cultivation
+2026-01-08 16:53:47 - evalscope - INFO: Getting predictions for subset: ideological_and_moral_cultivation
+2026-01-08 16:53:47 - evalscope - INFO: Reusing predictions from /home/crq/llm_scripts/evalscope/outputs/20260108_153910/predictions/Qwen3-4B-Instruct-2507-eval/ceval_ideological_and_moral_cultivation.jsonl, got 19 predictions, remaining 0 samples
+2026-01-08 16:53:47 - evalscope - INFO: Getting reviews for subset: ideological_and_moral_cultivation
+2026-01-08 16:53:47 - evalscope - INFO: Reusing reviews from /home/crq/llm_scripts/evalscope/outputs/20260108_153910/reviews/Qwen3-4B-Instruct-2507-eval/ceval_ideological_and_moral_cultivation.jsonl, got 19 reviews
+2026-01-08 16:53:47 - evalscope - INFO: Aggregating scores for subset: ideological_and_moral_cultivation
+2026-01-08 16:53:47 - evalscope - INFO: Evaluating subset: logic
+2026-01-08 16:53:47 - evalscope - INFO: Getting predictions for subset: logic
+2026-01-08 16:53:47 - evalscope - INFO: Reusing predictions from /home/crq/llm_scripts/evalscope/outputs/20260108_153910/predictions/Qwen3-4B-Instruct-2507-eval/ceval_logic.jsonl, got 22 predictions, remaining 0 samples
+2026-01-08 16:53:47 - evalscope - INFO: Getting reviews for subset: logic
+2026-01-08 16:53:47 - evalscope - INFO: Reusing reviews from /home/crq/llm_scripts/evalscope/outputs/20260108_153910/reviews/Qwen3-4B-Instruct-2507-eval/ceval_logic.jsonl, got 22 reviews
+2026-01-08 16:53:47 - evalscope - INFO: Aggregating scores for subset: logic
+2026-01-08 16:53:47 - evalscope - INFO: Evaluating subset: law
+2026-01-08 16:53:47 - evalscope - INFO: Getting predictions for subset: law
+2026-01-08 16:53:47 - evalscope - INFO: Reusing predictions from /home/crq/llm_scripts/evalscope/outputs/20260108_153910/predictions/Qwen3-4B-Instruct-2507-eval/ceval_law.jsonl, got 24 predictions, remaining 0 samples
+2026-01-08 16:53:47 - evalscope - INFO: Getting reviews for subset: law
+2026-01-08 16:53:47 - evalscope - INFO: Reusing reviews from /home/crq/llm_scripts/evalscope/outputs/20260108_153910/reviews/Qwen3-4B-Instruct-2507-eval/ceval_law.jsonl, got 24 reviews
+2026-01-08 16:53:47 - evalscope - INFO: Aggregating scores for subset: law
+2026-01-08 16:53:47 - evalscope - INFO: Evaluating subset: chinese_language_and_literature
+2026-01-08 16:53:47 - evalscope - INFO: Getting predictions for subset: chinese_language_and_literature
+2026-01-08 16:53:47 - evalscope - INFO: Reusing predictions from /home/crq/llm_scripts/evalscope/outputs/20260108_153910/predictions/Qwen3-4B-Instruct-2507-eval/ceval_chinese_language_and_literature.jsonl, got 23 predictions, remaining 0 samples
+2026-01-08 16:53:47 - evalscope - INFO: Getting reviews for subset: chinese_language_and_literature
+2026-01-08 16:53:47 - evalscope - INFO: Reusing reviews from /home/crq/llm_scripts/evalscope/outputs/20260108_153910/reviews/Qwen3-4B-Instruct-2507-eval/ceval_chinese_language_and_literature.jsonl, got 23 reviews
+2026-01-08 16:53:47 - evalscope - INFO: Aggregating scores for subset: chinese_language_and_literature
+2026-01-08 16:53:47 - evalscope - INFO: Evaluating subset: art_studies
+2026-01-08 16:53:47 - evalscope - INFO: Getting predictions for subset: art_studies
+2026-01-08 16:53:47 - evalscope - INFO: Reusing predictions from /home/crq/llm_scripts/evalscope/outputs/20260108_153910/predictions/Qwen3-4B-Instruct-2507-eval/ceval_art_studies.jsonl, got 33 predictions, remaining 0 samples
+2026-01-08 16:53:47 - evalscope - INFO: Getting reviews for subset: art_studies
+2026-01-08 16:53:47 - evalscope - INFO: Reusing reviews from /home/crq/llm_scripts/evalscope/outputs/20260108_153910/reviews/Qwen3-4B-Instruct-2507-eval/ceval_art_studies.jsonl, got 33 reviews
+2026-01-08 16:53:47 - evalscope - INFO: Aggregating scores for subset: art_studies
+2026-01-08 16:53:47 - evalscope - INFO: Evaluating subset: professional_tour_guide
+2026-01-08 16:53:47 - evalscope - INFO: Getting predictions for subset: professional_tour_guide
+2026-01-08 16:53:47 - evalscope - INFO: Reusing predictions from /home/crq/llm_scripts/evalscope/outputs/20260108_153910/predictions/Qwen3-4B-Instruct-2507-eval/ceval_professional_tour_guide.jsonl, got 29 predictions, remaining 0 samples
+2026-01-08 16:53:47 - evalscope - INFO: Getting reviews for subset: professional_tour_guide
+2026-01-08 16:53:47 - evalscope - INFO: Reusing reviews from /home/crq/llm_scripts/evalscope/outputs/20260108_153910/reviews/Qwen3-4B-Instruct-2507-eval/ceval_professional_tour_guide.jsonl, got 29 reviews
+2026-01-08 16:53:47 - evalscope - INFO: Aggregating scores for subset: professional_tour_guide
+2026-01-08 16:53:47 - evalscope - INFO: Evaluating subset: legal_professional
+2026-01-08 16:53:47 - evalscope - INFO: Getting predictions for subset: legal_professional
+2026-01-08 16:53:47 - evalscope - INFO: Reusing predictions from /home/crq/llm_scripts/evalscope/outputs/20260108_153910/predictions/Qwen3-4B-Instruct-2507-eval/ceval_legal_professional.jsonl, got 23 predictions, remaining 0 samples
+2026-01-08 16:53:47 - evalscope - INFO: Getting reviews for subset: legal_professional
+2026-01-08 16:53:47 - evalscope - INFO: Reusing reviews from /home/crq/llm_scripts/evalscope/outputs/20260108_153910/reviews/Qwen3-4B-Instruct-2507-eval/ceval_legal_professional.jsonl, got 23 reviews
+2026-01-08 16:53:47 - evalscope - INFO: Aggregating scores for subset: legal_professional
+2026-01-08 16:53:47 - evalscope - INFO: Evaluating subset: high_school_chinese
+2026-01-08 16:53:47 - evalscope - INFO: Getting predictions for subset: high_school_chinese
+2026-01-08 16:53:47 - evalscope - INFO: Reusing predictions from /home/crq/llm_scripts/evalscope/outputs/20260108_153910/predictions/Qwen3-4B-Instruct-2507-eval/ceval_high_school_chinese.jsonl, got 19 predictions, remaining 0 samples
+2026-01-08 16:53:47 - evalscope - INFO: Getting reviews for subset: high_school_chinese
+2026-01-08 16:53:47 - evalscope - INFO: Reusing reviews from /home/crq/llm_scripts/evalscope/outputs/20260108_153910/reviews/Qwen3-4B-Instruct-2507-eval/ceval_high_school_chinese.jsonl, got 19 reviews
+2026-01-08 16:53:47 - evalscope - INFO: Aggregating scores for subset: high_school_chinese
+2026-01-08 16:53:47 - evalscope - INFO: Evaluating subset: high_school_history
+2026-01-08 16:53:47 - evalscope - INFO: Getting predictions for subset: high_school_history
+2026-01-08 16:53:47 - evalscope - INFO: Reusing predictions from /home/crq/llm_scripts/evalscope/outputs/20260108_153910/predictions/Qwen3-4B-Instruct-2507-eval/ceval_high_school_history.jsonl, got 20 predictions, remaining 0 samples
+2026-01-08 16:53:47 - evalscope - INFO: Getting reviews for subset: high_school_history
+2026-01-08 16:53:47 - evalscope - INFO: Reusing reviews from /home/crq/llm_scripts/evalscope/outputs/20260108_153910/reviews/Qwen3-4B-Instruct-2507-eval/ceval_high_school_history.jsonl, got 20 reviews
+2026-01-08 16:53:47 - evalscope - INFO: Aggregating scores for subset: high_school_history
+2026-01-08 16:53:47 - evalscope - INFO: Evaluating subset: middle_school_history
+2026-01-08 16:53:47 - evalscope - INFO: Getting predictions for subset: middle_school_history
+2026-01-08 16:53:47 - evalscope - INFO: Reusing predictions from /home/crq/llm_scripts/evalscope/outputs/20260108_153910/predictions/Qwen3-4B-Instruct-2507-eval/ceval_middle_school_history.jsonl, got 22 predictions, remaining 0 samples
+2026-01-08 16:53:47 - evalscope - INFO: Getting reviews for subset: middle_school_history
+2026-01-08 16:53:47 - evalscope - INFO: Reusing reviews from /home/crq/llm_scripts/evalscope/outputs/20260108_153910/reviews/Qwen3-4B-Instruct-2507-eval/ceval_middle_school_history.jsonl, got 22 reviews
+2026-01-08 16:53:47 - evalscope - INFO: Aggregating scores for subset: middle_school_history
+2026-01-08 16:53:47 - evalscope - INFO: Evaluating subset: civil_servant
+2026-01-08 16:53:47 - evalscope - INFO: Getting predictions for subset: civil_servant
+2026-01-08 16:53:47 - evalscope - INFO: Reusing predictions from /home/crq/llm_scripts/evalscope/outputs/20260108_153910/predictions/Qwen3-4B-Instruct-2507-eval/ceval_civil_servant.jsonl, got 47 predictions, remaining 0 samples
+2026-01-08 16:53:47 - evalscope - INFO: Getting reviews for subset: civil_servant
+2026-01-08 16:53:47 - evalscope - INFO: Reusing reviews from /home/crq/llm_scripts/evalscope/outputs/20260108_153910/reviews/Qwen3-4B-Instruct-2507-eval/ceval_civil_servant.jsonl, got 47 reviews
+2026-01-08 16:53:47 - evalscope - INFO: Aggregating scores for subset: civil_servant
+2026-01-08 16:53:47 - evalscope - INFO: Evaluating subset: sports_science
+2026-01-08 16:53:47 - evalscope - INFO: Getting predictions for subset: sports_science
+2026-01-08 16:53:47 - evalscope - INFO: Reusing predictions from /home/crq/llm_scripts/evalscope/outputs/20260108_153910/predictions/Qwen3-4B-Instruct-2507-eval/ceval_sports_science.jsonl, got 19 predictions, remaining 0 samples
+2026-01-08 16:53:47 - evalscope - INFO: Getting reviews for subset: sports_science
+2026-01-08 16:53:47 - evalscope - INFO: Reusing reviews from /home/crq/llm_scripts/evalscope/outputs/20260108_153910/reviews/Qwen3-4B-Instruct-2507-eval/ceval_sports_science.jsonl, got 19 reviews
+2026-01-08 16:53:47 - evalscope - INFO: Aggregating scores for subset: sports_science
+2026-01-08 16:53:47 - evalscope - INFO: Evaluating subset: plant_protection
+2026-01-08 16:53:47 - evalscope - INFO: Getting predictions for subset: plant_protection
+2026-01-08 16:53:47 - evalscope - INFO: Reusing predictions from /home/crq/llm_scripts/evalscope/outputs/20260108_153910/predictions/Qwen3-4B-Instruct-2507-eval/ceval_plant_protection.jsonl, got 22 predictions, remaining 0 samples
+2026-01-08 16:53:47 - evalscope - INFO: Getting reviews for subset: plant_protection
+2026-01-08 16:53:47 - evalscope - INFO: Reusing reviews from /home/crq/llm_scripts/evalscope/outputs/20260108_153910/reviews/Qwen3-4B-Instruct-2507-eval/ceval_plant_protection.jsonl, got 22 reviews
+2026-01-08 16:53:47 - evalscope - INFO: Aggregating scores for subset: plant_protection
+2026-01-08 16:53:47 - evalscope - INFO: Evaluating subset: basic_medicine
+2026-01-08 16:53:47 - evalscope - INFO: Getting predictions for subset: basic_medicine
+2026-01-08 16:53:47 - evalscope - INFO: Reusing predictions from /home/crq/llm_scripts/evalscope/outputs/20260108_153910/predictions/Qwen3-4B-Instruct-2507-eval/ceval_basic_medicine.jsonl, got 19 predictions, remaining 0 samples
+2026-01-08 16:53:47 - evalscope - INFO: Getting reviews for subset: basic_medicine
+2026-01-08 16:53:47 - evalscope - INFO: Reusing reviews from /home/crq/llm_scripts/evalscope/outputs/20260108_153910/reviews/Qwen3-4B-Instruct-2507-eval/ceval_basic_medicine.jsonl, got 19 reviews
+2026-01-08 16:53:47 - evalscope - INFO: Aggregating scores for subset: basic_medicine
+2026-01-08 16:53:47 - evalscope - INFO: Evaluating subset: clinical_medicine
+2026-01-08 16:53:47 - evalscope - INFO: Getting predictions for subset: clinical_medicine
+2026-01-08 16:53:47 - evalscope - INFO: Reusing predictions from /home/crq/llm_scripts/evalscope/outputs/20260108_153910/predictions/Qwen3-4B-Instruct-2507-eval/ceval_clinical_medicine.jsonl, got 22 predictions, remaining 0 samples
+2026-01-08 16:53:47 - evalscope - INFO: Getting reviews for subset: clinical_medicine
+2026-01-08 16:53:47 - evalscope - INFO: Reusing reviews from /home/crq/llm_scripts/evalscope/outputs/20260108_153910/reviews/Qwen3-4B-Instruct-2507-eval/ceval_clinical_medicine.jsonl, got 22 reviews
+2026-01-08 16:53:47 - evalscope - INFO: Aggregating scores for subset: clinical_medicine
+2026-01-08 16:53:47 - evalscope - INFO: Evaluating subset: urban_and_rural_planner
+2026-01-08 16:53:47 - evalscope - INFO: Getting predictions for subset: urban_and_rural_planner
+2026-01-08 16:53:47 - evalscope - INFO: Reusing predictions from /home/crq/llm_scripts/evalscope/outputs/20260108_153910/predictions/Qwen3-4B-Instruct-2507-eval/ceval_urban_and_rural_planner.jsonl, got 46 predictions, remaining 0 samples
+2026-01-08 16:53:47 - evalscope - INFO: Getting reviews for subset: urban_and_rural_planner
+2026-01-08 16:53:47 - evalscope - INFO: Reusing reviews from /home/crq/llm_scripts/evalscope/outputs/20260108_153910/reviews/Qwen3-4B-Instruct-2507-eval/ceval_urban_and_rural_planner.jsonl, got 46 reviews
+2026-01-08 16:53:47 - evalscope - INFO: Aggregating scores for subset: urban_and_rural_planner
+2026-01-08 16:53:47 - evalscope - INFO: Evaluating subset: accountant
+2026-01-08 16:53:47 - evalscope - INFO: Getting predictions for subset: accountant
+2026-01-08 16:53:47 - evalscope - INFO: Reusing predictions from /home/crq/llm_scripts/evalscope/outputs/20260108_153910/predictions/Qwen3-4B-Instruct-2507-eval/ceval_accountant.jsonl, got 49 predictions, remaining 0 samples
+2026-01-08 16:53:47 - evalscope - INFO: Getting reviews for subset: accountant
+2026-01-08 16:53:47 - evalscope - INFO: Reusing reviews from /home/crq/llm_scripts/evalscope/outputs/20260108_153910/reviews/Qwen3-4B-Instruct-2507-eval/ceval_accountant.jsonl, got 49 reviews
+2026-01-08 16:53:47 - evalscope - INFO: Aggregating scores for subset: accountant
+2026-01-08 16:53:47 - evalscope - INFO: Evaluating subset: fire_engineer
+2026-01-08 16:53:47 - evalscope - INFO: Getting predictions for subset: fire_engineer
+2026-01-08 16:53:47 - evalscope - INFO: Reusing predictions from /home/crq/llm_scripts/evalscope/outputs/20260108_153910/predictions/Qwen3-4B-Instruct-2507-eval/ceval_fire_engineer.jsonl, got 31 predictions, remaining 0 samples
+2026-01-08 16:53:47 - evalscope - INFO: Getting reviews for subset: fire_engineer
+2026-01-08 16:53:47 - evalscope - INFO: Reusing reviews from /home/crq/llm_scripts/evalscope/outputs/20260108_153910/reviews/Qwen3-4B-Instruct-2507-eval/ceval_fire_engineer.jsonl, got 31 reviews
+2026-01-08 16:53:47 - evalscope - INFO: Aggregating scores for subset: fire_engineer
+2026-01-08 16:53:47 - evalscope - INFO: Evaluating subset: environmental_impact_assessment_engineer
+2026-01-08 16:53:47 - evalscope - INFO: Getting predictions for subset: environmental_impact_assessment_engineer
+2026-01-08 16:53:47 - evalscope - INFO: Reusing predictions from /home/crq/llm_scripts/evalscope/outputs/20260108_153910/predictions/Qwen3-4B-Instruct-2507-eval/ceval_environmental_impact_assessment_engineer.jsonl, got 31 predictions, remaining 0 samples
+2026-01-08 16:53:47 - evalscope - INFO: Getting reviews for subset: environmental_impact_assessment_engineer
+2026-01-08 16:53:47 - evalscope - INFO: Reusing reviews from /home/crq/llm_scripts/evalscope/outputs/20260108_153910/reviews/Qwen3-4B-Instruct-2507-eval/ceval_environmental_impact_assessment_engineer.jsonl, got 31 reviews
+2026-01-08 16:53:47 - evalscope - INFO: Aggregating scores for subset: environmental_impact_assessment_engineer
+2026-01-08 16:53:47 - evalscope - INFO: Evaluating subset: tax_accountant
+2026-01-08 16:53:47 - evalscope - INFO: Getting predictions for subset: tax_accountant
+2026-01-08 16:53:47 - evalscope - INFO: Reusing predictions from /home/crq/llm_scripts/evalscope/outputs/20260108_153910/predictions/Qwen3-4B-Instruct-2507-eval/ceval_tax_accountant.jsonl, got 49 predictions, remaining 0 samples
+2026-01-08 16:53:47 - evalscope - INFO: Getting reviews for subset: tax_accountant
+2026-01-08 16:53:47 - evalscope - INFO: Reusing reviews from /home/crq/llm_scripts/evalscope/outputs/20260108_153910/reviews/Qwen3-4B-Instruct-2507-eval/ceval_tax_accountant.jsonl, got 49 reviews
+2026-01-08 16:53:47 - evalscope - INFO: Aggregating scores for subset: tax_accountant
+2026-01-08 16:53:47 - evalscope - INFO: Evaluating subset: physician
+2026-01-08 16:53:47 - evalscope - INFO: Getting predictions for subset: physician
+2026-01-08 16:53:47 - evalscope - INFO: Reusing predictions from /home/crq/llm_scripts/evalscope/outputs/20260108_153910/predictions/Qwen3-4B-Instruct-2507-eval/ceval_physician.jsonl, got 49 predictions, remaining 0 samples
+2026-01-08 16:53:47 - evalscope - INFO: Getting reviews for subset: physician
+2026-01-08 16:53:47 - evalscope - INFO: Reusing reviews from /home/crq/llm_scripts/evalscope/outputs/20260108_153910/reviews/Qwen3-4B-Instruct-2507-eval/ceval_physician.jsonl, got 49 reviews
+2026-01-08 16:53:47 - evalscope - INFO: Aggregating scores for subset: physician
+2026-01-08 16:53:47 - evalscope - INFO: Evaluating [ceval] 100%| 52/52 [Elapsed: 00:00 < Remaining: 00:00, 210.37subset/s]
+2026-01-08 16:53:47 - evalscope - INFO: Generating report...
+2026-01-08 16:53:47 - evalscope - INFO: 
+ceval report table:
++-----------------------------+-----------+----------+------------------------------------------+-------+---------+----------------+
+| Model                       | Dataset   | Metric   | Subset                                   |   Num |   Score | Cat.0          |
++=============================+===========+==========+==========================================+=======+=========+================+
+| Qwen3-4B-Instruct-2507-eval | ceval     | mean_acc | modern_chinese_history                   |    23 |  0.8261 | Humanities     |
++-----------------------------+-----------+----------+------------------------------------------+-------+---------+----------------+
+| Qwen3-4B-Instruct-2507-eval | ceval     | mean_acc | ideological_and_moral_cultivation        |    19 |  0.8947 | Humanities     |
++-----------------------------+-----------+----------+------------------------------------------+-------+---------+----------------+
+| Qwen3-4B-Instruct-2507-eval | ceval     | mean_acc | logic                                    |    22 |  0.7727 | Humanities     |
++-----------------------------+-----------+----------+------------------------------------------+-------+---------+----------------+
+| Qwen3-4B-Instruct-2507-eval | ceval     | mean_acc | law                                      |    24 |  0.7083 | Humanities     |
++-----------------------------+-----------+----------+------------------------------------------+-------+---------+----------------+
+| Qwen3-4B-Instruct-2507-eval | ceval     | mean_acc | chinese_language_and_literature          |    23 |  0.7826 | Humanities     |
++-----------------------------+-----------+----------+------------------------------------------+-------+---------+----------------+
+| Qwen3-4B-Instruct-2507-eval | ceval     | mean_acc | art_studies                              |    33 |  0.7576 | Humanities     |
++-----------------------------+-----------+----------+------------------------------------------+-------+---------+----------------+
+| Qwen3-4B-Instruct-2507-eval | ceval     | mean_acc | professional_tour_guide                  |    29 |  0.931  | Humanities     |
++-----------------------------+-----------+----------+------------------------------------------+-------+---------+----------------+
+| Qwen3-4B-Instruct-2507-eval | ceval     | mean_acc | legal_professional                       |    23 |  0.4783 | Humanities     |
++-----------------------------+-----------+----------+------------------------------------------+-------+---------+----------------+
+| Qwen3-4B-Instruct-2507-eval | ceval     | mean_acc | high_school_chinese                      |    19 |  0.6316 | Humanities     |
++-----------------------------+-----------+----------+------------------------------------------+-------+---------+----------------+
+| Qwen3-4B-Instruct-2507-eval | ceval     | mean_acc | high_school_history                      |    20 |  0.85   | Humanities     |
++-----------------------------+-----------+----------+------------------------------------------+-------+---------+----------------+
+| Qwen3-4B-Instruct-2507-eval | ceval     | mean_acc | middle_school_history                    |    22 |  1      | Humanities     |
++-----------------------------+-----------+----------+------------------------------------------+-------+---------+----------------+
+| Qwen3-4B-Instruct-2507-eval | ceval     | mean_acc | civil_servant                            |    47 |  0.7021 | Other          |
++-----------------------------+-----------+----------+------------------------------------------+-------+---------+----------------+
+| Qwen3-4B-Instruct-2507-eval | ceval     | mean_acc | sports_science                           |    19 |  0.8947 | Other          |
++-----------------------------+-----------+----------+------------------------------------------+-------+---------+----------------+
+| Qwen3-4B-Instruct-2507-eval | ceval     | mean_acc | plant_protection                         |    22 |  0.8182 | Other          |
++-----------------------------+-----------+----------+------------------------------------------+-------+---------+----------------+
+| Qwen3-4B-Instruct-2507-eval | ceval     | mean_acc | basic_medicine                           |    19 |  0.7895 | Other          |
++-----------------------------+-----------+----------+------------------------------------------+-------+---------+----------------+
+| Qwen3-4B-Instruct-2507-eval | ceval     | mean_acc | clinical_medicine                        |    22 |  0.6818 | Other          |
++-----------------------------+-----------+----------+------------------------------------------+-------+---------+----------------+
+| Qwen3-4B-Instruct-2507-eval | ceval     | mean_acc | urban_and_rural_planner                  |    46 |  0.6739 | Other          |
++-----------------------------+-----------+----------+------------------------------------------+-------+---------+----------------+
+| Qwen3-4B-Instruct-2507-eval | ceval     | mean_acc | accountant                               |    49 |  0.551  | Other          |
++-----------------------------+-----------+----------+------------------------------------------+-------+---------+----------------+
+| Qwen3-4B-Instruct-2507-eval | ceval     | mean_acc | fire_engineer                            |    31 |  0.7097 | Other          |
++-----------------------------+-----------+----------+------------------------------------------+-------+---------+----------------+
+| Qwen3-4B-Instruct-2507-eval | ceval     | mean_acc | environmental_impact_assessment_engineer |    31 |  0.7419 | Other          |
++-----------------------------+-----------+----------+------------------------------------------+-------+---------+----------------+
+| Qwen3-4B-Instruct-2507-eval | ceval     | mean_acc | tax_accountant                           |    49 |  0.5918 | Other          |
++-----------------------------+-----------+----------+------------------------------------------+-------+---------+----------------+
+| Qwen3-4B-Instruct-2507-eval | ceval     | mean_acc | physician                                |    49 |  0.7551 | Other          |
++-----------------------------+-----------+----------+------------------------------------------+-------+---------+----------------+
+| Qwen3-4B-Instruct-2507-eval | ceval     | mean_acc | computer_network                         |    19 |  0.7895 | STEM           |
++-----------------------------+-----------+----------+------------------------------------------+-------+---------+----------------+
+| Qwen3-4B-Instruct-2507-eval | ceval     | mean_acc | operating_system                         |    19 |  0.8947 | STEM           |
++-----------------------------+-----------+----------+------------------------------------------+-------+---------+----------------+
+| Qwen3-4B-Instruct-2507-eval | ceval     | mean_acc | computer_architecture                    |    21 |  0.9048 | STEM           |
++-----------------------------+-----------+----------+------------------------------------------+-------+---------+----------------+
+| Qwen3-4B-Instruct-2507-eval | ceval     | mean_acc | college_programming                      |    37 |  0.8649 | STEM           |
++-----------------------------+-----------+----------+------------------------------------------+-------+---------+----------------+
+| Qwen3-4B-Instruct-2507-eval | ceval     | mean_acc | college_physics                          |    19 |  0.7368 | STEM           |
++-----------------------------+-----------+----------+------------------------------------------+-------+---------+----------------+
+| Qwen3-4B-Instruct-2507-eval | ceval     | mean_acc | college_chemistry                        |    24 |  0.75   | STEM           |
++-----------------------------+-----------+----------+------------------------------------------+-------+---------+----------------+
+| Qwen3-4B-Instruct-2507-eval | ceval     | mean_acc | advanced_mathematics                     |    19 |  0.8421 | STEM           |
++-----------------------------+-----------+----------+------------------------------------------+-------+---------+----------------+
+| Qwen3-4B-Instruct-2507-eval | ceval     | mean_acc | probability_and_statistics               |    18 |  0.8333 | STEM           |
++-----------------------------+-----------+----------+------------------------------------------+-------+---------+----------------+
+| Qwen3-4B-Instruct-2507-eval | ceval     | mean_acc | discrete_mathematics                     |    16 |  0.625  | STEM           |
++-----------------------------+-----------+----------+------------------------------------------+-------+---------+----------------+
+| Qwen3-4B-Instruct-2507-eval | ceval     | mean_acc | electrical_engineer                      |    37 |  0.5946 | STEM           |
++-----------------------------+-----------+----------+------------------------------------------+-------+---------+----------------+
+| Qwen3-4B-Instruct-2507-eval | ceval     | mean_acc | metrology_engineer                       |    24 |  0.75   | STEM           |
++-----------------------------+-----------+----------+------------------------------------------+-------+---------+----------------+
+| Qwen3-4B-Instruct-2507-eval | ceval     | mean_acc | high_school_mathematics                  |    18 |  0.6667 | STEM           |
++-----------------------------+-----------+----------+------------------------------------------+-------+---------+----------------+
+| Qwen3-4B-Instruct-2507-eval | ceval     | mean_acc | high_school_physics                      |    19 |  0.8421 | STEM           |
++-----------------------------+-----------+----------+------------------------------------------+-------+---------+----------------+
+| Qwen3-4B-Instruct-2507-eval | ceval     | mean_acc | high_school_chemistry                    |    19 |  0.8421 | STEM           |
++-----------------------------+-----------+----------+------------------------------------------+-------+---------+----------------+
+| Qwen3-4B-Instruct-2507-eval | ceval     | mean_acc | high_school_biology                      |    19 |  0.8947 | STEM           |
++-----------------------------+-----------+----------+------------------------------------------+-------+---------+----------------+
+| Qwen3-4B-Instruct-2507-eval | ceval     | mean_acc | middle_school_mathematics                |    19 |  1      | STEM           |
++-----------------------------+-----------+----------+------------------------------------------+-------+---------+----------------+
+| Qwen3-4B-Instruct-2507-eval | ceval     | mean_acc | middle_school_biology                    |    21 |  0.8571 | STEM           |
++-----------------------------+-----------+----------+------------------------------------------+-------+---------+----------------+
+| Qwen3-4B-Instruct-2507-eval | ceval     | mean_acc | middle_school_physics                    |    19 |  0.9474 | STEM           |
++-----------------------------+-----------+----------+------------------------------------------+-------+---------+----------------+
+| Qwen3-4B-Instruct-2507-eval | ceval     | mean_acc | middle_school_chemistry                  |    20 |  0.95   | STEM           |
++-----------------------------+-----------+----------+------------------------------------------+-------+---------+----------------+
+| Qwen3-4B-Instruct-2507-eval | ceval     | mean_acc | veterinary_medicine                      |    23 |  0.8261 | STEM           |
++-----------------------------+-----------+----------+------------------------------------------+-------+---------+----------------+
+| Qwen3-4B-Instruct-2507-eval | ceval     | mean_acc | college_economics                        |    55 |  0.6909 | Social Science |
++-----------------------------+-----------+----------+------------------------------------------+-------+---------+----------------+
+| Qwen3-4B-Instruct-2507-eval | ceval     | mean_acc | business_administration                  |    33 |  0.7576 | Social Science |
++-----------------------------+-----------+----------+------------------------------------------+-------+---------+----------------+
+| Qwen3-4B-Instruct-2507-eval | ceval     | mean_acc | marxism                                  |    19 |  0.9474 | Social Science |
++-----------------------------+-----------+----------+------------------------------------------+-------+---------+----------------+
+| Qwen3-4B-Instruct-2507-eval | ceval     | mean_acc | mao_zedong_thought                       |    24 |  0.875  | Social Science |
++-----------------------------+-----------+----------+------------------------------------------+-------+---------+----------------+
+| Qwen3-4B-Instruct-2507-eval | ceval     | mean_acc | education_science                        |    29 |  0.8621 | Social Science |
++-----------------------------+-----------+----------+------------------------------------------+-------+---------+----------------+
+| Qwen3-4B-Instruct-2507-eval | ceval     | mean_acc | teacher_qualification                    |    44 |  0.9091 | Social Science |
++-----------------------------+-----------+----------+------------------------------------------+-------+---------+----------------+
+| Qwen3-4B-Instruct-2507-eval | ceval     | mean_acc | high_school_politics                     |    19 |  0.9474 | Social Science |
++-----------------------------+-----------+----------+------------------------------------------+-------+---------+----------------+
+| Qwen3-4B-Instruct-2507-eval | ceval     | mean_acc | high_school_geography                    |    19 |  0.8947 | Social Science |
++-----------------------------+-----------+----------+------------------------------------------+-------+---------+----------------+
+| Qwen3-4B-Instruct-2507-eval | ceval     | mean_acc | middle_school_politics                   |    21 |  1      | Social Science |
++-----------------------------+-----------+----------+------------------------------------------+-------+---------+----------------+
+| Qwen3-4B-Instruct-2507-eval | ceval     | mean_acc | middle_school_geography                  |    12 |  0.75   | Social Science |
++-----------------------------+-----------+----------+------------------------------------------+-------+---------+----------------+
+| Qwen3-4B-Instruct-2507-eval | ceval     | mean_acc | OVERALL                                  |  1346 |  0.7808 | -              |
++-----------------------------+-----------+----------+------------------------------------------+-------+---------+----------------+ 
+
+2026-01-08 16:53:47 - evalscope - INFO: Skipping report analysis (`analysis_report=False`).
+2026-01-08 16:53:47 - evalscope - INFO: Dump report to: /home/crq/llm_scripts/evalscope/outputs/20260108_153910/reports/Qwen3-4B-Instruct-2507-eval/ceval.json 
+
+2026-01-08 16:53:47 - evalscope - INFO: Benchmark ceval evaluation finished.
+2026-01-08 16:53:47 - evalscope - INFO: Start loading benchmark dataset: math_500
+2026-01-08 16:53:47 - evalscope - INFO: Start evaluating 5 subsets of the math_500: ['Level 1', 'Level 2', 'Level 3', 'Level 4', 'Level 5']
+2026-01-08 16:53:47 - evalscope - INFO: Evaluating subset: Level 1
+2026-01-08 16:53:47 - evalscope - INFO: Getting predictions for subset: Level 1
+2026-01-08 16:53:47 - evalscope - INFO: Reusing predictions from /home/crq/llm_scripts/evalscope/outputs/20260108_153910/predictions/Qwen3-4B-Instruct-2507-eval/math_500_Level 1.jsonl, got 43 predictions, remaining 0 samples
+2026-01-08 16:53:47 - evalscope - INFO: Getting reviews for subset: Level 1
+2026-01-08 16:53:47 - evalscope - INFO: Reusing reviews from /home/crq/llm_scripts/evalscope/outputs/20260108_153910/reviews/Qwen3-4B-Instruct-2507-eval/math_500_Level 1.jsonl, got 43 reviews
+2026-01-08 16:53:47 - evalscope - INFO: Aggregating scores for subset: Level 1
+2026-01-08 16:53:47 - evalscope - INFO: Evaluating subset: Level 2
+2026-01-08 16:53:47 - evalscope - INFO: Getting predictions for subset: Level 2
+2026-01-08 16:53:47 - evalscope - INFO: Reusing predictions from /home/crq/llm_scripts/evalscope/outputs/20260108_153910/predictions/Qwen3-4B-Instruct-2507-eval/math_500_Level 2.jsonl, got 90 predictions, remaining 0 samples
+2026-01-08 16:53:47 - evalscope - INFO: Getting reviews for subset: Level 2
+2026-01-08 16:53:47 - evalscope - INFO: Reusing reviews from /home/crq/llm_scripts/evalscope/outputs/20260108_153910/reviews/Qwen3-4B-Instruct-2507-eval/math_500_Level 2.jsonl, got 90 reviews
+2026-01-08 16:53:47 - evalscope - INFO: Aggregating scores for subset: Level 2
+2026-01-08 16:53:47 - evalscope - INFO: Evaluating subset: Level 3
+2026-01-08 16:53:47 - evalscope - INFO: Getting predictions for subset: Level 3
+2026-01-08 16:53:47 - evalscope - INFO: Reusing predictions from /home/crq/llm_scripts/evalscope/outputs/20260108_153910/predictions/Qwen3-4B-Instruct-2507-eval/math_500_Level 3.jsonl, got 35 predictions, remaining 65 samples
+2026-01-08 16:53:47 - evalscope - INFO: Processing 65 samples, if data is large, it may take a while.
+2026-01-08 16:53:47 - evalscope - INFO: Loading model for prediction...
+2026-01-08 16:53:47 - evalscope - INFO: Creating model Qwen3-4B-Instruct-2507-eval with eval_type=openai_api base_url=http://127.0.0.1:8010/v1/chat/completions, config={'timeout': 300000, 'retries': 5, 'retry_interval': 10, 'batch_size': 8, 'stream': True, 'max_tokens': 2048, 'top_p': 1.0, 'temperature': 0.0}, model_args={}
+2026-01-08 16:53:47 - evalscope - INFO: Model loaded successfully.
+2026-01-08 16:54:47 - evalscope - INFO: Predicting[math_500@Level 3]:   43%| 28/65 [Elapsed: 01:00 < Remaining: 00:55,  1.51s/it]
+2026-01-08 16:55:47 - evalscope - INFO: Predicting[math_500@Level 3]:   82%| 53/65 [Elapsed: 02:00 < Remaining: 00:24,  2.05s/it]
+2026-01-08 16:56:33 - evalscope - INFO: Predicting[math_500@Level 3]:  100%| 65/65 [Elapsed: 02:45 < Remaining: 00:00,  5.56s/it]
+2026-01-08 16:56:33 - evalscope - INFO: Finished getting predictions for subset: Level 3.
+2026-01-08 16:56:33 - evalscope - INFO: Getting reviews for subset: Level 3
+2026-01-08 16:56:33 - evalscope - INFO: Reviewing 100 samples, if data is large, it may take a while.
+2026-01-08 16:56:34 - evalscope - INFO: Reviewing[math_500@Level 3]:  100%| 100/100 [Elapsed: 00:00 < Remaining: 00:00, 101.06it/s]
+2026-01-08 16:56:34 - evalscope - INFO: Finished reviewing subset: Level 3. Total reviewed: 100
+2026-01-08 16:56:34 - evalscope - INFO: Aggregating scores for subset: Level 3
+2026-01-08 16:56:34 - evalscope - INFO: Evaluating [math_500]  60%| 3/5 [Elapsed: 02:46 < Remaining: 01:51, 55.60s/subset]
+2026-01-08 16:56:34 - evalscope - INFO: Evaluating subset: Level 4
+2026-01-08 16:56:34 - evalscope - INFO: Getting predictions for subset: Level 4
+2026-01-08 16:56:34 - evalscope - INFO: Processing 100 samples, if data is large, it may take a while.
+2026-01-08 16:57:34 - evalscope - INFO: Predicting[math_500@Level 4]:   19%| 19/100 [Elapsed: 01:00 < Remaining: 03:55,  2.90s/it]
+2026-01-08 16:58:34 - evalscope - INFO: Predicting[math_500@Level 4]:   42%| 42/100 [Elapsed: 02:00 < Remaining: 01:27,  1.51s/it]
+2026-01-08 16:59:34 - evalscope - INFO: Predicting[math_500@Level 4]:   61%| 61/100 [Elapsed: 03:00 < Remaining: 01:41,  2.60s/it]
+2026-01-08 17:00:34 - evalscope - INFO: Predicting[math_500@Level 4]:   77%| 77/100 [Elapsed: 04:00 < Remaining: 01:09,  3.00s/it]
+2026-01-08 17:01:34 - evalscope - INFO: Predicting[math_500@Level 4]:   94%| 94/100 [Elapsed: 05:00 < Remaining: 00:17,  2.92s/it]
+2026-01-08 17:01:51 - evalscope - INFO: Predicting[math_500@Level 4]:  100%| 100/100 [Elapsed: 05:17 < Remaining: 00:00,  3.12s/it]
+2026-01-08 17:01:51 - evalscope - INFO: Finished getting predictions for subset: Level 4.
+2026-01-08 17:01:51 - evalscope - INFO: Getting reviews for subset: Level 4
+2026-01-08 17:01:51 - evalscope - INFO: Reviewing 100 samples, if data is large, it may take a while.
+2026-01-08 17:01:52 - evalscope - INFO: Reviewing[math_500@Level 4]:  100%| 100/100 [Elapsed: 00:00 < Remaining: 00:00, 465.22it/s]
+2026-01-08 17:01:52 - evalscope - INFO: Finished reviewing subset: Level 4. Total reviewed: 100
+2026-01-08 17:01:52 - evalscope - INFO: Aggregating scores for subset: Level 4
+2026-01-08 17:01:52 - evalscope - INFO: Evaluating [math_500]  80%| 4/5 [Elapsed: 08:04 < Remaining: 02:20, 140.19s/subset]
+2026-01-08 17:01:52 - evalscope - INFO: Evaluating subset: Level 5
+2026-01-08 17:01:52 - evalscope - INFO: Getting predictions for subset: Level 5
+2026-01-08 17:01:52 - evalscope - INFO: Processing 100 samples, if data is large, it may take a while.
+2026-01-08 17:02:52 - evalscope - INFO: Predicting[math_500@Level 5]:   13%| 13/100 [Elapsed: 01:00 < Remaining: 06:27,  4.46s/it]
+2026-01-08 17:03:52 - evalscope - INFO: Predicting[math_500@Level 5]:   27%| 27/100 [Elapsed: 02:00 < Remaining: 04:40,  3.84s/it]
+2026-01-08 17:04:52 - evalscope - INFO: Predicting[math_500@Level 5]:   39%| 39/100 [Elapsed: 03:00 < Remaining: 03:54,  3.85s/it]
+2026-01-08 17:05:52 - evalscope - INFO: Predicting[math_500@Level 5]:   56%| 56/100 [Elapsed: 04:00 < Remaining: 02:22,  3.25s/it]
+2026-01-08 17:06:52 - evalscope - INFO: Predicting[math_500@Level 5]:   74%| 74/100 [Elapsed: 05:00 < Remaining: 01:00,  2.33s/it]
+2026-01-08 17:07:53 - evalscope - INFO: Predicting[math_500@Level 5]:   89%| 89/100 [Elapsed: 06:00 < Remaining: 00:33,  3.04s/it]
+2026-01-08 17:08:39 - evalscope - INFO: Predicting[math_500@Level 5]:  100%| 100/100 [Elapsed: 06:46 < Remaining: 00:00,  4.91s/it]
+2026-01-08 17:08:39 - evalscope - INFO: Finished getting predictions for subset: Level 5.
+2026-01-08 17:08:39 - evalscope - INFO: Getting reviews for subset: Level 5
+2026-01-08 17:08:39 - evalscope - INFO: Reviewing 100 samples, if data is large, it may take a while.
+2026-01-08 17:08:39 - evalscope - INFO: Reviewing[math_500@Level 5]:  100%| 100/100 [Elapsed: 00:00 < Remaining: 00:00, 289.86it/s]
+2026-01-08 17:08:39 - evalscope - INFO: Finished reviewing subset: Level 5. Total reviewed: 100
+2026-01-08 17:08:39 - evalscope - INFO: Aggregating scores for subset: Level 5
+2026-01-08 17:08:39 - evalscope - INFO: Evaluating [math_500] 100%| 5/5 [Elapsed: 14:51 < Remaining: 00:00, 224.43s/subset]
+2026-01-08 17:08:39 - evalscope - INFO: Generating report...
+2026-01-08 17:08:39 - evalscope - INFO: 
+math_500 report table:
++-----------------------------+-----------+----------+----------+-------+---------+---------+
+| Model                       | Dataset   | Metric   | Subset   |   Num |   Score | Cat.0   |
++=============================+===========+==========+==========+=======+=========+=========+
+| Qwen3-4B-Instruct-2507-eval | math_500  | mean_acc | Level 1  |    43 |  0.9767 | default |
++-----------------------------+-----------+----------+----------+-------+---------+---------+
+| Qwen3-4B-Instruct-2507-eval | math_500  | mean_acc | Level 2  |    90 |  0.9556 | default |
++-----------------------------+-----------+----------+----------+-------+---------+---------+
+| Qwen3-4B-Instruct-2507-eval | math_500  | mean_acc | Level 3  |   100 |  0.89   | default |
++-----------------------------+-----------+----------+----------+-------+---------+---------+
+| Qwen3-4B-Instruct-2507-eval | math_500  | mean_acc | Level 4  |   100 |  0.74   | default |
++-----------------------------+-----------+----------+----------+-------+---------+---------+
+| Qwen3-4B-Instruct-2507-eval | math_500  | mean_acc | Level 5  |   100 |  0.62   | default |
++-----------------------------+-----------+----------+----------+-------+---------+---------+
+| Qwen3-4B-Instruct-2507-eval | math_500  | mean_acc | OVERALL  |   433 |  0.8152 | -       |
++-----------------------------+-----------+----------+----------+-------+---------+---------+ 
+
+2026-01-08 17:08:39 - evalscope - INFO: Skipping report analysis (`analysis_report=False`).
+2026-01-08 17:08:39 - evalscope - INFO: Dump report to: /home/crq/llm_scripts/evalscope/outputs/20260108_153910/reports/Qwen3-4B-Instruct-2507-eval/math_500.json 
+
+2026-01-08 17:08:39 - evalscope - INFO: Benchmark math_500 evaluation finished.
+2026-01-08 17:08:39 - evalscope - INFO: Overall report table: 
++-----------------------------+-----------+--------------------------+------------------------------------------+-------+---------+----------------+
+| Model                       | Dataset   | Metric                   | Subset                                   |   Num |   Score | Cat.0          |
++=============================+===========+==========================+==========================================+=======+=========+================+
+| Qwen3-4B-Instruct-2507-eval | ceval     | mean_acc                 | modern_chinese_history                   |    23 |  0.8261 | Humanities     |
++-----------------------------+-----------+--------------------------+------------------------------------------+-------+---------+----------------+
+| Qwen3-4B-Instruct-2507-eval | ceval     | mean_acc                 | ideological_and_moral_cultivation        |    19 |  0.8947 | Humanities     |
++-----------------------------+-----------+--------------------------+------------------------------------------+-------+---------+----------------+
+| Qwen3-4B-Instruct-2507-eval | ceval     | mean_acc                 | logic                                    |    22 |  0.7727 | Humanities     |
++-----------------------------+-----------+--------------------------+------------------------------------------+-------+---------+----------------+
+| Qwen3-4B-Instruct-2507-eval | ceval     | mean_acc                 | law                                      |    24 |  0.7083 | Humanities     |
++-----------------------------+-----------+--------------------------+------------------------------------------+-------+---------+----------------+
+| Qwen3-4B-Instruct-2507-eval | ceval     | mean_acc                 | chinese_language_and_literature          |    23 |  0.7826 | Humanities     |
++-----------------------------+-----------+--------------------------+------------------------------------------+-------+---------+----------------+
+| Qwen3-4B-Instruct-2507-eval | ceval     | mean_acc                 | art_studies                              |    33 |  0.7576 | Humanities     |
++-----------------------------+-----------+--------------------------+------------------------------------------+-------+---------+----------------+
+| Qwen3-4B-Instruct-2507-eval | ceval     | mean_acc                 | professional_tour_guide                  |    29 |  0.931  | Humanities     |
++-----------------------------+-----------+--------------------------+------------------------------------------+-------+---------+----------------+
+| Qwen3-4B-Instruct-2507-eval | ceval     | mean_acc                 | legal_professional                       |    23 |  0.4783 | Humanities     |
++-----------------------------+-----------+--------------------------+------------------------------------------+-------+---------+----------------+
+| Qwen3-4B-Instruct-2507-eval | ceval     | mean_acc                 | high_school_chinese                      |    19 |  0.6316 | Humanities     |
++-----------------------------+-----------+--------------------------+------------------------------------------+-------+---------+----------------+
+| Qwen3-4B-Instruct-2507-eval | ceval     | mean_acc                 | high_school_history                      |    20 |  0.85   | Humanities     |
++-----------------------------+-----------+--------------------------+------------------------------------------+-------+---------+----------------+
+| Qwen3-4B-Instruct-2507-eval | ceval     | mean_acc                 | middle_school_history                    |    22 |  1      | Humanities     |
++-----------------------------+-----------+--------------------------+------------------------------------------+-------+---------+----------------+
+| Qwen3-4B-Instruct-2507-eval | ceval     | mean_acc                 | civil_servant                            |    47 |  0.7021 | Other          |
++-----------------------------+-----------+--------------------------+------------------------------------------+-------+---------+----------------+
+| Qwen3-4B-Instruct-2507-eval | ceval     | mean_acc                 | sports_science                           |    19 |  0.8947 | Other          |
++-----------------------------+-----------+--------------------------+------------------------------------------+-------+---------+----------------+
+| Qwen3-4B-Instruct-2507-eval | ceval     | mean_acc                 | plant_protection                         |    22 |  0.8182 | Other          |
++-----------------------------+-----------+--------------------------+------------------------------------------+-------+---------+----------------+
+| Qwen3-4B-Instruct-2507-eval | ceval     | mean_acc                 | basic_medicine                           |    19 |  0.7895 | Other          |
++-----------------------------+-----------+--------------------------+------------------------------------------+-------+---------+----------------+
+| Qwen3-4B-Instruct-2507-eval | ceval     | mean_acc                 | clinical_medicine                        |    22 |  0.6818 | Other          |
++-----------------------------+-----------+--------------------------+------------------------------------------+-------+---------+----------------+
+| Qwen3-4B-Instruct-2507-eval | ceval     | mean_acc                 | urban_and_rural_planner                  |    46 |  0.6739 | Other          |
++-----------------------------+-----------+--------------------------+------------------------------------------+-------+---------+----------------+
+| Qwen3-4B-Instruct-2507-eval | ceval     | mean_acc                 | accountant                               |    49 |  0.551  | Other          |
++-----------------------------+-----------+--------------------------+------------------------------------------+-------+---------+----------------+
+| Qwen3-4B-Instruct-2507-eval | ceval     | mean_acc                 | fire_engineer                            |    31 |  0.7097 | Other          |
++-----------------------------+-----------+--------------------------+------------------------------------------+-------+---------+----------------+
+| Qwen3-4B-Instruct-2507-eval | ceval     | mean_acc                 | environmental_impact_assessment_engineer |    31 |  0.7419 | Other          |
++-----------------------------+-----------+--------------------------+------------------------------------------+-------+---------+----------------+
+| Qwen3-4B-Instruct-2507-eval | ceval     | mean_acc                 | tax_accountant                           |    49 |  0.5918 | Other          |
++-----------------------------+-----------+--------------------------+------------------------------------------+-------+---------+----------------+
+| Qwen3-4B-Instruct-2507-eval | ceval     | mean_acc                 | physician                                |    49 |  0.7551 | Other          |
++-----------------------------+-----------+--------------------------+------------------------------------------+-------+---------+----------------+
+| Qwen3-4B-Instruct-2507-eval | ceval     | mean_acc                 | computer_network                         |    19 |  0.7895 | STEM           |
++-----------------------------+-----------+--------------------------+------------------------------------------+-------+---------+----------------+
+| Qwen3-4B-Instruct-2507-eval | ceval     | mean_acc                 | operating_system                         |    19 |  0.8947 | STEM           |
++-----------------------------+-----------+--------------------------+------------------------------------------+-------+---------+----------------+
+| Qwen3-4B-Instruct-2507-eval | ceval     | mean_acc                 | computer_architecture                    |    21 |  0.9048 | STEM           |
++-----------------------------+-----------+--------------------------+------------------------------------------+-------+---------+----------------+
+| Qwen3-4B-Instruct-2507-eval | ceval     | mean_acc                 | college_programming                      |    37 |  0.8649 | STEM           |
++-----------------------------+-----------+--------------------------+------------------------------------------+-------+---------+----------------+
+| Qwen3-4B-Instruct-2507-eval | ceval     | mean_acc                 | college_physics                          |    19 |  0.7368 | STEM           |
++-----------------------------+-----------+--------------------------+------------------------------------------+-------+---------+----------------+
+| Qwen3-4B-Instruct-2507-eval | ceval     | mean_acc                 | college_chemistry                        |    24 |  0.75   | STEM           |
++-----------------------------+-----------+--------------------------+------------------------------------------+-------+---------+----------------+
+| Qwen3-4B-Instruct-2507-eval | ceval     | mean_acc                 | advanced_mathematics                     |    19 |  0.8421 | STEM           |
++-----------------------------+-----------+--------------------------+------------------------------------------+-------+---------+----------------+
+| Qwen3-4B-Instruct-2507-eval | ceval     | mean_acc                 | probability_and_statistics               |    18 |  0.8333 | STEM           |
++-----------------------------+-----------+--------------------------+------------------------------------------+-------+---------+----------------+
+| Qwen3-4B-Instruct-2507-eval | ceval     | mean_acc                 | discrete_mathematics                     |    16 |  0.625  | STEM           |
++-----------------------------+-----------+--------------------------+------------------------------------------+-------+---------+----------------+
+| Qwen3-4B-Instruct-2507-eval | ceval     | mean_acc                 | electrical_engineer                      |    37 |  0.5946 | STEM           |
++-----------------------------+-----------+--------------------------+------------------------------------------+-------+---------+----------------+
+| Qwen3-4B-Instruct-2507-eval | ceval     | mean_acc                 | metrology_engineer                       |    24 |  0.75   | STEM           |
++-----------------------------+-----------+--------------------------+------------------------------------------+-------+---------+----------------+
+| Qwen3-4B-Instruct-2507-eval | ceval     | mean_acc                 | high_school_mathematics                  |    18 |  0.6667 | STEM           |
++-----------------------------+-----------+--------------------------+------------------------------------------+-------+---------+----------------+
+| Qwen3-4B-Instruct-2507-eval | ceval     | mean_acc                 | high_school_physics                      |    19 |  0.8421 | STEM           |
++-----------------------------+-----------+--------------------------+------------------------------------------+-------+---------+----------------+
+| Qwen3-4B-Instruct-2507-eval | ceval     | mean_acc                 | high_school_chemistry                    |    19 |  0.8421 | STEM           |
++-----------------------------+-----------+--------------------------+------------------------------------------+-------+---------+----------------+
+| Qwen3-4B-Instruct-2507-eval | ceval     | mean_acc                 | high_school_biology                      |    19 |  0.8947 | STEM           |
++-----------------------------+-----------+--------------------------+------------------------------------------+-------+---------+----------------+
+| Qwen3-4B-Instruct-2507-eval | ceval     | mean_acc                 | middle_school_mathematics                |    19 |  1      | STEM           |
++-----------------------------+-----------+--------------------------+------------------------------------------+-------+---------+----------------+
+| Qwen3-4B-Instruct-2507-eval | ceval     | mean_acc                 | middle_school_biology                    |    21 |  0.8571 | STEM           |
++-----------------------------+-----------+--------------------------+------------------------------------------+-------+---------+----------------+
+| Qwen3-4B-Instruct-2507-eval | ceval     | mean_acc                 | middle_school_physics                    |    19 |  0.9474 | STEM           |
++-----------------------------+-----------+--------------------------+------------------------------------------+-------+---------+----------------+
+| Qwen3-4B-Instruct-2507-eval | ceval     | mean_acc                 | middle_school_chemistry                  |    20 |  0.95   | STEM           |
++-----------------------------+-----------+--------------------------+------------------------------------------+-------+---------+----------------+
+| Qwen3-4B-Instruct-2507-eval | ceval     | mean_acc                 | veterinary_medicine                      |    23 |  0.8261 | STEM           |
++-----------------------------+-----------+--------------------------+------------------------------------------+-------+---------+----------------+
+| Qwen3-4B-Instruct-2507-eval | ceval     | mean_acc                 | college_economics                        |    55 |  0.6909 | Social Science |
++-----------------------------+-----------+--------------------------+------------------------------------------+-------+---------+----------------+
+| Qwen3-4B-Instruct-2507-eval | ceval     | mean_acc                 | business_administration                  |    33 |  0.7576 | Social Science |
++-----------------------------+-----------+--------------------------+------------------------------------------+-------+---------+----------------+
+| Qwen3-4B-Instruct-2507-eval | ceval     | mean_acc                 | marxism                                  |    19 |  0.9474 | Social Science |
++-----------------------------+-----------+--------------------------+------------------------------------------+-------+---------+----------------+
+| Qwen3-4B-Instruct-2507-eval | ceval     | mean_acc                 | mao_zedong_thought                       |    24 |  0.875  | Social Science |
++-----------------------------+-----------+--------------------------+------------------------------------------+-------+---------+----------------+
+| Qwen3-4B-Instruct-2507-eval | ceval     | mean_acc                 | education_science                        |    29 |  0.8621 | Social Science |
++-----------------------------+-----------+--------------------------+------------------------------------------+-------+---------+----------------+
+| Qwen3-4B-Instruct-2507-eval | ceval     | mean_acc                 | teacher_qualification                    |    44 |  0.9091 | Social Science |
++-----------------------------+-----------+--------------------------+------------------------------------------+-------+---------+----------------+
+| Qwen3-4B-Instruct-2507-eval | ceval     | mean_acc                 | high_school_politics                     |    19 |  0.9474 | Social Science |
++-----------------------------+-----------+--------------------------+------------------------------------------+-------+---------+----------------+
+| Qwen3-4B-Instruct-2507-eval | ceval     | mean_acc                 | high_school_geography                    |    19 |  0.8947 | Social Science |
++-----------------------------+-----------+--------------------------+------------------------------------------+-------+---------+----------------+
+| Qwen3-4B-Instruct-2507-eval | ceval     | mean_acc                 | middle_school_politics                   |    21 |  1      | Social Science |
++-----------------------------+-----------+--------------------------+------------------------------------------+-------+---------+----------------+
+| Qwen3-4B-Instruct-2507-eval | ceval     | mean_acc                 | middle_school_geography                  |    12 |  0.75   | Social Science |
++-----------------------------+-----------+--------------------------+------------------------------------------+-------+---------+----------------+
+| Qwen3-4B-Instruct-2507-eval | ceval     | mean_acc                 | OVERALL                                  |  1346 |  0.7808 | -              |
++-----------------------------+-----------+--------------------------+------------------------------------------+-------+---------+----------------+
+| Qwen3-4B-Instruct-2507-eval | ifeval    | mean_prompt_level_strict | default                                  |   100 |  0.85   | default        |
++-----------------------------+-----------+--------------------------+------------------------------------------+-------+---------+----------------+
+| Qwen3-4B-Instruct-2507-eval | ifeval    | mean_inst_level_strict   | default                                  |   100 |  0.9167 | default        |
++-----------------------------+-----------+--------------------------+------------------------------------------+-------+---------+----------------+
+| Qwen3-4B-Instruct-2507-eval | ifeval    | mean_prompt_level_loose  | default                                  |   100 |  0.91   | default        |
++-----------------------------+-----------+--------------------------+------------------------------------------+-------+---------+----------------+
+| Qwen3-4B-Instruct-2507-eval | ifeval    | mean_inst_level_loose    | default                                  |   100 |  0.9483 | default        |
++-----------------------------+-----------+--------------------------+------------------------------------------+-------+---------+----------------+
+| Qwen3-4B-Instruct-2507-eval | math_500  | mean_acc                 | Level 1                                  |    43 |  0.9767 | default        |
++-----------------------------+-----------+--------------------------+------------------------------------------+-------+---------+----------------+
+| Qwen3-4B-Instruct-2507-eval | math_500  | mean_acc                 | Level 2                                  |    90 |  0.9556 | default        |
++-----------------------------+-----------+--------------------------+------------------------------------------+-------+---------+----------------+
+| Qwen3-4B-Instruct-2507-eval | math_500  | mean_acc                 | Level 3                                  |   100 |  0.89   | default        |
++-----------------------------+-----------+--------------------------+------------------------------------------+-------+---------+----------------+
+| Qwen3-4B-Instruct-2507-eval | math_500  | mean_acc                 | Level 4                                  |   100 |  0.74   | default        |
++-----------------------------+-----------+--------------------------+------------------------------------------+-------+---------+----------------+
+| Qwen3-4B-Instruct-2507-eval | math_500  | mean_acc                 | Level 5                                  |   100 |  0.62   | default        |
++-----------------------------+-----------+--------------------------+------------------------------------------+-------+---------+----------------+
+| Qwen3-4B-Instruct-2507-eval | math_500  | mean_acc                 | OVERALL                                  |   433 |  0.8152 | -              |
++-----------------------------+-----------+--------------------------+------------------------------------------+-------+---------+----------------+
+| Qwen3-4B-Instruct-2507-eval | mmlu_pro  | mean_acc                 | computer science                         |   100 |  0.67   | default        |
++-----------------------------+-----------+--------------------------+------------------------------------------+-------+---------+----------------+
+| Qwen3-4B-Instruct-2507-eval | mmlu_pro  | mean_acc                 | math                                     |   100 |  0.83   | default        |
++-----------------------------+-----------+--------------------------+------------------------------------------+-------+---------+----------------+
+| Qwen3-4B-Instruct-2507-eval | mmlu_pro  | mean_acc                 | chemistry                                |   100 |  0.79   | default        |
++-----------------------------+-----------+--------------------------+------------------------------------------+-------+---------+----------------+
+| Qwen3-4B-Instruct-2507-eval | mmlu_pro  | mean_acc                 | engineering                              |   100 |  0.61   | default        |
++-----------------------------+-----------+--------------------------+------------------------------------------+-------+---------+----------------+
+| Qwen3-4B-Instruct-2507-eval | mmlu_pro  | mean_acc                 | law                                      |   100 |  0.37   | default        |
++-----------------------------+-----------+--------------------------+------------------------------------------+-------+---------+----------------+
+| Qwen3-4B-Instruct-2507-eval | mmlu_pro  | mean_acc                 | biology                                  |   100 |  0.77   | default        |
++-----------------------------+-----------+--------------------------+------------------------------------------+-------+---------+----------------+
+| Qwen3-4B-Instruct-2507-eval | mmlu_pro  | mean_acc                 | health                                   |   100 |  0.57   | default        |
++-----------------------------+-----------+--------------------------+------------------------------------------+-------+---------+----------------+
+| Qwen3-4B-Instruct-2507-eval | mmlu_pro  | mean_acc                 | physics                                  |   100 |  0.71   | default        |
++-----------------------------+-----------+--------------------------+------------------------------------------+-------+---------+----------------+
+| Qwen3-4B-Instruct-2507-eval | mmlu_pro  | mean_acc                 | business                                 |   100 |  0.71   | default        |
++-----------------------------+-----------+--------------------------+------------------------------------------+-------+---------+----------------+
+| Qwen3-4B-Instruct-2507-eval | mmlu_pro  | mean_acc                 | philosophy                               |   100 |  0.51   | default        |
++-----------------------------+-----------+--------------------------+------------------------------------------+-------+---------+----------------+
+| Qwen3-4B-Instruct-2507-eval | mmlu_pro  | mean_acc                 | economics                                |   100 |  0.72   | default        |
++-----------------------------+-----------+--------------------------+------------------------------------------+-------+---------+----------------+
+| Qwen3-4B-Instruct-2507-eval | mmlu_pro  | mean_acc                 | other                                    |   100 |  0.46   | default        |
++-----------------------------+-----------+--------------------------+------------------------------------------+-------+---------+----------------+
+| Qwen3-4B-Instruct-2507-eval | mmlu_pro  | mean_acc                 | psychology                               |   100 |  0.63   | default        |
++-----------------------------+-----------+--------------------------+------------------------------------------+-------+---------+----------------+
+| Qwen3-4B-Instruct-2507-eval | mmlu_pro  | mean_acc                 | history                                  |   100 |  0.46   | default        |
++-----------------------------+-----------+--------------------------+------------------------------------------+-------+---------+----------------+
+| Qwen3-4B-Instruct-2507-eval | mmlu_pro  | mean_acc                 | OVERALL                                  |  1400 |  0.6293 | -              |
++-----------------------------+-----------+--------------------------+------------------------------------------+-------+---------+----------------+ 
+
+2026-01-08 17:08:39 - evalscope - INFO: Finished evaluation for Qwen3-4B-Instruct-2507-eval on ['mmlu_pro', 'ifeval', 'ceval', 'math_500']
+2026-01-08 17:08:39 - evalscope - INFO: Output directory: /home/crq/llm_scripts/evalscope/outputs/20260108_153910

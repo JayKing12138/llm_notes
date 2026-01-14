@@ -1,0 +1,382 @@
+analysis_report: false
+api_url: http://127.0.0.1:8010/v1/chat/completions
+chat_template: null
+dataset_args:
+  aime24:
+    aggregation: mean
+    dataset_id: HuggingFaceH4/aime_2024
+    default_subset: default
+    description: The AIME 2024 benchmark is based on problems from the American Invitational
+      Mathematics Examination, a prestigious high school mathematics competition.
+      This benchmark tests a model's ability to solve challenging mathematics problems
+      by generating step-by-step solutions and providing the correct final answer.
+    eval_split: train
+    extra_params: {}
+    few_shot_num: 0
+    few_shot_prompt_template: null
+    few_shot_random: false
+    filters: null
+    force_redownload: false
+    metric_list:
+    - acc:
+        numeric: true
+    name: aime24
+    output_types:
+    - generation
+    pretty_name: AIME-2024
+    prompt_template: '{question}
+
+      Please reason step by step, and put your final answer within \boxed{{}}.'
+    query_template: null
+    review_timeout: null
+    sandbox_config: {}
+    shuffle: false
+    shuffle_choices: false
+    subset_list:
+    - default
+    system_prompt: null
+    tags:
+    - Math
+    - Reasoning
+    train_split: null
+  ceval:
+    aggregation: mean
+    dataset_id: ceval-exam
+    default_subset: default
+    description: C-Eval is a benchmark designed to evaluate the performance of AI
+      models on Chinese exams across various subjects, including STEM, social sciences,
+      and humanities. It consists of multiple-choice questions that test knowledge
+      and reasoning abilities in these areas.
+    eval_split: val
+    extra_params: {}
+    few_shot_num: 5
+    few_shot_prompt_template: '以下是一些示例问题：
+
+
+      {fewshot}
+
+
+      '
+    few_shot_random: false
+    filters: null
+    force_redownload: false
+    metric_list:
+    - acc
+    name: ceval
+    output_types:
+    - generation
+    pretty_name: C-Eval
+    prompt_template: '以下是中国关于{subject}的单项选择题，请选出其中的正确答案。你的回答的最后一行应该是这样的格式："答案：[LETTER]"（不带引号），其中
+      [LETTER] 是 A、B、C、D 中的一个。
+
+
+      问题：{question}
+
+      选项：
+
+      {choices}
+
+      '
+    query_template: null
+    review_timeout: null
+    sandbox_config: {}
+    shuffle: false
+    shuffle_choices: false
+    subset_list:
+    - computer_network
+    - operating_system
+    - computer_architecture
+    - college_programming
+    - college_physics
+    - college_chemistry
+    - advanced_mathematics
+    - probability_and_statistics
+    - discrete_mathematics
+    - electrical_engineer
+    - metrology_engineer
+    - high_school_mathematics
+    - high_school_physics
+    - high_school_chemistry
+    - high_school_biology
+    - middle_school_mathematics
+    - middle_school_biology
+    - middle_school_physics
+    - middle_school_chemistry
+    - veterinary_medicine
+    - college_economics
+    - business_administration
+    - marxism
+    - mao_zedong_thought
+    - education_science
+    - teacher_qualification
+    - high_school_politics
+    - high_school_geography
+    - middle_school_politics
+    - middle_school_geography
+    - modern_chinese_history
+    - ideological_and_moral_cultivation
+    - logic
+    - law
+    - chinese_language_and_literature
+    - art_studies
+    - professional_tour_guide
+    - legal_professional
+    - high_school_chinese
+    - high_school_history
+    - middle_school_history
+    - civil_servant
+    - sports_science
+    - plant_protection
+    - basic_medicine
+    - clinical_medicine
+    - urban_and_rural_planner
+    - accountant
+    - fire_engineer
+    - environmental_impact_assessment_engineer
+    - tax_accountant
+    - physician
+    system_prompt: null
+    tags:
+    - Knowledge
+    - MCQ
+    - Chinese
+    train_split: dev
+  gpqa_diamond:
+    aggregation: mean
+    dataset_id: AI-ModelScope/gpqa_diamond
+    default_subset: default
+    description: GPQA is a dataset for evaluating the reasoning ability of large language
+      models (LLMs) on complex mathematical problems. It contains questions that require
+      step-by-step reasoning to arrive at the correct answer.
+    eval_split: train
+    extra_params: {}
+    few_shot_num: 0
+    few_shot_prompt_template: null
+    few_shot_random: false
+    filters: null
+    force_redownload: false
+    metric_list:
+    - acc
+    name: gpqa_diamond
+    output_types:
+    - generation
+    pretty_name: GPQA-Diamond
+    prompt_template: 'Answer the following multiple choice question. The last line
+      of your response should be of the following format: ''ANSWER: [LETTER]'' (without
+      quotes) where [LETTER] is one of {letters}. Think step by step before answering.
+
+
+      {question}
+
+
+      {choices}'
+    query_template: null
+    review_timeout: null
+    sandbox_config: {}
+    shuffle: false
+    shuffle_choices: false
+    subset_list:
+    - default
+    system_prompt: null
+    tags:
+    - Knowledge
+    - MCQ
+    train_split: null
+  ifeval:
+    aggregation: mean
+    dataset_id: opencompass/ifeval
+    default_subset: default
+    description: IFEval is a benchmark for evaluating instruction-following language
+      models, focusing on their ability to understand and respond to various prompts.
+      It includes a diverse set of tasks and metrics to assess model performance comprehensively.
+    eval_split: train
+    extra_params: {}
+    few_shot_num: 0
+    few_shot_prompt_template: null
+    few_shot_random: false
+    filters: null
+    force_redownload: false
+    metric_list:
+    - prompt_level_strict
+    - inst_level_strict
+    - prompt_level_loose
+    - inst_level_loose
+    name: ifeval
+    output_types:
+    - generation
+    pretty_name: IFEval
+    prompt_template: ''
+    query_template: null
+    review_timeout: null
+    sandbox_config: {}
+    shuffle: false
+    shuffle_choices: false
+    subset_list:
+    - default
+    system_prompt: null
+    tags:
+    - InstructionFollowing
+    train_split: null
+  math_500:
+    aggregation: mean
+    dataset_id: AI-ModelScope/MATH-500
+    default_subset: default
+    description: MATH-500 is a benchmark for evaluating mathematical reasoning capabilities
+      of AI models. It consists of 500 diverse math problems across five levels of
+      difficulty, designed to test a model's ability to solve complex mathematical
+      problems by generating step-by-step solutions and providing the correct final
+      answer.
+    eval_split: test
+    extra_params: {}
+    few_shot_num: 0
+    few_shot_prompt_template: null
+    few_shot_random: false
+    filters: null
+    force_redownload: false
+    metric_list:
+    - acc:
+        numeric: true
+    name: math_500
+    output_types:
+    - generation
+    pretty_name: MATH-500
+    prompt_template: '{question}
+
+      Please reason step by step, and put your final answer within \boxed{{}}.'
+    query_template: null
+    review_timeout: null
+    sandbox_config: {}
+    shuffle: false
+    shuffle_choices: false
+    subset_list:
+    - Level 1
+    - Level 2
+    - Level 3
+    - Level 4
+    - Level 5
+    system_prompt: null
+    tags:
+    - Math
+    - Reasoning
+    train_split: null
+  mmlu_pro:
+    aggregation: mean
+    dataset_id: TIGER-Lab/MMLU-Pro
+    default_subset: default
+    description: MMLU-Pro is a benchmark for evaluating language models on multiple-choice
+      questions across various subjects. It includes questions from different domains,
+      where the model must select the correct answer from given options.
+    eval_split: test
+    extra_params: {}
+    few_shot_num: 0
+    few_shot_prompt_template: 'The following are multiple choice questions (with answers)
+      about {subject}. Think step by step and then finish your answer with ''ANSWER:
+      [LETTER]'' (without quotes) where [LETTER] is the correct letter choice.
+
+
+      {examples}
+
+      Answer the following multiple choice question. The last line of your response
+      should be of the following format: ''ANSWER: [LETTER]'' (without quotes) where
+      [LETTER] is one of {letters}. Think step by step before answering.
+
+
+      Question:
+
+      {question}
+
+      Options:
+
+      {choices}
+
+      '
+    few_shot_random: false
+    filters: null
+    force_redownload: false
+    metric_list:
+    - acc
+    name: mmlu_pro
+    output_types:
+    - generation
+    pretty_name: MMLU-Pro
+    prompt_template: 'Answer the following multiple choice question. The last line
+      of your response should be of the following format: ''ANSWER: [LETTER]'' (without
+      quotes) where [LETTER] is one of {letters}. Think step by step before answering.
+
+
+      Question:
+
+      {question}
+
+      Options:
+
+      {choices}
+
+      '
+    query_template: null
+    review_timeout: null
+    sandbox_config: {}
+    shuffle: false
+    shuffle_choices: false
+    subset_list:
+    - computer science
+    - math
+    - chemistry
+    - engineering
+    - law
+    - biology
+    - health
+    - physics
+    - business
+    - philosophy
+    - economics
+    - other
+    - psychology
+    - history
+    system_prompt: null
+    tags:
+    - MCQ
+    - Knowledge
+    train_split: validation
+dataset_dir: /home/crq/.cache/modelscope/hub/datasets
+dataset_hub: modelscope
+datasets:
+- mmlu_pro
+- ifeval
+- ceval
+- math_500
+- aime24
+- gpqa_diamond
+debug: false
+eval_backend: Native
+eval_batch_size: 8
+eval_config: null
+eval_type: openai_api
+evalscope_version: 1.4.1
+generation_config:
+  batch_size: 8
+  max_tokens: 2048
+  stream: true
+  temperature: 0.0
+  timeout: 300000
+  top_p: 1.0
+ignore_errors: false
+judge_model_args: {}
+judge_strategy: auto
+judge_worker_num: 1
+limit: 100
+model: Qwen3-4B-Instruct-2507-eval
+model_args: {}
+model_id: Qwen3-4B-Instruct-2507-eval
+model_task: text_generation
+no_timestamp: false
+repeats: 1
+rerun_review: false
+sandbox_manager_config: {}
+sandbox_type: docker
+seed: 42
+stream: null
+timeout: null
+use_cache: /home/crq/llm_scripts/evalscope/outputs/20260108_153910
+use_sandbox: false
+work_dir: /home/crq/llm_scripts/evalscope/outputs/20260108_153910

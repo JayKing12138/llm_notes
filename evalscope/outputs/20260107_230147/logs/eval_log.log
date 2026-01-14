@@ -1,0 +1,202 @@
+2026-01-07 23:01:47 - evalscope - INFO: Running with native backend
+2026-01-07 23:01:47 - evalscope - INFO: Dump task config to ./outputs/20260107_230147/configs/task_config_8d0555.yaml
+2026-01-07 23:01:47 - evalscope - INFO: {
+    "model": "Qwen3-4B-Thinking-2507-eval",
+    "model_id": "Qwen3-4B-Thinking-2507-eval",
+    "model_args": {},
+    "model_task": "text_generation",
+    "chat_template": null,
+    "datasets": [
+        "general_qa"
+    ],
+    "dataset_args": {
+        "general_qa": {
+            "name": "general_qa",
+            "dataset_id": "/home/crq/llm_scripts/evalscope/temp_huatuo",
+            "output_types": [
+                "generation"
+            ],
+            "subset_list": [
+                "default"
+            ],
+            "default_subset": "default",
+            "few_shot_num": 0,
+            "few_shot_random": false,
+            "train_split": null,
+            "eval_split": "test",
+            "prompt_template": "你是一个专业的医生。请回答：\n{question}\n答案：",
+            "few_shot_prompt_template": null,
+            "system_prompt": null,
+            "query_template": null,
+            "pretty_name": "General-QA",
+            "description": "A general question answering dataset for custom evaluation. For detailed instructions on how to use this benchmark, please refer to the [User Guide](https://evalscope.readthedocs.io/en/latest/advanced_guides/custom_dataset/llm.html#qa).",
+            "tags": [
+                "QA",
+                "Custom"
+            ],
+            "filters": null,
+            "metric_list": [
+                "BLEU",
+                "Rouge"
+            ],
+            "aggregation": "mean",
+            "shuffle": false,
+            "shuffle_choices": false,
+            "force_redownload": false,
+            "review_timeout": null,
+            "extra_params": {},
+            "sandbox_config": {}
+        }
+    },
+    "dataset_dir": "/home/crq/.cache/modelscope/hub/datasets",
+    "dataset_hub": "modelscope",
+    "repeats": 1,
+    "generation_config": {
+        "batch_size": 8,
+        "stream": true,
+        "max_tokens": 4096,
+        "top_p": 1.0,
+        "temperature": 0.0
+    },
+    "eval_type": "openai_api",
+    "eval_backend": "Native",
+    "eval_config": null,
+    "limit": 100,
+    "eval_batch_size": 8,
+    "use_cache": null,
+    "rerun_review": false,
+    "work_dir": "./outputs/20260107_230147",
+    "no_timestamp": false,
+    "ignore_errors": false,
+    "debug": false,
+    "seed": 42,
+    "api_url": "http://127.0.0.1:8000/v1/chat/completions",
+    "timeout": null,
+    "stream": null,
+    "judge_strategy": "auto",
+    "judge_worker_num": 1,
+    "judge_model_args": {},
+    "analysis_report": false,
+    "use_sandbox": false,
+    "sandbox_type": "docker",
+    "sandbox_manager_config": {},
+    "evalscope_version": "1.4.1"
+}
+2026-01-07 23:01:47 - evalscope - INFO: Start loading benchmark dataset: general_qa
+2026-01-07 23:01:47 - evalscope - WARNING: No specific dataset file found, loading the first found file: /home/crq/llm_scripts/evalscope/temp_huatuo/test.jsonl
+2026-01-07 23:01:47 - evalscope - INFO: Start evaluating 1 subsets of the general_qa: ['default']
+2026-01-07 23:01:47 - evalscope - INFO: Evaluating subset: default
+2026-01-07 23:01:47 - evalscope - INFO: Getting predictions for subset: default
+2026-01-07 23:01:47 - evalscope - INFO: Processing 100 samples, if data is large, it may take a while.
+2026-01-07 23:01:47 - evalscope - INFO: Loading model for prediction...
+2026-01-07 23:01:47 - evalscope - INFO: Creating model Qwen3-4B-Thinking-2507-eval with eval_type=openai_api base_url=http://127.0.0.1:8000/v1/chat/completions, config={'retries': 5, 'retry_interval': 10, 'batch_size': 8, 'stream': True, 'max_tokens': 4096, 'top_p': 1.0, 'temperature': 0.0}, model_args={}
+2026-01-07 23:01:47 - evalscope - INFO: Model loaded successfully.
+2026-01-07 23:02:47 - evalscope - INFO: Predicting[general_qa@default]:    0%| 0/100 [Elapsed: 01:00 < Remaining: ?, ?it/s]
+2026-01-07 23:03:48 - evalscope - INFO: Predicting[general_qa@default]:    3%| 3/100 [Elapsed: 02:00 < Remaining: 46:06, 28.52s/it]
+2026-01-07 23:04:48 - evalscope - INFO: Predicting[general_qa@default]:    8%| 8/100 [Elapsed: 03:00 < Remaining: 09:26,  6.16s/it]
+2026-01-07 23:05:48 - evalscope - INFO: Predicting[general_qa@default]:   13%| 13/100 [Elapsed: 04:00 < Remaining: 15:34, 10.74s/it]
+2026-01-07 23:06:48 - evalscope - INFO: Predicting[general_qa@default]:   16%| 16/100 [Elapsed: 05:00 < Remaining: 29:09, 20.82s/it]
+2026-01-07 23:07:48 - evalscope - INFO: Predicting[general_qa@default]:   21%| 21/100 [Elapsed: 06:00 < Remaining: 10:47,  8.19s/it]
+2026-01-07 23:08:48 - evalscope - INFO: Predicting[general_qa@default]:   25%| 25/100 [Elapsed: 07:00 < Remaining: 19:17, 15.44s/it]
+2026-01-07 23:09:48 - evalscope - INFO: Predicting[general_qa@default]:   29%| 29/100 [Elapsed: 08:00 < Remaining: 15:23, 13.01s/it]
+2026-01-07 23:10:48 - evalscope - INFO: Predicting[general_qa@default]:   34%| 34/100 [Elapsed: 09:00 < Remaining: 14:29, 13.17s/it]
+2026-01-07 23:11:48 - evalscope - INFO: Predicting[general_qa@default]:   37%| 37/100 [Elapsed: 10:01 < Remaining: 13:23, 12.76s/it]
+2026-01-07 23:12:48 - evalscope - INFO: Predicting[general_qa@default]:   43%| 43/100 [Elapsed: 11:01 < Remaining: 09:13,  9.71s/it]
+2026-01-07 23:13:48 - evalscope - INFO: Predicting[general_qa@default]:   47%| 47/100 [Elapsed: 12:01 < Remaining: 13:24, 15.17s/it]
+2026-01-07 23:14:48 - evalscope - INFO: Predicting[general_qa@default]:   52%| 52/100 [Elapsed: 13:01 < Remaining: 08:25, 10.53s/it]
+2026-01-07 23:15:49 - evalscope - INFO: Predicting[general_qa@default]:   57%| 57/100 [Elapsed: 14:01 < Remaining: 09:23, 13.10s/it]
+2026-01-07 23:16:49 - evalscope - INFO: Predicting[general_qa@default]:   62%| 62/100 [Elapsed: 15:01 < Remaining: 06:52, 10.84s/it]
+2026-01-07 23:17:49 - evalscope - INFO: Predicting[general_qa@default]:   67%| 67/100 [Elapsed: 16:01 < Remaining: 06:56, 12.62s/it]
+2026-01-07 23:18:49 - evalscope - INFO: Predicting[general_qa@default]:   71%| 71/100 [Elapsed: 17:01 < Remaining: 07:14, 14.99s/it]
+2026-01-07 23:19:49 - evalscope - INFO: Predicting[general_qa@default]:   74%| 74/100 [Elapsed: 18:01 < Remaining: 05:27, 12.60s/it]
+2026-01-07 23:20:49 - evalscope - INFO: Predicting[general_qa@default]:   81%| 81/100 [Elapsed: 19:01 < Remaining: 02:23,  7.55s/it]
+2026-01-07 23:21:49 - evalscope - INFO: Predicting[general_qa@default]:   84%| 84/100 [Elapsed: 20:01 < Remaining: 04:09, 15.60s/it]
+2026-01-07 23:22:49 - evalscope - INFO: Predicting[general_qa@default]:   87%| 87/100 [Elapsed: 21:01 < Remaining: 04:19, 20.00s/it]
+2026-01-07 23:23:49 - evalscope - INFO: Predicting[general_qa@default]:   92%| 92/100 [Elapsed: 22:01 < Remaining: 01:54, 14.37s/it]
+2026-01-07 23:24:49 - evalscope - INFO: Predicting[general_qa@default]:   97%| 97/100 [Elapsed: 23:01 < Remaining: 00:26,  8.89s/it]
+2026-01-07 23:25:31 - evalscope - INFO: Predicting[general_qa@default]:  100%| 100/100 [Elapsed: 23:44 < Remaining: 00:00, 15.28s/it]
+2026-01-07 23:25:31 - evalscope - INFO: Finished getting predictions for subset: default.
+2026-01-07 23:25:31 - evalscope - INFO: Getting reviews for subset: default
+2026-01-07 23:25:31 - evalscope - INFO: Reviewing 100 samples, if data is large, it may take a while.
+2026-01-07 23:25:33 - evalscope - ERROR: Error calculating metric BLEU: 
+**********************************************************************
+  Resource [93mpunkt_tab[0m not found.
+  Please use the NLTK Downloader to obtain the resource:
+
+  [31m>>> import nltk
+  >>> nltk.download('punkt_tab')
+  [0m
+  For more information see: https://www.nltk.org/data.html
+
+  Attempted to load [93mtokenizers/punkt_tab/english/[0m
+
+  Searched in:
+    - '/home/crq/nltk_data'
+    - '/home/crq/.conda/envs/evalscope/nltk_data'
+    - '/home/crq/.conda/envs/evalscope/share/nltk_data'
+    - '/home/crq/.conda/envs/evalscope/lib/nltk_data'
+    - '/usr/share/nltk_data'
+    - '/usr/local/share/nltk_data'
+    - '/usr/lib/nltk_data'
+    - '/usr/local/lib/nltk_data'
+**********************************************************************
+
+2026-01-07 23:25:34 - evalscope - ERROR: Error when review sample 2: due to 1 validation error for SampleScore
+score
+  Input should be a valid dictionary or instance of Score [type=model_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/model_type
+Traceback:
+Traceback (most recent call last):
+  File "/home/crq/.conda/envs/evalscope/lib/python3.11/site-packages/evalscope/utils/function_utils.py", line 257, in run_in_threads_with_progress
+    res = future.result()
+          ^^^^^^^^^^^^^^^
+  File "/home/crq/.conda/envs/evalscope/lib/python3.11/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/crq/.conda/envs/evalscope/lib/python3.11/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/home/crq/.conda/envs/evalscope/lib/python3.11/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/crq/.conda/envs/evalscope/lib/python3.11/site-packages/evalscope/evaluator/evaluator.py", line 258, in worker
+    return self._review_task_state(task_state)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/crq/.conda/envs/evalscope/lib/python3.11/site-packages/evalscope/evaluator/evaluator.py", line 310, in _review_task_state
+    sample_score = self.benchmark.calculate_metrics(task_state=task_state)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/crq/.conda/envs/evalscope/lib/python3.11/site-packages/evalscope/api/benchmark/adapters/default_data_adapter.py", line 623, in calculate_metrics
+    sample_score = SampleScore(
+                   ^^^^^^^^^^^^
+  File "/home/crq/.conda/envs/evalscope/lib/python3.11/site-packages/pydantic/main.py", line 250, in __init__
+    validated_self = self.__pydantic_validator__.validate_python(data, self_instance=self)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+pydantic_core._pydantic_core.ValidationError: 1 validation error for SampleScore
+score
+  Input should be a valid dictionary or instance of Score [type=model_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/model_type
+
+2026-01-07 23:25:34 - evalscope - INFO: Reviewing[general_qa@default]:    3%| 3/100 [Elapsed: 00:02 < Remaining: 03:19,  2.06s/it]
+2026-01-07 23:25:37 - evalscope - ERROR: Error calculating metric BLEU: 
+**********************************************************************
+  Resource [93mpunkt_tab[0m not found.
+  Please use the NLTK Downloader to obtain the resource:
+
+  [31m>>> import nltk
+  >>> nltk.download('punkt_tab')
+  [0m
+  For more information see: https://www.nltk.org/data.html
+
+  Attempted to load [93mtokenizers/punkt_tab/english/[0m
+
+  Searched in:
+    - '/home/crq/nltk_data'
+    - '/home/crq/.conda/envs/evalscope/nltk_data'
+    - '/home/crq/.conda/envs/evalscope/share/nltk_data'
+    - '/home/crq/.conda/envs/evalscope/lib/nltk_data'
+    - '/usr/share/nltk_data'
+    - '/usr/local/share/nltk_data'
+    - '/usr/lib/nltk_data'
+    - '/usr/local/lib/nltk_data'
+**********************************************************************
+
+2026-01-07 23:25:40 - evalscope - INFO: Evaluating [general_qa]   0%| 0/1 [Elapsed: 23:52 < Remaining: ?, ?subset/s]

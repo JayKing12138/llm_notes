@@ -1,0 +1,593 @@
+2026-01-08 00:13:10 - evalscope - INFO: Running with native backend
+2026-01-08 00:13:10 - evalscope - INFO: Dump task config to ./outputs/20260108_001310/configs/task_config_4ed3d9.yaml
+2026-01-08 00:13:10 - evalscope - INFO: {
+    "model": "Qwen3-4B-Instruct-2507-eval",
+    "model_id": "Qwen3-4B-Instruct-2507-eval",
+    "model_args": {},
+    "model_task": "text_generation",
+    "chat_template": null,
+    "datasets": [
+        "mmlu_pro",
+        "ifeval",
+        "ceval",
+        "cmmlu",
+        "live_code_bench",
+        "math_500",
+        "aime24",
+        "gpqa_diamond"
+    ],
+    "dataset_args": {
+        "mmlu_pro": {
+            "name": "mmlu_pro",
+            "dataset_id": "TIGER-Lab/MMLU-Pro",
+            "output_types": [
+                "generation"
+            ],
+            "subset_list": [
+                "computer science",
+                "math",
+                "chemistry",
+                "engineering",
+                "law",
+                "biology",
+                "health",
+                "physics",
+                "business",
+                "philosophy",
+                "economics",
+                "other",
+                "psychology",
+                "history"
+            ],
+            "default_subset": "default",
+            "few_shot_num": 0,
+            "few_shot_random": false,
+            "train_split": "validation",
+            "eval_split": "test",
+            "prompt_template": "Answer the following multiple choice question. The last line of your response should be of the following format: 'ANSWER: [LETTER]' (without quotes) where [LETTER] is one of {letters}. Think step by step before answering.\n\nQuestion:\n{question}\nOptions:\n{choices}\n",
+            "few_shot_prompt_template": "The following are multiple choice questions (with answers) about {subject}. Think step by step and then finish your answer with 'ANSWER: [LETTER]' (without quotes) where [LETTER] is the correct letter choice.\n\n{examples}\nAnswer the following multiple choice question. The last line of your response should be of the following format: 'ANSWER: [LETTER]' (without quotes) where [LETTER] is one of {letters}. Think step by step before answering.\n\nQuestion:\n{question}\nOptions:\n{choices}\n",
+            "system_prompt": null,
+            "query_template": null,
+            "pretty_name": "MMLU-Pro",
+            "description": "MMLU-Pro is a benchmark for evaluating language models on multiple-choice questions across various subjects. It includes questions from different domains, where the model must select the correct answer from given options.",
+            "tags": [
+                "MCQ",
+                "Knowledge"
+            ],
+            "filters": null,
+            "metric_list": [
+                "acc"
+            ],
+            "aggregation": "mean",
+            "shuffle": false,
+            "shuffle_choices": false,
+            "force_redownload": false,
+            "review_timeout": null,
+            "extra_params": {},
+            "sandbox_config": {}
+        },
+        "ifeval": {
+            "name": "ifeval",
+            "dataset_id": "opencompass/ifeval",
+            "output_types": [
+                "generation"
+            ],
+            "subset_list": [
+                "default"
+            ],
+            "default_subset": "default",
+            "few_shot_num": 0,
+            "few_shot_random": false,
+            "train_split": null,
+            "eval_split": "train",
+            "prompt_template": "",
+            "few_shot_prompt_template": null,
+            "system_prompt": null,
+            "query_template": null,
+            "pretty_name": "IFEval",
+            "description": "IFEval is a benchmark for evaluating instruction-following language models, focusing on their ability to understand and respond to various prompts. It includes a diverse set of tasks and metrics to assess model performance comprehensively.",
+            "tags": [
+                "InstructionFollowing"
+            ],
+            "filters": null,
+            "metric_list": [
+                "prompt_level_strict",
+                "inst_level_strict",
+                "prompt_level_loose",
+                "inst_level_loose"
+            ],
+            "aggregation": "mean",
+            "shuffle": false,
+            "shuffle_choices": false,
+            "force_redownload": false,
+            "review_timeout": null,
+            "extra_params": {},
+            "sandbox_config": {}
+        },
+        "ceval": {
+            "name": "ceval",
+            "dataset_id": "ceval-exam",
+            "output_types": [
+                "generation"
+            ],
+            "subset_list": [
+                "computer_network",
+                "operating_system",
+                "computer_architecture",
+                "college_programming",
+                "college_physics",
+                "college_chemistry",
+                "advanced_mathematics",
+                "probability_and_statistics",
+                "discrete_mathematics",
+                "electrical_engineer",
+                "metrology_engineer",
+                "high_school_mathematics",
+                "high_school_physics",
+                "high_school_chemistry",
+                "high_school_biology",
+                "middle_school_mathematics",
+                "middle_school_biology",
+                "middle_school_physics",
+                "middle_school_chemistry",
+                "veterinary_medicine",
+                "college_economics",
+                "business_administration",
+                "marxism",
+                "mao_zedong_thought",
+                "education_science",
+                "teacher_qualification",
+                "high_school_politics",
+                "high_school_geography",
+                "middle_school_politics",
+                "middle_school_geography",
+                "modern_chinese_history",
+                "ideological_and_moral_cultivation",
+                "logic",
+                "law",
+                "chinese_language_and_literature",
+                "art_studies",
+                "professional_tour_guide",
+                "legal_professional",
+                "high_school_chinese",
+                "high_school_history",
+                "middle_school_history",
+                "civil_servant",
+                "sports_science",
+                "plant_protection",
+                "basic_medicine",
+                "clinical_medicine",
+                "urban_and_rural_planner",
+                "accountant",
+                "fire_engineer",
+                "environmental_impact_assessment_engineer",
+                "tax_accountant",
+                "physician"
+            ],
+            "default_subset": "default",
+            "few_shot_num": 5,
+            "few_shot_random": false,
+            "train_split": "dev",
+            "eval_split": "val",
+            "prompt_template": "以下是中国关于{subject}的单项选择题，请选出其中的正确答案。你的回答的最后一行应该是这样的格式：\"答案：[LETTER]\"（不带引号），其中 [LETTER] 是 A、B、C、D 中的一个。\n\n问题：{question}\n选项：\n{choices}\n",
+            "few_shot_prompt_template": "以下是一些示例问题：\n\n{fewshot}\n\n",
+            "system_prompt": null,
+            "query_template": null,
+            "pretty_name": "C-Eval",
+            "description": "C-Eval is a benchmark designed to evaluate the performance of AI models on Chinese exams across various subjects, including STEM, social sciences, and humanities. It consists of multiple-choice questions that test knowledge and reasoning abilities in these areas.",
+            "tags": [
+                "Knowledge",
+                "MCQ",
+                "Chinese"
+            ],
+            "filters": null,
+            "metric_list": [
+                "acc"
+            ],
+            "aggregation": "mean",
+            "shuffle": false,
+            "shuffle_choices": false,
+            "force_redownload": false,
+            "review_timeout": null,
+            "extra_params": {},
+            "sandbox_config": {}
+        },
+        "cmmlu": {
+            "name": "cmmlu",
+            "dataset_id": "evalscope/cmmlu",
+            "output_types": [
+                "generation"
+            ],
+            "subset_list": [
+                "agronomy",
+                "anatomy",
+                "ancient_chinese",
+                "arts",
+                "astronomy",
+                "business_ethics",
+                "chinese_civil_service_exam",
+                "chinese_driving_rule",
+                "chinese_food_culture",
+                "chinese_foreign_policy",
+                "chinese_history",
+                "chinese_literature",
+                "chinese_teacher_qualification",
+                "college_actuarial_science",
+                "college_education",
+                "college_engineering_hydrology",
+                "college_law",
+                "college_mathematics",
+                "college_medical_statistics",
+                "clinical_knowledge",
+                "college_medicine",
+                "computer_science",
+                "computer_security",
+                "conceptual_physics",
+                "construction_project_management",
+                "economics",
+                "education",
+                "elementary_chinese",
+                "elementary_commonsense",
+                "elementary_information_and_technology",
+                "electrical_engineering",
+                "elementary_mathematics",
+                "ethnology",
+                "food_science",
+                "genetics",
+                "global_facts",
+                "high_school_biology",
+                "high_school_chemistry",
+                "high_school_geography",
+                "high_school_mathematics",
+                "high_school_physics",
+                "high_school_politics",
+                "human_sexuality",
+                "international_law",
+                "journalism",
+                "jurisprudence",
+                "legal_and_moral_basis",
+                "logical",
+                "machine_learning",
+                "management",
+                "marketing",
+                "marxist_theory",
+                "modern_chinese",
+                "nutrition",
+                "philosophy",
+                "professional_accounting",
+                "professional_law",
+                "professional_medicine",
+                "professional_psychology",
+                "public_relations",
+                "security_study",
+                "sociology",
+                "sports_science",
+                "traditional_chinese_medicine",
+                "virology",
+                "world_history",
+                "world_religions"
+            ],
+            "default_subset": "default",
+            "few_shot_num": 5,
+            "few_shot_random": false,
+            "train_split": null,
+            "eval_split": "test",
+            "prompt_template": "回答下面的单项选择题，请选出其中的正确答案。你的回答的最后一行应该是这样的格式：\"答案：[LETTER]\"（不带引号），其中 [LETTER] 是 {letters} 中的一个。请在回答前进行一步步思考。\n\n问题：{question}\n选项：\n{choices}\n",
+            "few_shot_prompt_template": null,
+            "system_prompt": null,
+            "query_template": null,
+            "pretty_name": "C-MMLU",
+            "description": "C-MMLU is a benchmark designed to evaluate the performance of AI models on Chinese language tasks, including reading comprehension, text classification, and more.",
+            "tags": [
+                "Knowledge",
+                "MCQ",
+                "Chinese"
+            ],
+            "filters": null,
+            "metric_list": [
+                "acc"
+            ],
+            "aggregation": "mean",
+            "shuffle": false,
+            "shuffle_choices": false,
+            "force_redownload": false,
+            "review_timeout": null,
+            "extra_params": {},
+            "sandbox_config": {}
+        },
+        "live_code_bench": {
+            "name": "live_code_bench",
+            "dataset_id": "AI-ModelScope/code_generation_lite",
+            "output_types": [
+                "generation"
+            ],
+            "subset_list": [
+                "v5_v6"
+            ],
+            "default_subset": "default",
+            "few_shot_num": 0,
+            "few_shot_random": false,
+            "train_split": null,
+            "eval_split": "test",
+            "prompt_template": "### Question:\n{question_content}\n\n{format_prompt} ### Answer: (use the provided format with backticks)\n\n",
+            "few_shot_prompt_template": null,
+            "system_prompt": null,
+            "query_template": null,
+            "pretty_name": "Live-Code-Bench",
+            "description": "Live Code Bench is a benchmark for evaluating code generation models on real-world coding tasks. It includes a variety of programming problems with test cases to assess the model's ability to generate correct and efficient code solutions. **By default the code is executed in local environment. We recommend using sandbox execution to safely run and evaluate the generated code, please refer to the [documentation](https://evalscope.readthedocs.io/en/latest/user_guides/sandbox.html) for more details.**",
+            "tags": [
+                "Coding"
+            ],
+            "filters": null,
+            "metric_list": [
+                "acc"
+            ],
+            "aggregation": "mean_and_pass_at_k",
+            "shuffle": false,
+            "shuffle_choices": false,
+            "force_redownload": false,
+            "review_timeout": 6,
+            "extra_params": {
+                "start_date": "2025-01-01",
+                "end_date": "2025-04-30",
+                "debug": false
+            },
+            "sandbox_config": {
+                "image": "python:3.11-slim",
+                "tools_config": {
+                    "shell_executor": {},
+                    "python_executor": {}
+                }
+            }
+        },
+        "math_500": {
+            "name": "math_500",
+            "dataset_id": "AI-ModelScope/MATH-500",
+            "output_types": [
+                "generation"
+            ],
+            "subset_list": [
+                "Level 1",
+                "Level 2",
+                "Level 3",
+                "Level 4",
+                "Level 5"
+            ],
+            "default_subset": "default",
+            "few_shot_num": 0,
+            "few_shot_random": false,
+            "train_split": null,
+            "eval_split": "test",
+            "prompt_template": "{question}\nPlease reason step by step, and put your final answer within \\boxed{{}}.",
+            "few_shot_prompt_template": null,
+            "system_prompt": null,
+            "query_template": null,
+            "pretty_name": "MATH-500",
+            "description": "MATH-500 is a benchmark for evaluating mathematical reasoning capabilities of AI models. It consists of 500 diverse math problems across five levels of difficulty, designed to test a model's ability to solve complex mathematical problems by generating step-by-step solutions and providing the correct final answer.",
+            "tags": [
+                "Math",
+                "Reasoning"
+            ],
+            "filters": null,
+            "metric_list": [
+                {
+                    "acc": {
+                        "numeric": true
+                    }
+                }
+            ],
+            "aggregation": "mean",
+            "shuffle": false,
+            "shuffle_choices": false,
+            "force_redownload": false,
+            "review_timeout": null,
+            "extra_params": {},
+            "sandbox_config": {}
+        },
+        "aime24": {
+            "name": "aime24",
+            "dataset_id": "HuggingFaceH4/aime_2024",
+            "output_types": [
+                "generation"
+            ],
+            "subset_list": [
+                "default"
+            ],
+            "default_subset": "default",
+            "few_shot_num": 0,
+            "few_shot_random": false,
+            "train_split": null,
+            "eval_split": "train",
+            "prompt_template": "{question}\nPlease reason step by step, and put your final answer within \\boxed{{}}.",
+            "few_shot_prompt_template": null,
+            "system_prompt": null,
+            "query_template": null,
+            "pretty_name": "AIME-2024",
+            "description": "The AIME 2024 benchmark is based on problems from the American Invitational Mathematics Examination, a prestigious high school mathematics competition. This benchmark tests a model's ability to solve challenging mathematics problems by generating step-by-step solutions and providing the correct final answer.",
+            "tags": [
+                "Math",
+                "Reasoning"
+            ],
+            "filters": null,
+            "metric_list": [
+                {
+                    "acc": {
+                        "numeric": true
+                    }
+                }
+            ],
+            "aggregation": "mean",
+            "shuffle": false,
+            "shuffle_choices": false,
+            "force_redownload": false,
+            "review_timeout": null,
+            "extra_params": {},
+            "sandbox_config": {}
+        },
+        "gpqa_diamond": {
+            "name": "gpqa_diamond",
+            "dataset_id": "AI-ModelScope/gpqa_diamond",
+            "output_types": [
+                "generation"
+            ],
+            "subset_list": [
+                "default"
+            ],
+            "default_subset": "default",
+            "few_shot_num": 0,
+            "few_shot_random": false,
+            "train_split": null,
+            "eval_split": "train",
+            "prompt_template": "Answer the following multiple choice question. The last line of your response should be of the following format: 'ANSWER: [LETTER]' (without quotes) where [LETTER] is one of {letters}. Think step by step before answering.\n\n{question}\n\n{choices}",
+            "few_shot_prompt_template": null,
+            "system_prompt": null,
+            "query_template": null,
+            "pretty_name": "GPQA-Diamond",
+            "description": "GPQA is a dataset for evaluating the reasoning ability of large language models (LLMs) on complex mathematical problems. It contains questions that require step-by-step reasoning to arrive at the correct answer.",
+            "tags": [
+                "Knowledge",
+                "MCQ"
+            ],
+            "filters": null,
+            "metric_list": [
+                "acc"
+            ],
+            "aggregation": "mean",
+            "shuffle": false,
+            "shuffle_choices": false,
+            "force_redownload": false,
+            "review_timeout": null,
+            "extra_params": {},
+            "sandbox_config": {}
+        }
+    },
+    "dataset_dir": "/home/crq/.cache/modelscope/hub/datasets",
+    "dataset_hub": "modelscope",
+    "repeats": 1,
+    "generation_config": {
+        "timeout": 300000,
+        "batch_size": 8,
+        "stream": true,
+        "max_tokens": 2048,
+        "top_p": 1.0,
+        "temperature": 0.0
+    },
+    "eval_type": "openai_api",
+    "eval_backend": "Native",
+    "eval_config": null,
+    "limit": 100,
+    "eval_batch_size": 8,
+    "use_cache": null,
+    "rerun_review": false,
+    "work_dir": "./outputs/20260108_001310",
+    "no_timestamp": false,
+    "ignore_errors": false,
+    "debug": false,
+    "seed": 42,
+    "api_url": "http://127.0.0.1:8010/v1/chat/completions",
+    "timeout": null,
+    "stream": null,
+    "judge_strategy": "auto",
+    "judge_worker_num": 1,
+    "judge_model_args": {},
+    "analysis_report": false,
+    "use_sandbox": false,
+    "sandbox_type": "docker",
+    "sandbox_manager_config": {},
+    "evalscope_version": "1.4.1"
+}
+2026-01-08 00:13:10 - evalscope - INFO: Start loading benchmark dataset: mmlu_pro
+2026-01-08 00:13:11 - evalscope - INFO: Start evaluating 14 subsets of the mmlu_pro: ['computer science', 'math', 'chemistry', 'engineering', 'law', 'biology', 'health', 'physics', 'business', 'philosophy', 'economics', 'other', 'psychology', 'history']
+2026-01-08 00:13:11 - evalscope - INFO: Evaluating subset: computer science
+2026-01-08 00:13:11 - evalscope - INFO: Getting predictions for subset: computer science
+2026-01-08 00:13:11 - evalscope - INFO: Processing 100 samples, if data is large, it may take a while.
+2026-01-08 00:13:11 - evalscope - INFO: Loading model for prediction...
+2026-01-08 00:13:11 - evalscope - INFO: Creating model Qwen3-4B-Instruct-2507-eval with eval_type=openai_api base_url=http://127.0.0.1:8010/v1/chat/completions, config={'timeout': 300000, 'retries': 5, 'retry_interval': 10, 'batch_size': 8, 'stream': True, 'max_tokens': 2048, 'top_p': 1.0, 'temperature': 0.0}, model_args={}
+2026-01-08 00:13:11 - evalscope - INFO: Model loaded successfully.
+2026-01-08 00:14:12 - evalscope - INFO: Predicting[mmlu_pro@computer science]:   61%| 61/100 [Elapsed: 01:00 < Remaining: 00:37,  1.04it/s]
+2026-01-08 00:14:48 - evalscope - INFO: Predicting[mmlu_pro@computer science]:  100%| 100/100 [Elapsed: 01:37 < Remaining: 00:00,  1.42it/s]
+2026-01-08 00:14:48 - evalscope - INFO: Finished getting predictions for subset: computer science.
+2026-01-08 00:14:48 - evalscope - INFO: Getting reviews for subset: computer science
+2026-01-08 00:14:48 - evalscope - INFO: Reviewing 100 samples, if data is large, it may take a while.
+2026-01-08 00:14:49 - evalscope - INFO: Reviewing[mmlu_pro@computer science]:  100%| 100/100 [Elapsed: 00:00 < Remaining: 00:00, 2112.99it/s]
+2026-01-08 00:14:49 - evalscope - INFO: Finished reviewing subset: computer science. Total reviewed: 100
+2026-01-08 00:14:49 - evalscope - INFO: Aggregating scores for subset: computer science
+2026-01-08 00:14:49 - evalscope - INFO: Evaluating [mmlu_pro]   7%| 1/14 [Elapsed: 01:37 < Remaining: 21:04, 97.29s/subset]
+2026-01-08 00:14:49 - evalscope - INFO: Evaluating subset: math
+2026-01-08 00:14:49 - evalscope - INFO: Getting predictions for subset: math
+2026-01-08 00:14:49 - evalscope - INFO: Processing 100 samples, if data is large, it may take a while.
+2026-01-08 00:15:49 - evalscope - INFO: Predicting[mmlu_pro@math]:   70%| 70/100 [Elapsed: 01:00 < Remaining: 00:31,  1.04s/it]
+2026-01-08 00:16:25 - evalscope - INFO: Predicting[mmlu_pro@math]:  100%| 100/100 [Elapsed: 01:36 < Remaining: 00:00,  1.10it/s]
+2026-01-08 00:16:25 - evalscope - INFO: Finished getting predictions for subset: math.
+2026-01-08 00:16:25 - evalscope - INFO: Getting reviews for subset: math
+2026-01-08 00:16:25 - evalscope - INFO: Reviewing 100 samples, if data is large, it may take a while.
+2026-01-08 00:16:25 - evalscope - INFO: Reviewing[mmlu_pro@math]:  100%| 100/100 [Elapsed: 00:00 < Remaining: 00:00, 2130.05it/s]
+2026-01-08 00:16:25 - evalscope - INFO: Finished reviewing subset: math. Total reviewed: 100
+2026-01-08 00:16:25 - evalscope - INFO: Aggregating scores for subset: math
+2026-01-08 00:16:25 - evalscope - INFO: Evaluating [mmlu_pro]  14%| 2/14 [Elapsed: 03:13 < Remaining: 19:19, 96.64s/subset]
+2026-01-08 00:16:25 - evalscope - INFO: Evaluating subset: chemistry
+2026-01-08 00:16:25 - evalscope - INFO: Getting predictions for subset: chemistry
+2026-01-08 00:16:25 - evalscope - INFO: Processing 100 samples, if data is large, it may take a while.
+2026-01-08 00:17:25 - evalscope - INFO: Predicting[mmlu_pro@chemistry]:   55%| 55/100 [Elapsed: 01:00 < Remaining: 00:46,  1.04s/it]
+2026-01-08 00:18:25 - evalscope - INFO: Predicting[mmlu_pro@chemistry]:   99%| 99/100 [Elapsed: 02:00 < Remaining: 00:01,  1.40s/it]
+2026-01-08 00:18:26 - evalscope - INFO: Predicting[mmlu_pro@chemistry]:  100%| 100/100 [Elapsed: 02:00 < Remaining: 00:00,  1.60s/it]
+2026-01-08 00:18:26 - evalscope - INFO: Finished getting predictions for subset: chemistry.
+2026-01-08 00:18:26 - evalscope - INFO: Getting reviews for subset: chemistry
+2026-01-08 00:18:26 - evalscope - INFO: Reviewing 100 samples, if data is large, it may take a while.
+2026-01-08 00:18:26 - evalscope - INFO: Reviewing[mmlu_pro@chemistry]:  100%| 100/100 [Elapsed: 00:00 < Remaining: 00:00, 2299.50it/s]
+2026-01-08 00:18:26 - evalscope - INFO: Finished reviewing subset: chemistry. Total reviewed: 100
+2026-01-08 00:18:26 - evalscope - INFO: Aggregating scores for subset: chemistry
+2026-01-08 00:18:26 - evalscope - INFO: Evaluating [mmlu_pro]  21%| 3/14 [Elapsed: 05:14 < Remaining: 19:45, 107.77s/subset]
+2026-01-08 00:18:26 - evalscope - INFO: Evaluating subset: engineering
+2026-01-08 00:18:26 - evalscope - INFO: Getting predictions for subset: engineering
+2026-01-08 00:18:26 - evalscope - INFO: Processing 100 samples, if data is large, it may take a while.
+2026-01-08 00:19:26 - evalscope - INFO: Predicting[mmlu_pro@engineering]:   46%| 46/100 [Elapsed: 01:00 < Remaining: 00:57,  1.07s/it]
+2026-01-08 00:20:26 - evalscope - INFO: Predicting[mmlu_pro@engineering]:   98%| 98/100 [Elapsed: 02:00 < Remaining: 00:02,  1.14s/it]
+2026-01-08 00:20:34 - evalscope - INFO: Predicting[mmlu_pro@engineering]:  100%| 100/100 [Elapsed: 02:08 < Remaining: 00:00,  1.98s/it]
+2026-01-08 00:20:34 - evalscope - INFO: Finished getting predictions for subset: engineering.
+2026-01-08 00:20:34 - evalscope - INFO: Getting reviews for subset: engineering
+2026-01-08 00:20:34 - evalscope - INFO: Reviewing 100 samples, if data is large, it may take a while.
+2026-01-08 00:20:34 - evalscope - INFO: Reviewing[mmlu_pro@engineering]:  100%| 100/100 [Elapsed: 00:00 < Remaining: 00:00, 1836.33it/s]
+2026-01-08 00:20:34 - evalscope - INFO: Finished reviewing subset: engineering. Total reviewed: 100
+2026-01-08 00:20:34 - evalscope - INFO: Aggregating scores for subset: engineering
+2026-01-08 00:20:34 - evalscope - INFO: Evaluating [mmlu_pro]  29%| 4/14 [Elapsed: 07:23 < Remaining: 19:19, 115.96s/subset]
+2026-01-08 00:20:34 - evalscope - INFO: Evaluating subset: law
+2026-01-08 00:20:34 - evalscope - INFO: Getting predictions for subset: law
+2026-01-08 00:20:34 - evalscope - INFO: Processing 100 samples, if data is large, it may take a while.
+2026-01-08 00:21:34 - evalscope - INFO: Predicting[mmlu_pro@law]:   65%| 65/100 [Elapsed: 01:00 < Remaining: 00:30,  1.16it/s]
+2026-01-08 00:22:03 - evalscope - INFO: Predicting[mmlu_pro@law]:  100%| 100/100 [Elapsed: 01:29 < Remaining: 00:00,  1.02it/s]
+2026-01-08 00:22:03 - evalscope - INFO: Finished getting predictions for subset: law.
+2026-01-08 00:22:03 - evalscope - INFO: Getting reviews for subset: law
+2026-01-08 00:22:03 - evalscope - INFO: Reviewing 100 samples, if data is large, it may take a while.
+2026-01-08 00:22:03 - evalscope - INFO: Reviewing[mmlu_pro@law]:  100%| 100/100 [Elapsed: 00:00 < Remaining: 00:00, 2097.91it/s]
+2026-01-08 00:22:03 - evalscope - INFO: Finished reviewing subset: law. Total reviewed: 100
+2026-01-08 00:22:03 - evalscope - INFO: Aggregating scores for subset: law
+2026-01-08 00:22:03 - evalscope - INFO: Evaluating [mmlu_pro]  36%| 5/14 [Elapsed: 08:52 < Remaining: 15:56, 106.30s/subset]
+2026-01-08 00:22:03 - evalscope - INFO: Evaluating subset: biology
+2026-01-08 00:22:03 - evalscope - INFO: Getting predictions for subset: biology
+2026-01-08 00:22:03 - evalscope - INFO: Processing 100 samples, if data is large, it may take a while.
+2026-01-08 00:23:04 - evalscope - INFO: Predicting[mmlu_pro@biology]:   70%| 70/100 [Elapsed: 01:00 < Remaining: 00:19,  1.56it/s]
+2026-01-08 00:23:31 - evalscope - INFO: Predicting[mmlu_pro@biology]:  100%| 100/100 [Elapsed: 01:27 < Remaining: 00:00,  1.06it/s]
+2026-01-08 00:23:31 - evalscope - INFO: Finished getting predictions for subset: biology.
+2026-01-08 00:23:31 - evalscope - INFO: Getting reviews for subset: biology
+2026-01-08 00:23:31 - evalscope - INFO: Reviewing 100 samples, if data is large, it may take a while.
+2026-01-08 00:23:31 - evalscope - INFO: Reviewing[mmlu_pro@biology]:  100%| 100/100 [Elapsed: 00:00 < Remaining: 00:00, 2258.07it/s]
+2026-01-08 00:23:31 - evalscope - INFO: Finished reviewing subset: biology. Total reviewed: 100
+2026-01-08 00:23:31 - evalscope - INFO: Aggregating scores for subset: biology
+2026-01-08 00:23:31 - evalscope - INFO: Evaluating [mmlu_pro]  43%| 6/14 [Elapsed: 10:19 < Remaining: 13:19, 99.92s/subset]
+2026-01-08 00:23:31 - evalscope - INFO: Evaluating subset: health
+2026-01-08 00:23:31 - evalscope - INFO: Getting predictions for subset: health
+2026-01-08 00:23:31 - evalscope - INFO: Processing 100 samples, if data is large, it may take a while.
+2026-01-08 00:24:31 - evalscope - INFO: Predicting[mmlu_pro@health]:   71%| 71/100 [Elapsed: 01:00 < Remaining: 00:19,  1.52it/s]
+2026-01-08 00:24:51 - evalscope - INFO: Predicting[mmlu_pro@health]:  100%| 100/100 [Elapsed: 01:20 < Remaining: 00:00,  1.75it/s]
+2026-01-08 00:24:51 - evalscope - INFO: Finished getting predictions for subset: health.
+2026-01-08 00:24:51 - evalscope - INFO: Getting reviews for subset: health
+2026-01-08 00:24:51 - evalscope - INFO: Reviewing 100 samples, if data is large, it may take a while.
+2026-01-08 00:24:51 - evalscope - INFO: Reviewing[mmlu_pro@health]:  100%| 100/100 [Elapsed: 00:00 < Remaining: 00:00, 2319.56it/s]
+2026-01-08 00:24:51 - evalscope - INFO: Finished reviewing subset: health. Total reviewed: 100
+2026-01-08 00:24:51 - evalscope - INFO: Aggregating scores for subset: health
+2026-01-08 00:24:51 - evalscope - INFO: Evaluating [mmlu_pro]  50%| 7/14 [Elapsed: 11:40 < Remaining: 10:55, 93.59s/subset]
+2026-01-08 00:24:51 - evalscope - INFO: Evaluating subset: physics
+2026-01-08 00:24:51 - evalscope - INFO: Getting predictions for subset: physics
+2026-01-08 00:24:51 - evalscope - INFO: Processing 100 samples, if data is large, it may take a while.
+2026-01-08 00:24:57 - evalscope - INFO: Predicting[mmlu_pro@physics]:    1%| 1/100 [Elapsed: 00:05 < Remaining: 06:36,  4.00s/it]

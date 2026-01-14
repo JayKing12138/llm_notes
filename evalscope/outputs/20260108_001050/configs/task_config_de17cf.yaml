@@ -1,0 +1,545 @@
+analysis_report: false
+api_url: http://127.0.0.1:8000/v1/chat/completions
+chat_template: null
+dataset_args:
+  aime24:
+    aggregation: mean
+    dataset_id: HuggingFaceH4/aime_2024
+    default_subset: default
+    description: The AIME 2024 benchmark is based on problems from the American Invitational
+      Mathematics Examination, a prestigious high school mathematics competition.
+      This benchmark tests a model's ability to solve challenging mathematics problems
+      by generating step-by-step solutions and providing the correct final answer.
+    eval_split: train
+    extra_params: {}
+    few_shot_num: 0
+    few_shot_prompt_template: null
+    few_shot_random: false
+    filters: null
+    force_redownload: false
+    metric_list:
+    - acc:
+        numeric: true
+    name: aime24
+    output_types:
+    - generation
+    pretty_name: AIME-2024
+    prompt_template: '{question}
+
+      Please reason step by step, and put your final answer within \boxed{{}}.'
+    query_template: null
+    review_timeout: null
+    sandbox_config: {}
+    shuffle: false
+    shuffle_choices: false
+    subset_list:
+    - default
+    system_prompt: null
+    tags:
+    - Math
+    - Reasoning
+    train_split: null
+  ceval:
+    aggregation: mean
+    dataset_id: ceval-exam
+    default_subset: default
+    description: C-Eval is a benchmark designed to evaluate the performance of AI
+      models on Chinese exams across various subjects, including STEM, social sciences,
+      and humanities. It consists of multiple-choice questions that test knowledge
+      and reasoning abilities in these areas.
+    eval_split: val
+    extra_params: {}
+    few_shot_num: 5
+    few_shot_prompt_template: '以下是一些示例问题：
+
+
+      {fewshot}
+
+
+      '
+    few_shot_random: false
+    filters: null
+    force_redownload: false
+    metric_list:
+    - acc
+    name: ceval
+    output_types:
+    - generation
+    pretty_name: C-Eval
+    prompt_template: '以下是中国关于{subject}的单项选择题，请选出其中的正确答案。你的回答的最后一行应该是这样的格式："答案：[LETTER]"（不带引号），其中
+      [LETTER] 是 A、B、C、D 中的一个。
+
+
+      问题：{question}
+
+      选项：
+
+      {choices}
+
+      '
+    query_template: null
+    review_timeout: null
+    sandbox_config: {}
+    shuffle: false
+    shuffle_choices: false
+    subset_list:
+    - computer_network
+    - operating_system
+    - computer_architecture
+    - college_programming
+    - college_physics
+    - college_chemistry
+    - advanced_mathematics
+    - probability_and_statistics
+    - discrete_mathematics
+    - electrical_engineer
+    - metrology_engineer
+    - high_school_mathematics
+    - high_school_physics
+    - high_school_chemistry
+    - high_school_biology
+    - middle_school_mathematics
+    - middle_school_biology
+    - middle_school_physics
+    - middle_school_chemistry
+    - veterinary_medicine
+    - college_economics
+    - business_administration
+    - marxism
+    - mao_zedong_thought
+    - education_science
+    - teacher_qualification
+    - high_school_politics
+    - high_school_geography
+    - middle_school_politics
+    - middle_school_geography
+    - modern_chinese_history
+    - ideological_and_moral_cultivation
+    - logic
+    - law
+    - chinese_language_and_literature
+    - art_studies
+    - professional_tour_guide
+    - legal_professional
+    - high_school_chinese
+    - high_school_history
+    - middle_school_history
+    - civil_servant
+    - sports_science
+    - plant_protection
+    - basic_medicine
+    - clinical_medicine
+    - urban_and_rural_planner
+    - accountant
+    - fire_engineer
+    - environmental_impact_assessment_engineer
+    - tax_accountant
+    - physician
+    system_prompt: null
+    tags:
+    - Knowledge
+    - MCQ
+    - Chinese
+    train_split: dev
+  cmmlu:
+    aggregation: mean
+    dataset_id: evalscope/cmmlu
+    default_subset: default
+    description: C-MMLU is a benchmark designed to evaluate the performance of AI
+      models on Chinese language tasks, including reading comprehension, text classification,
+      and more.
+    eval_split: test
+    extra_params: {}
+    few_shot_num: 5
+    few_shot_prompt_template: null
+    few_shot_random: false
+    filters: null
+    force_redownload: false
+    metric_list:
+    - acc
+    name: cmmlu
+    output_types:
+    - generation
+    pretty_name: C-MMLU
+    prompt_template: '回答下面的单项选择题，请选出其中的正确答案。你的回答的最后一行应该是这样的格式："答案：[LETTER]"（不带引号），其中
+      [LETTER] 是 {letters} 中的一个。请在回答前进行一步步思考。
+
+
+      问题：{question}
+
+      选项：
+
+      {choices}
+
+      '
+    query_template: null
+    review_timeout: null
+    sandbox_config: {}
+    shuffle: false
+    shuffle_choices: false
+    subset_list:
+    - agronomy
+    - anatomy
+    - ancient_chinese
+    - arts
+    - astronomy
+    - business_ethics
+    - chinese_civil_service_exam
+    - chinese_driving_rule
+    - chinese_food_culture
+    - chinese_foreign_policy
+    - chinese_history
+    - chinese_literature
+    - chinese_teacher_qualification
+    - college_actuarial_science
+    - college_education
+    - college_engineering_hydrology
+    - college_law
+    - college_mathematics
+    - college_medical_statistics
+    - clinical_knowledge
+    - college_medicine
+    - computer_science
+    - computer_security
+    - conceptual_physics
+    - construction_project_management
+    - economics
+    - education
+    - elementary_chinese
+    - elementary_commonsense
+    - elementary_information_and_technology
+    - electrical_engineering
+    - elementary_mathematics
+    - ethnology
+    - food_science
+    - genetics
+    - global_facts
+    - high_school_biology
+    - high_school_chemistry
+    - high_school_geography
+    - high_school_mathematics
+    - high_school_physics
+    - high_school_politics
+    - human_sexuality
+    - international_law
+    - journalism
+    - jurisprudence
+    - legal_and_moral_basis
+    - logical
+    - machine_learning
+    - management
+    - marketing
+    - marxist_theory
+    - modern_chinese
+    - nutrition
+    - philosophy
+    - professional_accounting
+    - professional_law
+    - professional_medicine
+    - professional_psychology
+    - public_relations
+    - security_study
+    - sociology
+    - sports_science
+    - traditional_chinese_medicine
+    - virology
+    - world_history
+    - world_religions
+    system_prompt: null
+    tags:
+    - Knowledge
+    - MCQ
+    - Chinese
+    train_split: null
+  gpqa_diamond:
+    aggregation: mean
+    dataset_id: AI-ModelScope/gpqa_diamond
+    default_subset: default
+    description: GPQA is a dataset for evaluating the reasoning ability of large language
+      models (LLMs) on complex mathematical problems. It contains questions that require
+      step-by-step reasoning to arrive at the correct answer.
+    eval_split: train
+    extra_params: {}
+    few_shot_num: 0
+    few_shot_prompt_template: null
+    few_shot_random: false
+    filters: null
+    force_redownload: false
+    metric_list:
+    - acc
+    name: gpqa_diamond
+    output_types:
+    - generation
+    pretty_name: GPQA-Diamond
+    prompt_template: 'Answer the following multiple choice question. The last line
+      of your response should be of the following format: ''ANSWER: [LETTER]'' (without
+      quotes) where [LETTER] is one of {letters}. Think step by step before answering.
+
+
+      {question}
+
+
+      {choices}'
+    query_template: null
+    review_timeout: null
+    sandbox_config: {}
+    shuffle: false
+    shuffle_choices: false
+    subset_list:
+    - default
+    system_prompt: null
+    tags:
+    - Knowledge
+    - MCQ
+    train_split: null
+  ifeval:
+    aggregation: mean
+    dataset_id: opencompass/ifeval
+    default_subset: default
+    description: IFEval is a benchmark for evaluating instruction-following language
+      models, focusing on their ability to understand and respond to various prompts.
+      It includes a diverse set of tasks and metrics to assess model performance comprehensively.
+    eval_split: train
+    extra_params: {}
+    few_shot_num: 0
+    few_shot_prompt_template: null
+    few_shot_random: false
+    filters: null
+    force_redownload: false
+    metric_list:
+    - prompt_level_strict
+    - inst_level_strict
+    - prompt_level_loose
+    - inst_level_loose
+    name: ifeval
+    output_types:
+    - generation
+    pretty_name: IFEval
+    prompt_template: ''
+    query_template: null
+    review_timeout: null
+    sandbox_config: {}
+    shuffle: false
+    shuffle_choices: false
+    subset_list:
+    - default
+    system_prompt: null
+    tags:
+    - InstructionFollowing
+    train_split: null
+  live_code_bench:
+    aggregation: mean_and_pass_at_k
+    dataset_id: AI-ModelScope/code_generation_lite
+    default_subset: default
+    description: Live Code Bench is a benchmark for evaluating code generation models
+      on real-world coding tasks. It includes a variety of programming problems with
+      test cases to assess the model's ability to generate correct and efficient code
+      solutions. **By default the code is executed in local environment. We recommend
+      using sandbox execution to safely run and evaluate the generated code, please
+      refer to the [documentation](https://evalscope.readthedocs.io/en/latest/user_guides/sandbox.html)
+      for more details.**
+    eval_split: test
+    extra_params:
+      debug: false
+      end_date: '2025-04-30'
+      start_date: '2025-01-01'
+    few_shot_num: 0
+    few_shot_prompt_template: null
+    few_shot_random: false
+    filters: null
+    force_redownload: false
+    metric_list:
+    - acc
+    name: live_code_bench
+    output_types:
+    - generation
+    pretty_name: Live-Code-Bench
+    prompt_template: '### Question:
+
+      {question_content}
+
+
+      {format_prompt} ### Answer: (use the provided format with backticks)
+
+
+      '
+    query_template: null
+    review_timeout: 6
+    sandbox_config:
+      image: python:3.11-slim
+      tools_config:
+        python_executor: {}
+        shell_executor: {}
+    shuffle: false
+    shuffle_choices: false
+    subset_list:
+    - v5_v6
+    system_prompt: null
+    tags:
+    - Coding
+    train_split: null
+  math_500:
+    aggregation: mean
+    dataset_id: AI-ModelScope/MATH-500
+    default_subset: default
+    description: MATH-500 is a benchmark for evaluating mathematical reasoning capabilities
+      of AI models. It consists of 500 diverse math problems across five levels of
+      difficulty, designed to test a model's ability to solve complex mathematical
+      problems by generating step-by-step solutions and providing the correct final
+      answer.
+    eval_split: test
+    extra_params: {}
+    few_shot_num: 0
+    few_shot_prompt_template: null
+    few_shot_random: false
+    filters: null
+    force_redownload: false
+    metric_list:
+    - acc:
+        numeric: true
+    name: math_500
+    output_types:
+    - generation
+    pretty_name: MATH-500
+    prompt_template: '{question}
+
+      Please reason step by step, and put your final answer within \boxed{{}}.'
+    query_template: null
+    review_timeout: null
+    sandbox_config: {}
+    shuffle: false
+    shuffle_choices: false
+    subset_list:
+    - Level 1
+    - Level 2
+    - Level 3
+    - Level 4
+    - Level 5
+    system_prompt: null
+    tags:
+    - Math
+    - Reasoning
+    train_split: null
+  mmlu_pro:
+    aggregation: mean
+    dataset_id: TIGER-Lab/MMLU-Pro
+    default_subset: default
+    description: MMLU-Pro is a benchmark for evaluating language models on multiple-choice
+      questions across various subjects. It includes questions from different domains,
+      where the model must select the correct answer from given options.
+    eval_split: test
+    extra_params: {}
+    few_shot_num: 0
+    few_shot_prompt_template: 'The following are multiple choice questions (with answers)
+      about {subject}. Think step by step and then finish your answer with ''ANSWER:
+      [LETTER]'' (without quotes) where [LETTER] is the correct letter choice.
+
+
+      {examples}
+
+      Answer the following multiple choice question. The last line of your response
+      should be of the following format: ''ANSWER: [LETTER]'' (without quotes) where
+      [LETTER] is one of {letters}. Think step by step before answering.
+
+
+      Question:
+
+      {question}
+
+      Options:
+
+      {choices}
+
+      '
+    few_shot_random: false
+    filters: null
+    force_redownload: false
+    metric_list:
+    - acc
+    name: mmlu_pro
+    output_types:
+    - generation
+    pretty_name: MMLU-Pro
+    prompt_template: 'Answer the following multiple choice question. The last line
+      of your response should be of the following format: ''ANSWER: [LETTER]'' (without
+      quotes) where [LETTER] is one of {letters}. Think step by step before answering.
+
+
+      Question:
+
+      {question}
+
+      Options:
+
+      {choices}
+
+      '
+    query_template: null
+    review_timeout: null
+    sandbox_config: {}
+    shuffle: false
+    shuffle_choices: false
+    subset_list:
+    - computer science
+    - math
+    - chemistry
+    - engineering
+    - law
+    - biology
+    - health
+    - physics
+    - business
+    - philosophy
+    - economics
+    - other
+    - psychology
+    - history
+    system_prompt: null
+    tags:
+    - MCQ
+    - Knowledge
+    train_split: validation
+dataset_dir: /home/crq/.cache/modelscope/hub/datasets
+dataset_hub: modelscope
+datasets:
+- mmlu_pro
+- ifeval
+- ceval
+- cmmlu
+- live_code_bench
+- math_500
+- aime24
+- gpqa_diamond
+debug: false
+eval_backend: Native
+eval_batch_size: 8
+eval_config: null
+eval_type: openai_api
+evalscope_version: 1.4.1
+generation_config:
+  batch_size: 8
+  max_tokens: 2048
+  stream: true
+  temperature: 0.0
+  timeout: 300000
+  top_p: 1.0
+ignore_errors: false
+judge_model_args: {}
+judge_strategy: auto
+judge_worker_num: 1
+limit: 100
+model: Qwen3-4B-Instruct-2507-eval
+model_args: {}
+model_id: Qwen3-4B-Instruct-2507-eval
+model_task: text_generation
+no_timestamp: false
+repeats: 1
+rerun_review: false
+sandbox_manager_config: {}
+sandbox_type: docker
+seed: 42
+stream: null
+timeout: null
+use_cache: null
+use_sandbox: false
+work_dir: ./outputs/20260108_001050

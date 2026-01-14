@@ -1,0 +1,6 @@
+cache_dir: null
+hub_name: modelscope
+lang: zh
+last_model: Qwen3-4B-Instruct-2507
+path_dict:
+  Qwen3-4B-Instruct-2507: /home/crq/.cache/modelscope/hub/models/Qwen/Qwen3-4B-Instruct-2507
