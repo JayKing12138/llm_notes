@@ -7,6 +7,8 @@ from langchain.tools import tool
 import json
 import pandas as pd
 import requests
+from langchain.agents.middleware import HumanInTheLoopMiddleware
+from langgraph.checkpoint.memory import InMemorySaver
 
 
 # 加载环境变量
@@ -83,3 +85,24 @@ agent = create_agent(
     tools=[web_search, get_weather],
     system_prompt=prompt
 )
+
+# agent = create_agent(
+#     model=model,
+#     tools=[web_search, get_weather],
+#     # checkpointer=InMemorySaver(),
+#     system_prompt=prompt,
+#     middleware=[
+#         HumanInTheLoopMiddleware(
+#             interrupt_on={
+#                 # 拦截 Tavily 搜索工具执行前，要求人工确认
+#                 "tavily_search_results_json": {
+#                     "allowed_decisions": ["approve", "edit", "reject"],
+#                     "description": lambda tool_name, tool_input, state: (
+#                         f"🔍 模型准备执行 Tavily 搜索：'{tool_input.get('query', '')}'"
+#                     ),
+#                 }
+#             },
+#             description_prefix="⚠️ 工具执行需要人工审批"
+#         )
+#     ],
+# )
