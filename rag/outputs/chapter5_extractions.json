@@ -1,0 +1,948 @@
+[
+  {
+    "doc_id": "doc_001",
+    "doc_title": "/home/crq/llm_scripts/rag/data/刑法4页.pdf",
+    "extraction_class": "实体",
+    "extraction_text": "走私、贩卖、运输、制造毒品罪",
+    "char_interval": {
+      "start_pos": 4,
+      "end_pos": 18
+    },
+    "attributes": {
+      "类型": "罪名",
+      "章节": "第七节",
+      "所属编章": "分则"
+    }
+  },
+  {
+    "doc_id": "doc_001",
+    "doc_title": "/home/crq/llm_scripts/rag/data/刑法4页.pdf",
+    "extraction_class": "extraction_text",
+    "extraction_text": "走私、贩卖、运输、制造毒品罪",
+    "char_interval": {
+      "start_pos": 4,
+      "end_pos": 18
+    },
+    "attributes": {}
+  },
+  {
+    "doc_id": "doc_001",
+    "doc_title": "/home/crq/llm_scripts/rag/data/刑法4页.pdf",
+    "extraction_class": "实体",
+    "extraction_text": "组织、强迫、引诱、容留、介绍卖淫罪",
+    "char_interval": {
+      "start_pos": 24,
+      "end_pos": 41
+    },
+    "attributes": {
+      "类型": "罪名",
+      "章节": "第八节",
+      "所属编章": "分则"
+    }
+  },
+  {
+    "doc_id": "doc_001",
+    "doc_title": "/home/crq/llm_scripts/rag/data/刑法4页.pdf",
+    "extraction_class": "extraction_text",
+    "extraction_text": "组织、强迫、引诱、容留、介绍卖淫罪",
+    "char_interval": {
+      "start_pos": 24,
+      "end_pos": 41
+    },
+    "attributes": {}
+  },
+  {
+    "doc_id": "doc_001",
+    "doc_title": "/home/crq/llm_scripts/rag/data/刑法4页.pdf",
+    "extraction_class": "实体",
+    "extraction_text": "制作、贩卖、传播淫秽物品罪",
+    "char_interval": {
+      "start_pos": 47,
+      "end_pos": 60
+    },
+    "attributes": {
+      "类型": "罪名",
+      "章节": "第九节",
+      "所属编章": "分则"
+    }
+  },
+  {
+    "doc_id": "doc_001",
+    "doc_title": "/home/crq/llm_scripts/rag/data/刑法4页.pdf",
+    "extraction_class": "extraction_text",
+    "extraction_text": "制作、贩卖、传播淫秽物品罪",
+    "char_interval": {
+      "start_pos": 47,
+      "end_pos": 60
+    },
+    "attributes": {}
+  },
+  {
+    "doc_id": "doc_001",
+    "doc_title": "/home/crq/llm_scripts/rag/data/刑法4页.pdf",
+    "extraction_class": "实体",
+    "extraction_text": "危害国防利益罪",
+    "char_interval": {
+      "start_pos": 66,
+      "end_pos": 73
+    },
+    "attributes": {
+      "类型": "章节标题",
+      "章号": "第七章",
+      "所属编章": "分则"
+    }
+  },
+  {
+    "doc_id": "doc_001",
+    "doc_title": "/home/crq/llm_scripts/rag/data/刑法4页.pdf",
+    "extraction_class": "extraction_text",
+    "extraction_text": "危害国防利益罪",
+    "char_interval": {
+      "start_pos": 66,
+      "end_pos": 73
+    },
+    "attributes": {}
+  },
+  {
+    "doc_id": "doc_001",
+    "doc_title": "/home/crq/llm_scripts/rag/data/刑法4页.pdf",
+    "extraction_class": "实体",
+    "extraction_text": "贪污贿赂罪",
+    "char_interval": {
+      "start_pos": 79,
+      "end_pos": 84
+    },
+    "attributes": {
+      "类型": "章节标题",
+      "章号": "第八章",
+      "所属编章": "分则"
+    }
+  },
+  {
+    "doc_id": "doc_001",
+    "doc_title": "/home/crq/llm_scripts/rag/data/刑法4页.pdf",
+    "extraction_class": "extraction_text",
+    "extraction_text": "贪污贿赂罪",
+    "char_interval": {
+      "start_pos": 79,
+      "end_pos": 84
+    },
+    "attributes": {}
+  },
+  {
+    "doc_id": "doc_001",
+    "doc_title": "/home/crq/llm_scripts/rag/data/刑法4页.pdf",
+    "extraction_class": "实体",
+    "extraction_text": "渎职罪",
+    "char_interval": null,
+    "attributes": {
+      "类型": "章节标题",
+      "章号": "第九章",
+      "所属编章": "分则"
+    }
+  },
+  {
+    "doc_id": "doc_001",
+    "doc_title": "/home/crq/llm_scripts/rag/data/刑法4页.pdf",
+    "extraction_class": "extraction_text",
+    "extraction_text": "渎职罪",
+    "char_interval": null,
+    "attributes": {}
+  },
+  {
+    "doc_id": "doc_001",
+    "doc_title": "/home/crq/llm_scripts/rag/data/刑法4页.pdf",
+    "extraction_class": "实体",
+    "extraction_text": "军人违反职责罪",
+    "char_interval": {
+      "start_pos": 99,
+      "end_pos": 106
+    },
+    "attributes": {
+      "类型": "章节标题",
+      "章号": "第十章",
+      "所属编章": "分则"
+    }
+  },
+  {
+    "doc_id": "doc_001",
+    "doc_title": "/home/crq/llm_scripts/rag/data/刑法4页.pdf",
+    "extraction_class": "extraction_text",
+    "extraction_text": "军人违反职责罪",
+    "char_interval": {
+      "start_pos": 99,
+      "end_pos": 106
+    },
+    "attributes": {}
+  },
+  {
+    "doc_id": "doc_001",
+    "doc_title": "/home/crq/llm_scripts/rag/data/刑法4页.pdf",
+    "extraction_class": "实体",
+    "extraction_text": "第一编 总则",
+    "char_interval": {
+      "start_pos": 114,
+      "end_pos": 120
+    },
+    "attributes": {
+      "类型": "编标题",
+      "编号": "第一编"
+    }
+  },
+  {
+    "doc_id": "doc_001",
+    "doc_title": "/home/crq/llm_scripts/rag/data/刑法4页.pdf",
+    "extraction_class": "extraction_text",
+    "extraction_text": "第一编 总则",
+    "char_interval": {
+      "start_pos": 114,
+      "end_pos": 120
+    },
+    "attributes": {}
+  },
+  {
+    "doc_id": "doc_001",
+    "doc_title": "/home/crq/llm_scripts/rag/data/刑法4页.pdf",
+    "extraction_class": "实体",
+    "extraction_text": "第一章 刑法的任务、基本原则和适用范围",
+    "char_interval": {
+      "start_pos": 124,
+      "end_pos": 143
+    },
+    "attributes": {
+      "类型": "章标题",
+      "所属编": "第一编",
+      "编号": "第一章"
+    }
+  },
+  {
+    "doc_id": "doc_001",
+    "doc_title": "/home/crq/llm_scripts/rag/data/刑法4页.pdf",
+    "extraction_class": "extraction_text",
+    "extraction_text": "第一章 刑法的任务、基本原则和适用范围",
+    "char_interval": {
+      "start_pos": 124,
+      "end_pos": 143
+    },
+    "attributes": {}
+  },
+  {
+    "doc_id": "doc_001",
+    "doc_title": "/home/crq/llm_scripts/rag/data/刑法4页.pdf",
+    "extraction_class": "关系描述",
+    "extraction_text": "为了惩罚犯罪，保护人民，根据宪法，结合我国同犯罪作斗争的具体经验及实际情况，制定本法。",
+    "char_interval": {
+      "start_pos": 149,
+      "end_pos": 192
+    },
+    "attributes": {
+      "类型": "立法目的",
+      "法律名称": "中华人民共和国刑法",
+      "目的": [
+        "惩罚犯罪",
+        "保护人民"
+      ],
+      "依据": [
+        "宪法",
+        "我国同犯罪作斗争的具体经验",
+        "实际情况"
+      ]
+    }
+  },
+  {
+    "doc_id": "doc_001",
+    "doc_title": "/home/crq/llm_scripts/rag/data/刑法4页.pdf",
+    "extraction_class": "extraction_text",
+    "extraction_text": "为了惩罚犯罪，保护人民，根据宪法，结合我国同犯罪作斗争的具体经验及实际情况，制定本法。",
+    "char_interval": {
+      "start_pos": 149,
+      "end_pos": 192
+    },
+    "attributes": {}
+  },
+  {
+    "doc_id": "doc_001",
+    "doc_title": "/home/crq/llm_scripts/rag/data/刑法4页.pdf",
+    "extraction_class": "关系描述",
+    "extraction_text": "中华人民共和国刑法的任务，是用刑罚同一切犯罪行为作斗争，以保卫国家安全，保卫人民民主专政的政权和社会主义制度，保护国有财产和劳动群众集体所有的财产，保护公民私人所有的财产，保护公民的人身权利、民主权利和其他权利，维护社会秩序、经济秩序，保障社会主义建设事业的顺利进行。",
+    "char_interval": {
+      "start_pos": 198,
+      "end_pos": 332
+    },
+    "attributes": {}
+  },
+  {
+    "doc_id": "doc_001",
+    "doc_title": "/home/crq/llm_scripts/rag/data/刑法4页.pdf",
+    "extraction_class": "extraction_text",
+    "extraction_text": "中华人民共和国刑法的任务，是用刑罚同一切犯罪行为作斗争，以保卫国家安全，保卫人民民主专政的政权和社会主义制度，保护国有财产和劳动群众集体所有的财产，保护公民私人所有的财产，保护公民的人身权利、民主权利和其他权利，维护社会秩序、经济秩序，保障社会主义建设事业的顺利进行。",
+    "char_interval": {
+      "start_pos": 198,
+      "end_pos": 332
+    },
+    "attributes": {}
+  },
+  {
+    "doc_id": "doc_001",
+    "doc_title": "/home/crq/llm_scripts/rag/data/刑法4页.pdf",
+    "extraction_class": "关系描述",
+    "extraction_text": "法律明文规定为犯罪行为的，依照法律定罪处刑；法律没有明文规定为犯罪行为的，不得定罪处刑。",
+    "char_interval": {
+      "start_pos": 338,
+      "end_pos": 382
+    },
+    "attributes": {
+      "类型": "罪刑法定原则",
+      "法律条款": "第三条",
+      "原则内容": "法无明文规定不为罪，法无明文规定不处罚"
+    }
+  },
+  {
+    "doc_id": "doc_001",
+    "doc_title": "/home/crq/llm_scripts/rag/data/刑法4页.pdf",
+    "extraction_class": "extraction_text",
+    "extraction_text": "法律明文规定为犯罪行为的，依照法律定罪处刑；法律没有明文规定为犯罪行为的，不得定罪处刑。",
+    "char_interval": {
+      "start_pos": 338,
+      "end_pos": 382
+    },
+    "attributes": {}
+  },
+  {
+    "doc_id": "doc_001",
+    "doc_title": "/home/crq/llm_scripts/rag/data/刑法4页.pdf",
+    "extraction_class": "关系描述",
+    "extraction_text": "对任何人犯罪，在适用法律上一律平等。不允许任何人有超越法律的特权。",
+    "char_interval": {
+      "start_pos": 388,
+      "end_pos": 421
+    },
+    "attributes": {
+      "类型": "法律适用平等原则",
+      "法律条款": "第四条",
+      "适用对象": "任何人"
+    }
+  },
+  {
+    "doc_id": "doc_001",
+    "doc_title": "/home/crq/llm_scripts/rag/data/刑法4页.pdf",
+    "extraction_class": "extraction_text",
+    "extraction_text": "对任何人犯罪，在适用法律上一律平等。不允许任何人有超越法律的特权。",
+    "char_interval": {
+      "start_pos": 388,
+      "end_pos": 421
+    },
+    "attributes": {}
+  },
+  {
+    "doc_id": "doc_001",
+    "doc_title": "/home/crq/llm_scripts/rag/data/刑法4页.pdf",
+    "extraction_class": "关系描述",
+    "extraction_text": "刑罚的轻重，应当与犯罪分子所犯罪行和承担的刑事责任相适应。",
+    "char_interval": {
+      "start_pos": 427,
+      "end_pos": 456
+    },
+    "attributes": {
+      "类型": "罪责刑相适应原则",
+      "法律条款": "第五条",
+      "关联要素": [
+        "罪行",
+        "刑事责任",
+        "刑罚轻重"
+      ]
+    }
+  },
+  {
+    "doc_id": "doc_001",
+    "doc_title": "/home/crq/llm_scripts/rag/data/刑法4页.pdf",
+    "extraction_class": "extraction_text",
+    "extraction_text": "刑罚的轻重，应当与犯罪分子所犯罪行和承担的刑事责任相适应。",
+    "char_interval": {
+      "start_pos": 427,
+      "end_pos": 456
+    },
+    "attributes": {}
+  },
+  {
+    "doc_id": "doc_001",
+    "doc_title": "/home/crq/llm_scripts/rag/data/刑法4页.pdf",
+    "extraction_class": "关系描述",
+    "extraction_text": "凡在中华人民共和国领域内犯罪的，除法律有特别规定的以外，都适用本法。",
+    "char_interval": {
+      "start_pos": 462,
+      "end_pos": 496
+    },
+    "attributes": {
+      "类型": "属地管辖",
+      "法律条款": "第六条",
+      "适用范围": "中华人民共和国领域内",
+      "例外情况": "法律有特别规定"
+    }
+  },
+  {
+    "doc_id": "doc_001",
+    "doc_title": "/home/crq/llm_scripts/rag/data/刑法4页.pdf",
+    "extraction_class": "extraction_text",
+    "extraction_text": "凡在中华人民共和国领域内犯罪的，除法律有特别规定的以外，都适用本法。",
+    "char_interval": {
+      "start_pos": 462,
+      "end_pos": 496
+    },
+    "attributes": {}
+  },
+  {
+    "doc_id": "doc_001",
+    "doc_title": "/home/crq/llm_scripts/rag/data/刑法4页.pdf",
+    "extraction_class": "关系描述",
+    "extraction_text": "凡在中华人民共和国船舶或者航空器内犯罪的，也适用本法。",
+    "char_interval": {
+      "start_pos": 498,
+      "end_pos": 525
+    },
+    "attributes": {
+      "类型": "属地管辖延伸",
+      "法律条款": "第六条",
+      "适用场所": [
+        "中华人民共和国船舶",
+        "中华人民共和国航空器"
+      ]
+    }
+  },
+  {
+    "doc_id": "doc_001",
+    "doc_title": "/home/crq/llm_scripts/rag/data/刑法4页.pdf",
+    "extraction_class": "extraction_text",
+    "extraction_text": "凡在中华人民共和国船舶或者航空器内犯罪的，也适用本法。",
+    "char_interval": {
+      "start_pos": 498,
+      "end_pos": 525
+    },
+    "attributes": {}
+  },
+  {
+    "doc_id": "doc_001",
+    "doc_title": "/home/crq/llm_scripts/rag/data/刑法4页.pdf",
+    "extraction_class": "关系描述",
+    "extraction_text": "犯罪的行为或者结果有一项发生在中华人民共和国领域内的，就认为是在中华人民共和国领域内犯罪。",
+    "char_interval": {
+      "start_pos": 527,
+      "end_pos": 572
+    },
+    "attributes": {
+      "类型": "属地管辖标准",
+      "法律条款": "第六条",
+      "判断标准": "行为地或结果地任一在境内"
+    }
+  },
+  {
+    "doc_id": "doc_001",
+    "doc_title": "/home/crq/llm_scripts/rag/data/刑法4页.pdf",
+    "extraction_class": "extraction_text",
+    "extraction_text": "犯罪的行为或者结果有一项发生在中华人民共和国领域内的，就认为是在中华人民共和国领域内犯罪。",
+    "char_interval": {
+      "start_pos": 527,
+      "end_pos": 572
+    },
+    "attributes": {}
+  },
+  {
+    "doc_id": "doc_001",
+    "doc_title": "/home/crq/llm_scripts/rag/data/刑法4页.pdf",
+    "extraction_class": "关系描述",
+    "extraction_text": "中华人民共和国公民在中华人民共和国领域外犯本法规定之罪的，适用本法，但是按本法规定的最高刑为三年以下有期徒刑的，可以不予追究。",
+    "char_interval": {
+      "start_pos": 578,
+      "end_pos": 641
+    },
+    "attributes": {
+      "类型": "属人管辖",
+      "法律条款": "第七条",
+      "主体": "中华人民共和国公民",
+      "适用条件": "领域外犯罪",
+      "例外": "最高刑为三年以下有期徒刑可不追究"
+    }
+  },
+  {
+    "doc_id": "doc_001",
+    "doc_title": "/home/crq/llm_scripts/rag/data/刑法4页.pdf",
+    "extraction_class": "extraction_text",
+    "extraction_text": "中华人民共和国公民在中华人民共和国领域外犯本法规定之罪的，适用本法，但是按本法规定的最高刑为三年以下有期徒刑的，可以不予追究。",
+    "char_interval": {
+      "start_pos": 578,
+      "end_pos": 641
+    },
+    "attributes": {}
+  },
+  {
+    "doc_id": "doc_001",
+    "doc_title": "/home/crq/llm_scripts/rag/data/刑法4页.pdf",
+    "extraction_class": "关系描述",
+    "extraction_text": "中华人民共和国国家工作人员和军人在中华人民共和国领域外犯本法规定之罪的，适用本法。",
+    "char_interval": {
+      "start_pos": 643,
+      "end_pos": 684
+    },
+    "attributes": {
+      "类型": "属人管辖（特殊主体）",
+      "法律条款": "第七条",
+      "主体": [
+        "国家工作人员",
+        "军人"
+      ],
+      "无刑期限制": true
+    }
+  },
+  {
+    "doc_id": "doc_001",
+    "doc_title": "/home/crq/llm_scripts/rag/data/刑法4页.pdf",
+    "extraction_class": "extraction_text",
+    "extraction_text": "中华人民共和国国家工作人员和军人在中华人民共和国领域外犯本法规定之罪的，适用本法。",
+    "char_interval": {
+      "start_pos": 643,
+      "end_pos": 684
+    },
+    "attributes": {}
+  },
+  {
+    "doc_id": "doc_001",
+    "doc_title": "/home/crq/llm_scripts/rag/data/刑法4页.pdf",
+    "extraction_class": "关系描述",
+    "extraction_text": "外国人在中华人民共和国领域外对中华人民共和国国家或者公民犯罪，而按本法规定的最低刑为三年以上有期徒刑的，可以适用本法，但是按照犯罪地的法律不受处罚的除外。",
+    "char_interval": {
+      "start_pos": 690,
+      "end_pos": 767
+    },
+    "attributes": {
+      "类型": "保护管辖",
+      "法律条款": "第八条",
+      "主体": "外国人",
+      "对象": [
+        "中华人民共和国国家",
+        "中华人民共和国公民"
+      ],
+      "适用条件": [
+        "最低刑为三年以上有期徒刑",
+        "犯罪地法律亦处罚"
+      ]
+    }
+  },
+  {
+    "doc_id": "doc_001",
+    "doc_title": "/home/crq/llm_scripts/rag/data/刑法4页.pdf",
+    "extraction_class": "extraction_text",
+    "extraction_text": "外国人在中华人民共和国领域外对中华人民共和国国家或者公民犯罪，而按本法规定的最低刑为三年以上有期徒刑的，可以适用本法，但是按照犯罪地的法律不受处罚的除外。",
+    "char_interval": {
+      "start_pos": 690,
+      "end_pos": 767
+    },
+    "attributes": {}
+  },
+  {
+    "doc_id": "doc_001",
+    "doc_title": "/home/crq/llm_scripts/rag/data/刑法4页.pdf",
+    "extraction_class": "关系描述",
+    "extraction_text": "对于中华人民共和国缔结或者参加的国际条约所规定的罪行，中华人民共和国在所承担条约义务的范围内行使刑事管辖权的，适用本法。",
+    "char_interval": {
+      "start_pos": 773,
+      "end_pos": 833
+    },
+    "attributes": {
+      "类型": "普遍管辖",
+      "法律条款": "第九条",
+      "依据": "国际条约",
+      "范围限制": "所承担条约义务范围内"
+    }
+  },
+  {
+    "doc_id": "doc_001",
+    "doc_title": "/home/crq/llm_scripts/rag/data/刑法4页.pdf",
+    "extraction_class": "extraction_text",
+    "extraction_text": "对于中华人民共和国缔结或者参加的国际条约所规定的罪行，中华人民共和国在所承担条约义务的范围内行使刑事管辖权的，适用本法。",
+    "char_interval": {
+      "start_pos": 773,
+      "end_pos": 833
+    },
+    "attributes": {}
+  },
+  {
+    "doc_id": "doc_001",
+    "doc_title": "/home/crq/llm_scripts/rag/data/刑法4页.pdf",
+    "extraction_class": "关系描述",
+    "extraction_text": "凡在中华人民共和国领域外犯罪，依照本法应当负刑事责任的，虽然经过外国审判，仍然可以依照本法追究，但是在外国已经受过刑罚处罚的，可以免除或者减轻处罚。",
+    "char_interval": {
+      "start_pos": 839,
+      "end_pos": 854
+    },
+    "attributes": {
+      "类型": "域外效力与一事不再理例外",
+      "法律条款": "第十条",
+      "原则": "本国可再审",
+      "从宽处理": "已在外国受罚可免除或减轻"
+    }
+  },
+  {
+    "doc_id": "doc_001",
+    "doc_title": "/home/crq/llm_scripts/rag/data/刑法4页.pdf",
+    "extraction_class": "extraction_text",
+    "extraction_text": "凡在中华人民共和国领域外犯罪，依照本法应当负刑事责任的，虽然经过外国审判，仍然可以依照本法追究，但是在外国已经受过刑罚处罚的，可以免除或者减轻处罚。",
+    "char_interval": {
+      "start_pos": 839,
+      "end_pos": 915
+    },
+    "attributes": {}
+  },
+  {
+    "doc_id": "doc_001",
+    "doc_title": "/home/crq/llm_scripts/rag/data/刑法4页.pdf",
+    "extraction_class": "关系描述",
+    "extraction_text": "享有外交特权和豁免权的外国人的刑事责任，通过外交途径解决。",
+    "char_interval": {
+      "start_pos": 922,
+      "end_pos": 951
+    },
+    "attributes": {
+      "类型": "外交豁免",
+      "法律条款": "第十一条",
+      "主体": "享有外交特权和豁免权的外国人",
+      "处理方式": "外交途径"
+    }
+  },
+  {
+    "doc_id": "doc_001",
+    "doc_title": "/home/crq/llm_scripts/rag/data/刑法4页.pdf",
+    "extraction_class": "extraction_text",
+    "extraction_text": "享有外交特权和豁免权的外国人的刑事责任，通过外交途径解决。",
+    "char_interval": {
+      "start_pos": 922,
+      "end_pos": 951
+    },
+    "attributes": {}
+  },
+  {
+    "doc_id": "doc_001",
+    "doc_title": "/home/crq/llm_scripts/rag/data/刑法4页.pdf",
+    "extraction_class": "实体",
+    "extraction_text": "中华人民共和国成立",
+    "char_interval": null,
+    "attributes": {
+      "类型": "时间",
+      "精确时间": "1949年10月1日",
+      "上下文作用": "法律溯及力的时间起点"
+    }
+  },
+  {
+    "doc_id": "doc_001",
+    "doc_title": "/home/crq/llm_scripts/rag/data/刑法4页.pdf",
+    "extraction_class": "实体",
+    "extraction_text": "本法施行以前",
+    "char_interval": {
+      "start_pos": 1078,
+      "end_pos": 1084
+    },
+    "attributes": {
+      "类型": "时间",
+      "相对时间": "刑法生效前",
+      "法律意义": "用于判断行为适用旧法或新法"
+    }
+  },
+  {
+    "doc_id": "doc_001",
+    "doc_title": "/home/crq/llm_scripts/rag/data/刑法4页.pdf",
+    "extraction_class": "关系描述",
+    "extraction_text": "如果当时的法律不认为是犯罪的，适用当时的法律",
+    "char_interval": {
+      "start_pos": 979,
+      "end_pos": 1001
+    },
+    "attributes": {
+      "类型": "法律适用规则",
+      "主体": "行为人",
+      "客体": "当时的法律",
+      "关系": "适用"
+    }
+  },
+  {
+    "doc_id": "doc_001",
+    "doc_title": "/home/crq/llm_scripts/rag/data/刑法4页.pdf",
+    "extraction_class": "关系描述",
+    "extraction_text": "如果当时的法官认为是犯罪的，依照本法总则第四章第八节的规定应当追诉的，按照当时的法律追究刑事责任",
+    "char_interval": {
+      "start_pos": 1002,
+      "end_pos": 1050
+    },
+    "attributes": {
+      "类型": "法律适用与追诉规则",
+      "主体": "行为人",
+      "依据": "本法总则第四章第八节",
+      "关系": "追诉与责任追究"
+    }
+  },
+  {
+    "doc_id": "doc_001",
+    "doc_title": "/home/crq/llm_scripts/rag/data/刑法4页.pdf",
+    "extraction_class": "关系描述",
+    "extraction_text": "但是如果本法不认为是犯罪或者处刑较轻的，适用本法",
+    "char_interval": {
+      "start_pos": 1051,
+      "end_pos": 1075
+    },
+    "attributes": {
+      "类型": "从旧兼从轻原则",
+      "主体": "行为人",
+      "客体": "本法（新法）",
+      "关系": "适用"
+    }
+  },
+  {
+    "doc_id": "doc_001",
+    "doc_title": "/home/crq/llm_scripts/rag/data/刑法4页.pdf",
+    "extraction_class": "事件",
+    "extraction_text": "依照当时的法律已经作出的生效判决，继续有效",
+    "char_interval": {
+      "start_pos": 1085,
+      "end_pos": 1106
+    },
+    "attributes": {
+      "类型": "司法效力延续",
+      "时间点": "本法施行以前",
+      "法律效果": "既判力维持"
+    }
+  },
+  {
+    "doc_id": "doc_001",
+    "doc_title": "/home/crq/llm_scripts/rag/data/刑法4页.pdf",
+    "extraction_class": "实体",
+    "extraction_text": "第二章 犯罪",
+    "char_interval": {
+      "start_pos": 1111,
+      "end_pos": 1117
+    },
+    "attributes": {
+      "类型": "编章标题",
+      "层级": "章",
+      "所属编": "第一编 总则"
+    }
+  },
+  {
+    "doc_id": "doc_001",
+    "doc_title": "/home/crq/llm_scripts/rag/data/刑法4页.pdf",
+    "extraction_class": "实体",
+    "extraction_text": "第一节 犯罪和刑事责任",
+    "char_interval": {
+      "start_pos": 1121,
+      "end_pos": 1132
+    },
+    "attributes": {
+      "类型": "编章标题",
+      "层级": "节",
+      "所属章": "第二章 犯罪"
+    }
+  },
+  {
+    "doc_id": "doc_001",
+    "doc_title": "/home/crq/llm_scripts/rag/data/刑法4页.pdf",
+    "extraction_class": "数据指标",
+    "extraction_text": "一切危害国家主权、领土完整和安全，分裂国家、颠覆人民民主专政的政权和推翻社会主义制度，破坏社会秩序和经济秩序，侵犯国有资产或者劳动群众集体所有的财产，侵犯公民私人所有的财产，侵犯公民的人身权利、民主权利和其他权利，以及其他危害社会的行为，依照法律应当受刑罚处罚的，都是犯罪，但是情节显著轻微危害不大的，不认为是犯罪",
+    "char_interval": {
+      "start_pos": 1139,
+      "end_pos": 1296
+    },
+    "attributes": {
+      "类型": "犯罪定义与但书条款",
+      "法律条款": "第十三条",
+      "核心要素": "社会危害性+应受刑罚处罚性",
+      "例外情形": "情节显著轻微危害不大"
+    }
+  },
+  {
+    "doc_id": "doc_001",
+    "doc_title": "/home/crq/llm_scripts/rag/data/刑法4页.pdf",
+    "extraction_class": "实体",
+    "extraction_text": "故意犯罪",
+    "char_interval": {
+      "start_pos": 1353,
+      "end_pos": 1357
+    },
+    "attributes": {
+      "类型": "法律概念",
+      "定义来源": "第十四条",
+      "构成要件": "明知+希望或放任危害结果发生"
+    }
+  },
+  {
+    "doc_id": "doc_001",
+    "doc_title": "/home/crq/llm_scripts/rag/data/刑法4页.pdf",
+    "extraction_class": "关系描述",
+    "extraction_text": "故意犯罪，应当负刑事责任",
+    "char_interval": {
+      "start_pos": 1353,
+      "end_pos": 1365
+    },
+    "attributes": {
+      "类型": "责任承担关系",
+      "主体": "故意犯罪人",
+      "义务": "负刑事责任"
+    }
+  },
+  {
+    "doc_id": "doc_001",
+    "doc_title": "/home/crq/llm_scripts/rag/data/刑法4页.pdf",
+    "extraction_class": "实体",
+    "extraction_text": "过失犯罪",
+    "char_interval": {
+      "start_pos": 1438,
+      "end_pos": 1442
+    },
+    "attributes": {
+      "类型": "法律概念",
+      "定义来源": "第十五条",
+      "构成要件": "应当预见而未预见，或已预见但轻信能避免"
+    }
+  },
+  {
+    "doc_id": "doc_001",
+    "doc_title": "/home/crq/llm_scripts/rag/data/刑法4页.pdf",
+    "extraction_class": "关系描述",
+    "extraction_text": "过失犯罪，法律有规定的才负刑事责任",
+    "char_interval": {
+      "start_pos": 1438,
+      "end_pos": 1455
+    },
+    "attributes": {
+      "类型": "责任限定关系",
+      "主体": "过失犯罪人",
+      "条件": "法律明文规定"
+    }
+  },
+  {
+    "doc_id": "doc_001",
+    "doc_title": "/home/crq/llm_scripts/rag/data/刑法4页.pdf",
+    "extraction_class": "实体",
+    "extraction_text": "不能抗拒或者不能预见的原因",
+    "char_interval": null,
+    "attributes": {
+      "类型": "免责事由",
+      "法律条款": "第十六条",
+      "法律效果": "不构成犯罪"
+    }
+  },
+  {
+    "doc_id": "doc_001",
+    "doc_title": "/home/crq/llm_scripts/rag/data/刑法4页.pdf",
+    "extraction_class": "数据指标",
+    "extraction_text": "已满十六周岁的人犯罪，应当负刑事责任",
+    "char_interval": {
+      "start_pos": 1526,
+      "end_pos": 1544
+    },
+    "attributes": {
+      "类型": "刑事责任年龄标准",
+      "年龄阈值": 16,
+      "法律条款": "第十七条第一款",
+      "责任性质": "完全刑事责任"
+    }
+  },
+  {
+    "doc_id": "doc_001",
+    "doc_title": "/home/crq/llm_scripts/rag/data/刑法4页.pdf",
+    "extraction_class": "数据指标",
+    "extraction_text": "已满十四周岁不满十六周岁的人，犯故意杀人、故意伤害致人重伤或者死亡、强奸、抢劫、贩卖毒品、放火、爆炸、投放危险物质罪的，应当负刑事责任",
+    "char_interval": {
+      "start_pos": 1547,
+      "end_pos": 1614
+    },
+    "attributes": {
+      "类型": "限制刑事责任年龄与特定罪名",
+      "年龄区间": "14 ≤ 年龄 < 16",
+      "涵盖罪名数量": 8,
+      "罪名列表": [
+        "故意杀人",
+        "故意伤害致人重伤或死亡",
+        "强奸",
+        "抢劫",
+        "贩卖毒品",
+        "放火",
+        "爆炸",
+        "投放危险物质罪"
+      ],
+      "法律条款": "第十七条第二款"
+    }
+  },
+  {
+    "doc_id": "doc_001",
+    "doc_title": "/home/crq/llm_scripts/rag/data/刑法4页.pdf",
+    "extraction_class": "数据指标",
+    "extraction_text": "已满十二周岁不满十四周岁的人，犯故意杀人、故意伤害罪，致人死亡或者以特别残忍手段致人重伤造成严重残疾，情节恶劣，经最高人民检察院核准追诉的，应当负刑事责任",
+    "char_interval": {
+      "start_pos": 1617,
+      "end_pos": 1694
+    },
+    "attributes": {
+      "类型": "特殊低龄刑事责任条款",
+      "年龄区间": "12 ≤ 年龄 < 14",
+      "适用罪名": [
+        "故意杀人",
+        "故意伤害罪"
+      ],
+      "附加条件": [
+        "致人死亡或特别残忍致重伤+严重残疾",
+        "情节恶劣",
+        "最高人民检察院核准追诉"
+      ],
+      "法律条款": "第十七条第三款"
+    }
+  },
+  {
+    "doc_id": "doc_001",
+    "doc_title": "/home/crq/llm_scripts/rag/data/刑法4页.pdf",
+    "extraction_class": "关系描述",
+    "extraction_text": "对依照前三款规定追究刑事责任的不满十八周岁的人，应当从轻或者减轻处罚",
+    "char_interval": {
+      "start_pos": 1697,
+      "end_pos": 1731
+    },
+    "attributes": {
+      "类型": "量刑从宽规则",
+      "主体": "不满十八周岁犯罪人",
+      "法律依据": "第十七条第四款",
+      "处理方式": "从轻或减轻处罚"
+    }
+  },
+  {
+    "doc_id": "doc_001",
+    "doc_title": "/home/crq/llm_scripts/rag/data/刑法4页.pdf",
+    "extraction_class": "事件",
+    "extraction_text": "因不满十六周岁不予刑事处罚的，责令其父母或者其他监护人加以管教；在必要的时候，依法进行专门矫治教育",
+    "char_interval": {
+      "start_pos": 1734,
+      "end_pos": 1783
+    },
+    "attributes": {
+      "类型": "非刑罚处置措施",
+      "适用对象": "不满十六周岁不予刑责者",
+      "措施内容": [
+        "监护人管教",
+        "专门矫治教育"
+      ],
+      "法律条款": "第十七条第五款"
+    }
+  },
+  {
+    "doc_id": "doc_001",
+    "doc_title": "/home/crq/llm_scripts/rag/data/刑法4页.pdf",
+    "extraction_class": "数据指标",
+    "extraction_text": "已满七十五周岁的人故意犯罪的，可以从轻",
+    "char_interval": {
+      "start_pos": 1793,
+      "end_pos": 1812
+    },
+    "attributes": {
+      "类型": "高龄犯罪量刑宽宥",
+      "年龄阈值": 75,
+      "适用范围": "故意犯罪",
+      "法律效果": "可以从轻处罚",
+      "法律条款": "第十七条之一"
+    }
+  }
+]

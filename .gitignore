@@ -3,3 +3,5 @@ langchain/langchain_chatbot/.env
 __pycache__/
 .DS_Store
 .webui_secret_key
+MCP/mcp-client/.env
+MCP/weather/.env
